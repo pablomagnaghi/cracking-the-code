@@ -1,23 +1,12 @@
-import {
-  isSubtree,
-  TreeNode,
-} from '../../src/trees-and-graphs/10-check-subtree';
+import { isSubtree, TreeNode } from '../../src/trees-and-graphs/10-check-subtree';
 
-function createTree<T>(
-  value: T,
-  left?: TreeNode<T>,
-  right?: TreeNode<T>
-): TreeNode<T> {
+function createTree<T>(value: T, left?: TreeNode<T>, right?: TreeNode<T>): TreeNode<T> {
   return { value, left, right };
 }
 
 describe('isSubtree', () => {
   it('returns true when t2 is a subtree of t1', () => {
-    const t1 = createTree(
-      3,
-      createTree(4, createTree(1), createTree(2)),
-      createTree(5)
-    );
+    const t1 = createTree(3, createTree(4, createTree(1), createTree(2)), createTree(5));
 
     const t2 = createTree(4, createTree(1), createTree(2));
 

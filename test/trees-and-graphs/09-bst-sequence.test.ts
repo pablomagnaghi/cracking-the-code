@@ -1,7 +1,4 @@
-import {
-  bstSequences,
-  TreeNode,
-} from '../../src/trees-and-graphs/09-bst-sequence';
+import { bstSequences, TreeNode } from '../../src/trees-and-graphs/09-bst-sequence';
 
 describe('bstSequences', () => {
   test('empty tree returns [[]]', () => {

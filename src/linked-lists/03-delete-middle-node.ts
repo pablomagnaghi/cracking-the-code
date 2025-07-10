@@ -28,7 +28,7 @@ export function deleteMiddleNode<T>(node: Node<T> | undefined): boolean {
 // Silver exercise deleting by position
 export function deleteMiddleNodeByPosition<T>(
   head: Node<T>,
-  position: number,
+  position: number
 ): Node<T> | undefined {
   if (!head || position < 0) return undefined;
 

@@ -13,10 +13,7 @@ export type TreeNode<T> = {
   right?: TreeNode<T>;
 };
 
-export function isSubtree<T>(
-  t1: TreeNode<T> | null,
-  t2: TreeNode<T> | null
-): boolean {
+export function isSubtree<T>(t1: TreeNode<T> | null, t2: TreeNode<T> | null): boolean {
   if (t2 === null) return true;
   if (t1 === null) return false;
   if (isSameTree(t1, t2)) return true;
@@ -29,8 +26,5 @@ function isSameTree<T>(a: TreeNode<T> | null, b: TreeNode<T> | null): boolean {
   if (a === null || b === null) return false;
   if (a.value !== b.value) return false;
 
-  return (
-    isSameTree(a.left ?? null, b.left ?? null) &&
-    isSameTree(a.right ?? null, b.right ?? null)
-  );
+  return isSameTree(a.left ?? null, b.left ?? null) && isSameTree(a.right ?? null, b.right ?? null);
 }

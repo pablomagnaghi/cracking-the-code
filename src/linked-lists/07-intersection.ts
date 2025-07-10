@@ -11,7 +11,7 @@ export type Node<T> = {
 
 export function intersection<T>(
   list1: Node<T> | undefined,
-  list2: Node<T> | undefined,
+  list2: Node<T> | undefined
 ): Node<T> | undefined {
   if (!list1 || !list2) return undefined;
 

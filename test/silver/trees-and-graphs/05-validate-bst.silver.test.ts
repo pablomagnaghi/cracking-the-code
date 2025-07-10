@@ -1,7 +1,4 @@
-import {
-  TreeNode,
-  validateBST,
-} from '../../../src/trees-and-graphs/05-validate-bst';
+import { TreeNode, validateBST } from '../../../src/trees-and-graphs/05-validate-bst';
 
 describe('validateBST', () => {
   test('returns true for a valid BST', () => {

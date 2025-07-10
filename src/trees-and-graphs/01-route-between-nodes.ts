@@ -8,10 +8,7 @@ export type GraphNode = {
   neighbors: GraphNode[];
 };
 
-export function hasRouteBetweenNodes(
-  start: GraphNode,
-  end: GraphNode
-): boolean {
+export function hasRouteBetweenNodes(start: GraphNode, end: GraphNode): boolean {
   if (!start || !end) {
     return false;
   }

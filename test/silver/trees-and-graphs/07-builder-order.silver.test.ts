@@ -10,14 +10,7 @@ describe('buildOrder', () => {
       ['f', 'a'],
       ['d', 'c'],
     ];
-    expect(buildOrder(projects1, dependencies1)).toEqual([
-      'e',
-      'f',
-      'a',
-      'b',
-      'd',
-      'c',
-    ]);
+    expect(buildOrder(projects1, dependencies1)).toEqual(['e', 'f', 'a', 'b', 'd', 'c']);
   });
 
   test('throws error for no valid order', () => {
@@ -30,9 +23,7 @@ describe('buildOrder', () => {
       ['d', 'c'],
       ['c', 'f'], // This creates a cycle: f → a → d → c → f
     ];
-    expect(() => buildOrder(projects, dependencies)).toThrow(
-      'No valid build order exists'
-    );
+    expect(() => buildOrder(projects, dependencies)).toThrow('No valid build order exists');
   });
 
   test('returns correct build order for single project', () => {

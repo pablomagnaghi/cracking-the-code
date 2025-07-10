@@ -13,10 +13,7 @@
 // Output: e, f, a, b, d, c
 // ```
 
-export function buildOrder(
-  projects: string[],
-  dependencies: string[][]
-): string[] {
+export function buildOrder(projects: string[], dependencies: string[][]): string[] {
   const graph = new Map<string, string[]>();
   const inDegree = new Map<string, number>();
 

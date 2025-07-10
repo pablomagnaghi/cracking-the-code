@@ -1,8 +1,4 @@
-import {
-  TreeNode,
-  ListNode,
-  listOfDepths,
-} from '../../../src/trees-and-graphs/03-list-of-depths';
+import { TreeNode, ListNode, listOfDepths } from '../../../src/trees-and-graphs/03-list-of-depths';
 
 describe('listOfDepths', () => {
   test('creates linked lists of nodes at each depth', () => {

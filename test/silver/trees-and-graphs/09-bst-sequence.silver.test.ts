@@ -1,13 +1,6 @@
-import {
-  bstSequences,
-  TreeNode,
-} from '../../../src/trees-and-graphs/09-bst-sequence';
+import { bstSequences, TreeNode } from '../../../src/trees-and-graphs/09-bst-sequence';
 
-const createNode = <T>(
-  value: T,
-  left?: TreeNode<T>,
-  right?: TreeNode<T>
-): TreeNode<T> => {
+const createNode = <T>(value: T, left?: TreeNode<T>, right?: TreeNode<T>): TreeNode<T> => {
   return { value, left, right };
 };
 

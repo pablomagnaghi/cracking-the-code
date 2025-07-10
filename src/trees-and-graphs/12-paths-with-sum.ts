@@ -12,18 +12,11 @@ export type TreeNode = {
   right?: TreeNode;
 };
 
-export function countPathsWithSum(
-  root: TreeNode | undefined,
-  targetSum: number
-): number {
+export function countPathsWithSum(root: TreeNode | undefined, targetSum: number): number {
   return dfs(root, targetSum, []);
 }
 
-function dfs(
-  node: TreeNode | undefined,
-  targetSum: number,
-  path: number[]
-): number {
+function dfs(node: TreeNode | undefined, targetSum: number, path: number[]): number {
   if (!node) return 0;
 
   path.push(node.value);

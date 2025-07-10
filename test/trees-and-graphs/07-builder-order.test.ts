@@ -29,9 +29,7 @@ describe('buildOrder', () => {
       ['a', 'b'],
       ['b', 'a'],
     ];
-    expect(() => buildOrder(projects, dependencies)).toThrow(
-      'No valid build order exists'
-    );
+    expect(() => buildOrder(projects, dependencies)).toThrow('No valid build order exists');
   });
 
   test('throws error when dependency references unknown project', () => {

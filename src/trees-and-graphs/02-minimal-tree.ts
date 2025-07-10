@@ -25,11 +25,7 @@ export function minimalTree<T>(sortedArray: T[]): TreeNode<T> | undefined {
   return buildMinimalTree(sortedArray, 0, sortedArray.length - 1);
 }
 
-function buildMinimalTree<T>(
-  array: T[],
-  start: number,
-  end: number
-): TreeNode<T> | undefined {
+function buildMinimalTree<T>(array: T[], start: number, end: number): TreeNode<T> | undefined {
   if (start > end) return undefined;
 
   const mid = Math.floor((start + end) / 2);

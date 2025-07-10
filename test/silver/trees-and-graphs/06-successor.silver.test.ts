@@ -1,7 +1,4 @@
-import {
-  TreeNode,
-  successor,
-} from '../../../src/trees-and-graphs/06-successor';
+import { TreeNode, successor } from '../../../src/trees-and-graphs/06-successor';
 
 describe('successor', () => {
   test('returns correct in-order successor', () => {

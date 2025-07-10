@@ -1,7 +1,4 @@
-import {
-  countPathsWithSum,
-  TreeNode,
-} from '../../src/trees-and-graphs/12-paths-with-sum';
+import { countPathsWithSum, TreeNode } from '../../src/trees-and-graphs/12-paths-with-sum';
 
 describe('countPathsWithSum', () => {
   test('counts all valid paths that sum to target', () => {

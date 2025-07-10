@@ -37,12 +37,7 @@ export function bstSequences<T>(root: TreeNode<T> | undefined): T[][] {
 }
 
 // Weave two arrays while maintaining the relative order of elements within each array
-function weaveLists<T>(
-  first: T[],
-  second: T[],
-  prefix: T[],
-  results: T[][]
-): void {
+function weaveLists<T>(first: T[], second: T[], prefix: T[], results: T[][]): void {
   if (first.length === 0 || second.length === 0) {
     results.push([...prefix, ...first, ...second]);
     return;

@@ -8,9 +8,7 @@ export type TreeNode<T> = {
   right?: TreeNode<T>;
 };
 
-export function validateBST<T extends number>(
-  node: TreeNode<T> | undefined
-): boolean {
+export function validateBST<T extends number>(node: TreeNode<T> | undefined): boolean {
   return validate(node, -Infinity, Infinity);
 }
 
@@ -23,8 +21,5 @@ function validate<T extends number>(
 
   if (node.value <= min || node.value >= max) return false;
 
-  return (
-    validate(node.left, min, node.value) &&
-    validate(node.right, node.value, max)
-  );
+  return validate(node.left, min, node.value) && validate(node.right, node.value, max);
 }

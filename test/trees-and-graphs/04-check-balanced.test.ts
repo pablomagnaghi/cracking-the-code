@@ -1,7 +1,4 @@
-import {
-  checkBalanced,
-  TreeNode,
-} from '../../src/trees-and-graphs/04-check-balanced';
+import { checkBalanced, TreeNode } from '../../src/trees-and-graphs/04-check-balanced';
 
 describe('checkBalanced', () => {
   test('returns true for empty tree', () => {

@@ -1,8 +1,4 @@
-import {
-  TreeNode,
-  ListNode,
-  listOfDepths,
-} from '../../src/trees-and-graphs/03-list-of-depths';
+import { TreeNode, ListNode, listOfDepths } from '../../src/trees-and-graphs/03-list-of-depths';
 
 function linkedListToArray<T>(head: ListNode<T> | undefined): T[] {
   const result: T[] = [];

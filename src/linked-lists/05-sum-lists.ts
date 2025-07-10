@@ -16,7 +16,7 @@ export type Node<T> = {
 
 export function sumLists(
   list1: Node<number> | undefined,
-  list2: Node<number> | undefined,
+  list2: Node<number> | undefined
 ): Node<number> | undefined {
   let carryOver = 0;
   let resultHead: Node<number> | undefined = undefined;

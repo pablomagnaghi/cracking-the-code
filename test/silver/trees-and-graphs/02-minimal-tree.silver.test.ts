@@ -1,7 +1,4 @@
-import {
-  TreeNode,
-  minimalTree,
-} from '../../../src/trees-and-graphs/02-minimal-tree';
+import { TreeNode, minimalTree } from '../../../src/trees-and-graphs/02-minimal-tree';
 
 describe('minimalTree', () => {
   test('creates minimal height BST from sorted array', () => {

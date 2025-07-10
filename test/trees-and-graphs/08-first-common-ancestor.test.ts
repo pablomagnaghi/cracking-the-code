@@ -1,7 +1,4 @@
-import {
-  firstCommonAncestor,
-  TreeNode,
-} from '../../src/trees-and-graphs/08-first-common-ancestor';
+import { firstCommonAncestor, TreeNode } from '../../src/trees-and-graphs/08-first-common-ancestor';
 
 describe('firstCommonAncestor', () => {
   /*
