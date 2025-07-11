@@ -1,4 +1,4 @@
-import { insertBits } from '../../src/bit-manipulation/01-insertion'; // Adjust the import path as needed
+import { insertBits } from '../../src/bit-manipulation/01-insertion';
 
 describe('insertBits', () => {
   test('inserts M into N between bits i and j correctly', () => {
