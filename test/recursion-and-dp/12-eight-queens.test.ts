@@ -1,4 +1,4 @@
-import { eightQueens } from '../../src/recursion-and-dp/12-eight-queens'; // adjust the import path as needed
+import { eightQueens } from '../../src/recursion-and-dp/12-eight-queens';
 
 describe('eightQueens', () => {
   test('returns all valid solutions for the 8 queens problem', () => {
