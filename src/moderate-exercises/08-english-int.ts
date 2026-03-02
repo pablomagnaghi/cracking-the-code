@@ -1,7 +1,23 @@
-// 16.8. English Integer
+// LCCI 16.08. English Int
 //
-// Write a function to convert an integer into its English phrase representation.
-// Example: 123 → "One Hundred Twenty Three"
+// Given any integer, print an English phrase that describes the integer
+// (e.g., "One Thousand Two Hundred Thirty Four").
+//
+// Example 1:
+//   Input: 123
+//   Output: "One Hundred Twenty Three"
+//
+// Example 2:
+//   Input: 12345
+//   Output: "Twelve Thousand Three Hundred Forty Five"
+//
+// Example 3:
+//   Input: 1234567
+//   Output: "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+//
+// Example 4:
+//   Input: 1234567891
+//   Output: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"
 
 const belowTwenty = [
   'Zero',

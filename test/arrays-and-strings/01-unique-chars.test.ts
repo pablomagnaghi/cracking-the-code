@@ -32,4 +32,12 @@ describe('isUnique', () => {
   it('returns false for long string with duplicates', () => {
     expect(isUnique('abcdefghijklmnopqrstuvwxyzAabcdefghijklmnopqrstuvwxyz')).toBe(false);
   });
+
+  it('returns false for "leetcode" (LCCI example 1)', () => {
+    expect(isUnique('leetcode')).toBe(false);
+  });
+
+  it('returns true for "abc" (LCCI example 2)', () => {
+    expect(isUnique('abc')).toBe(true);
+  });
 });

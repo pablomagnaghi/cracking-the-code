@@ -33,4 +33,16 @@ describe('kthToLast', () => {
     const result = kthToLast<number>(undefined as unknown as Node<number>, 1);
     expect(result).toBeUndefined();
   });
+
+  test('LCCI example: returns 4 for list 1->2->3->4->5 with k=2', () => {
+    const head = createLinkedList([1, 2, 3, 4, 5]);
+    const result = kthToLast(head, 2);
+    expect(result?.value).toBe(4);
+  });
+
+  test('returns last node when k=1', () => {
+    const head = createLinkedList([1, 2, 3, 4, 5]);
+    const result = kthToLast(head, 1);
+    expect(result?.value).toBe(5);
+  });
 });

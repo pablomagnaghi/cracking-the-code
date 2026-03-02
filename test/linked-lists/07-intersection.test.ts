@@ -63,4 +63,45 @@ describe('intersection', () => {
     const result = intersection(shared, shared);
     expect(result).toBe(shared);
   });
+
+  test('LCCI example 1: intersecting at node with value 8', () => {
+    // Shared tail: 8->4->5
+    const common: Node<number> = {
+      value: 8,
+      next: { value: 4, next: { value: 5 } },
+    };
+
+    // listA: 4->1->8->4->5
+    const listA: Node<number> = {
+      value: 4,
+      next: { value: 1, next: common },
+    };
+
+    // listB: 5->0->1->8->4->5
+    const listB: Node<number> = {
+      value: 5,
+      next: { value: 0, next: { value: 1, next: common } },
+    };
+
+    const result = intersection(listA, listB);
+    expect(result).toBe(common);
+    expect(result?.value).toBe(8);
+  });
+
+  test('LCCI example 3: no intersection returns undefined', () => {
+    // listA: 2->6->4
+    const listA: Node<number> = {
+      value: 2,
+      next: { value: 6, next: { value: 4 } },
+    };
+
+    // listB: 1->5
+    const listB: Node<number> = {
+      value: 1,
+      next: { value: 5 },
+    };
+
+    const result = intersection(listA, listB);
+    expect(result).toBeUndefined();
+  });
 });

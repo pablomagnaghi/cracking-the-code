@@ -1,13 +1,13 @@
-// 4. *Palindrome Permutation*:
-
+// LCCI 01.04. Palindrome Permutation
+//
 // Given a string, write a function to check if it is a permutation of a palindrome.
-// A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a rearrangement of letters.
-// The palindrome does not need to be limited to just dictionary words.
-// ```
-// EXAMPLE
-// Input: Tact Coa
-// Output True (permutations: "taco cat", "atco cta", etc.)
-// ```
+// A palindrome is a word or phrase that is the same forwards and backwards. A permutation
+// is a rearrangement of letters. The palindrome does not need to be limited to just
+// dictionary words.
+//
+// Example 1:
+//   Input: "tactcoa"
+//   Output: true (permutations: "tacocat", "atcocta", etc.)
 
 export function palindromePermutation(str: string) {
   if (str.length == 0) return true;

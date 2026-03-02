@@ -77,4 +77,22 @@ describe('validateBST', () => {
 
     expect(validateBST(tree)).toBe(false);
   });
+
+  test('returns true for LCCI example [2, 1, 3]', () => {
+    const tree: TreeNode<number> = {
+      value: 2,
+      left: { value: 1 },
+      right: { value: 3 },
+    };
+    expect(validateBST(tree)).toBe(true);
+  });
+
+  test('returns false for duplicate values (equal left child)', () => {
+    const tree: TreeNode<number> = {
+      value: 2,
+      left: { value: 2 },
+      right: { value: 3 },
+    };
+    expect(validateBST(tree)).toBe(false);
+  });
 });

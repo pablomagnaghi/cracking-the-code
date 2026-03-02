@@ -64,4 +64,31 @@ describe('successor', () => {
 
     expect(successor(node30)).toBeUndefined();
   });
+
+  test('LCCI example: successor of node 1 in [2, 1, 3] is 2', () => {
+    const root: TreeNode<number> = { value: 2 };
+    const node1: TreeNode<number> = { value: 1, parent: root };
+    const node3: TreeNode<number> = { value: 3, parent: root };
+
+    root.left = node1;
+    root.right = node3;
+
+    expect(successor(node1)).toBe(root);
+    expect(successor(node1)?.value).toBe(2);
+  });
+
+  test('successor of node with right subtree returns leftmost of right subtree', () => {
+    const root: TreeNode<number> = { value: 10 };
+    const node5: TreeNode<number> = { value: 5, parent: root };
+    const node15: TreeNode<number> = { value: 15, parent: root };
+    const node12: TreeNode<number> = { value: 12, parent: node15 };
+    const node20: TreeNode<number> = { value: 20, parent: node15 };
+
+    root.left = node5;
+    root.right = node15;
+    node15.left = node12;
+    node15.right = node20;
+
+    expect(successor(root)).toBe(node12);
+  });
 });

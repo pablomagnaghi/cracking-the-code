@@ -32,4 +32,16 @@ describe('randomSet', () => {
 
     expect(() => randomSet(arr, m)).toThrow('m cannot be larger than the array length');
   });
+
+  test('returns empty array when m is 0', () => {
+    const result = randomSet([1, 2, 3], 0);
+    expect(result).toHaveLength(0);
+  });
+
+  test('returns single element when m is 1', () => {
+    const arr = [10, 20, 30, 40, 50];
+    const result = randomSet(arr, 1);
+    expect(result).toHaveLength(1);
+    expect(arr).toContain(result[0]);
+  });
 });

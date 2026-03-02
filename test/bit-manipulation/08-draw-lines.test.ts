@@ -77,4 +77,23 @@ describe('drawLine', () => {
 
     expect(screen).toEqual(expected);
   });
+
+  test('draws a single pixel at bit 0 (leftmost)', () => {
+    const width = 8;
+    const screen = new Uint8Array(1);
+    drawLine(screen, width, 0, 0, 0);
+
+    expect(screen[0]).toBe(0x80); // MSB set: 10000000
+  });
+
+  test('draws line spanning exactly two bytes', () => {
+    const width = 16;
+    const screen = new Uint8Array(2);
+    drawLine(screen, width, 6, 9, 0);
+
+    // byte 0: bits 6-7 set => 00000011 = 0x03
+    // byte 1: bits 0-1 set => 11000000 = 0xC0
+    expect(screen[0]).toBe(0x03);
+    expect(screen[1]).toBe(0xc0);
+  });
 });

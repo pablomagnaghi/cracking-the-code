@@ -1,7 +1,16 @@
-// 17.5 Letters and Numbers
+// LCCI 17.05. Find Longest Subarray
 //
-// Problem:
-// Given an array filled with letters and numbers, find the longest subarray with an equal number of letters and numbers.
+// Given an array filled with letters and numbers, find the longest subarray
+// with an equal number of letters and numbers. Return the subarray. If there
+// are multiple answers, return the one with the smallest left index. Return
+// an empty array if no valid subarray exists.
+//
+// Example:
+//   Input: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7"]
+//   Output: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7"]
+//
+// Constraints:
+//   - array.length <= 100000
 
 export function findLongestBalancedSubarray(arr: (string | number)[]): (string | number)[] {
   const map = new Map<number, number>();

@@ -1,13 +1,19 @@
-// 5.4 *Next Number*
+// LCCI 05.04. Closed Number
 //
 // Given a positive integer, print the next smallest and the next largest number
 // that have the same number of 1 bits in their binary representation.
 //
-// Example:
-// Input: 13948 (in binary: 11011001111100)
-// Output:
-//   Next larger: 13967  (11011010001111)
-//   Next smaller: 13946 (11011001111010)
+// Example 1:
+// Input: num = 2 (binary: 0b10)
+// Output: [4, 1] (binary: [0b100, 0b1])
+//
+// Example 2:
+// Input: num = 1
+// Output: [2, -1]
+//
+// Constraints:
+// - 1 <= num <= 2147483647
+// - Return -1 if no valid next smallest or next largest number exists.
 
 export function getNext(n: number): number | undefined {
   let c = n;

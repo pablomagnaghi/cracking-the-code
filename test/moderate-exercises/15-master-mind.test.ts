@@ -39,4 +39,14 @@ describe('masterMind', () => {
   test('throws error if lengths differ', () => {
     expect(() => masterMind('RGB', 'RG')).toThrow('Secret and guess must be the same length');
   });
+
+  test('handles all pseudo-hits with no hits', () => {
+    const result = masterMind('RGYB', 'BYRG');
+    expect(result).toEqual({ hits: 0, pseudoHits: 4 });
+  });
+
+  test('single character match', () => {
+    const result = masterMind('RRRR', 'RYYY');
+    expect(result).toEqual({ hits: 1, pseudoHits: 0 });
+  });
 });

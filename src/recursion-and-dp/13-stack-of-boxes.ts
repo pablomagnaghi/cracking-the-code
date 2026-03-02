@@ -1,10 +1,21 @@
-// 8.13 Stack of Boxes
+// LCCI 08.13. Pile Box
 //
-// You have a stack of boxes, each with width, height, and depth.
-// The boxes cannot be rotated.
-// A box can be placed on top of another box only if
-// its width, height, and depth are all strictly smaller than the box below it.
-// Implement a method to compute the height of the tallest possible stack.
+// You have a stack of n boxes, with widths w, heights h, and depths d. The boxes
+// cannot be rotated and can only be stacked on top of one another if each box in
+// the stack is strictly larger than the box above it in width, height, and depth.
+// Implement a method to compute the height of the tallest possible stack. The
+// height of a stack is the sum of the heights of each box.
+//
+// Example 1:
+//   Input: box = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]
+//   Output: 6
+//
+// Example 2:
+//   Input: box = [[1, 1, 1], [2, 3, 4], [2, 6, 7], [3, 4, 5]]
+//   Output: 10
+//
+// Constraints:
+//   Maximum 3000 boxes.
 
 export type Box = { width: number; height: number; depth: number };
 

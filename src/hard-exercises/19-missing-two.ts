@@ -1,12 +1,21 @@
-// 17.19. Missing Two
+// LCCI 17.19. Missing Two
 //
-// Problem:
-// You are given an array containing all the numbers from 1 to n, except two numbers that are missing.
-// Write a function to find the two missing numbers.
+// You are given an array with all the numbers from 1 to N appearing exactly
+// once, except for two number that are missing. How can you find the missing
+// numbers in O(N) time and O(1) space?
 //
-// Example:
-// Input: [1, 2, 4, 6]
-// Output: [3, 5]
+// You can return the missing numbers in any order.
+//
+// Example 1:
+//   Input: [1]
+//   Output: [2,3]
+//
+// Example 2:
+//   Input: [2,3]
+//   Output: [1,4]
+//
+// Constraints:
+//   - nums.length <= 30000
 
 export function findMissingTwo(nums: number[]): number[] {
   const n = nums.length + 2;

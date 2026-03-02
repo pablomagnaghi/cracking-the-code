@@ -1,19 +1,20 @@
-// 8. *Loop Detection*:
-
-// Given a circular linked list, implement an algorithm that returns the node
-// at the beginning of the loop.
-
-// ```
-// DEFINITION
-// Circular linked list: A (corrupt) linked list in which a node's next pointer
-// points to an earlier node, so as to make a loop in the linked list.
-// ```
-
-// ```
-// EXAMPLE
-// Input: A->8->C->D->E-> C[thesameCasearlier] Output: C
-// Hints: #50, #69, #83, #90
-// ```
+// LCCI 02.08. Linked List Cycle
+//
+// Given a circular linked list, implement an algorithm that returns the node at
+// the beginning of the loop. A circular linked list is a (corrupt) linked list
+// in which a node's next pointer points to an earlier node.
+//
+// Example 1:
+//   Input: head = [3,2,0,-4], pos = 1
+//   Output: tail connects to node index 1
+//
+// Example 2:
+//   Input: head = [1,2], pos = 0
+//   Output: tail connects to node index 0
+//
+// Example 3:
+//   Input: head = [1], pos = -1
+//   Output: no cycle
 
 export type Node<T> = {
   value: T;

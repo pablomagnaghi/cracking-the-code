@@ -1,8 +1,22 @@
-// 8.14 Boolean Evaluation
+// LCCI 08.14. Boolean Evaluation
 //
-// Given a boolean expression consisting of symbols 0 (false), 1 (true), and operators (&, |, ^),
-// and a desired result (true or false), count the number of ways to parenthesize the expression
-// such that it evaluates to the desired result.
+// Given a boolean expression consisting of the symbols 0 (false), 1 (true),
+// & (AND), | (OR), and ^ (XOR), and a desired boolean result value result,
+// implement a function to count the number of ways of parenthesizing the
+// expression such that it evaluates to result.
+//
+// Example 1:
+//   Input: s = "1^0|0|1", result = 0
+//   Output: 2
+//   Explanation: Two possible parenthesizing ways are:
+//     1^(0|(0|1)) and 1^((0|0)|1)
+//
+// Example 2:
+//   Input: s = "0&0&0&1^1|0", result = 1
+//   Output: 10
+//
+// Constraints:
+//   There are no more than 19 operators in s.
 
 type MemoKey = string;
 

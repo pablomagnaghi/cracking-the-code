@@ -27,4 +27,12 @@ describe('add (without using + or -)', () => {
   test('adds number to itself', () => {
     expect(add(7, 7)).toBe(14);
   });
+
+  test('adds two zeros', () => {
+    expect(add(0, 0)).toBe(0);
+  });
+
+  test('adds negative to larger positive', () => {
+    expect(add(-100, 200)).toBe(100);
+  });
 });

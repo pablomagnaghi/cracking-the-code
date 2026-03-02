@@ -1,14 +1,15 @@
-// 3. *Delete Middle Node*:
-
-// Implement an algorithm to delete a node in the middle
-// (i.e., any node but the first and last node, not necessarily the exact middle)
-// of a singly linked list, given only access to that node.
-
-// ```
-// EXAMPLE
-// Input: the node c from the linked list a - >b- >c - >d - >e- >f
-// Result: nothing is returned, but the new linked list looks like a->b->d->e->f Hints: #72
-// ```
+// LCCI 02.03. Delete Middle Node
+//
+// Implement an algorithm to delete a node in the middle (i.e., any node but the
+// first and last node, not necessarily the exact middle) of a singly linked list,
+// given only access to that node.
+//
+// Example:
+//   Input: the node c from the linked list a->b->c->d->e->f
+//   Output: nothing is returned, but the new linked list looks like a->b->d->e->f
+//
+// Constraints:
+//   - The node to delete is not the first or last node in the list
 
 export type Node<T> = {
   value: T;

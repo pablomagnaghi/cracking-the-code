@@ -1,4 +1,4 @@
-// 6.7. The Apocalypse
+// 06.07. The Apocalypse (Book-only)
 //
 // In the new post-apocalyptic world, the world queen is desperately concerned about the birth rate.
 // Therefore, she decrees that all families should ensure that they have one girl or else they must continue to have children until they do.

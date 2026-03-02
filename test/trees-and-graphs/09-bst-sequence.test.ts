@@ -61,4 +61,26 @@ describe('bstSequences', () => {
       ])
     );
   });
+
+  test('right-only tree returns single sequence', () => {
+    const root: TreeNode<number> = {
+      value: 1,
+      right: {
+        value: 2,
+        right: { value: 3 },
+      },
+    };
+    expect(bstSequences(root)).toEqual([[1, 2, 3]]);
+  });
+
+  test('left-only tree returns single sequence', () => {
+    const root: TreeNode<number> = {
+      value: 3,
+      left: {
+        value: 2,
+        left: { value: 1 },
+      },
+    };
+    expect(bstSequences(root)).toEqual([[3, 2, 1]]);
+  });
 });

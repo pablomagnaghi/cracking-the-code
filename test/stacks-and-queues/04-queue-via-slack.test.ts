@@ -44,4 +44,27 @@ describe('MyQueue', () => {
     expect(queue.dequeue()).toBe(3);
     expect(queue.isEmpty()).toBe(true);
   });
+
+  test('LCCI example: push 1, push 2, peek, pop, empty', () => {
+    const queue = new MyQueue<number>();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    expect(queue.peek()).toBe(1);
+    expect(queue.dequeue()).toBe(1);
+    expect(queue.isEmpty()).toBe(false);
+  });
+
+  test('LCCI: multiple push then sequential dequeue maintains FIFO', () => {
+    const queue = new MyQueue<number>();
+    queue.enqueue(10);
+    queue.enqueue(20);
+    queue.enqueue(30);
+    queue.enqueue(40);
+    expect(queue.dequeue()).toBe(10);
+    expect(queue.dequeue()).toBe(20);
+    expect(queue.peek()).toBe(30);
+    expect(queue.dequeue()).toBe(30);
+    expect(queue.dequeue()).toBe(40);
+    expect(queue.isEmpty()).toBe(true);
+  });
 });

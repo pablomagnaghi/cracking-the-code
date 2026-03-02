@@ -26,4 +26,12 @@ describe('countTrailingZeros', () => {
   test('handles large input like 1000', () => {
     expect(countTrailingZeros(1000)).toBe(249);
   });
+
+  test('returns correct count for 50!', () => {
+    expect(countTrailingZeros(50)).toBe(12);
+  });
+
+  test('returns correct count for 125 (triple factor of 5)', () => {
+    expect(countTrailingZeros(125)).toBe(31); // 25 + 5 + 1
+  });
 });

@@ -1,15 +1,16 @@
-// 16.16 Sub Sort
+// LCCI 16.16. Sub Sort
 //
-// Problem: Given an array, find the smallest subarray that if sorted,
-// would make the entire array sorted.
+// Given an array of integers, write a method to find indices m and n such that
+// if you sorted elements m through n, the entire array would be sorted.
+// Minimize n - m (find the smallest such sequence).
 //
-// Approach:
-// 1. Scan from left to right to find the first element out of order (start).
-// 2. Scan from right to left to find the first element out of order (end).
-// 3. Find min and max in the subarray arr[start..end].
-// 4. Expand start to the left while arr[start-1] > min.
-// 5. Expand end to the right while arr[end+1] < max.
-// 6. Return [start, end], or [-1, -1] if array already sorted.
+// Example:
+//   Input: [1,2,4,7,10,11,7,12,6,7,16,18,19]
+//   Output: [3,9]
+//
+// Constraints:
+//   - 0 <= len(array) <= 1000000
+//   - Return [-1, -1] if the array is already sorted.
 
 export function subSort(arr: number[]): [number, number] {
   if (arr.length === 0) return [-1, -1];

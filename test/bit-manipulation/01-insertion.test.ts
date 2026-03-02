@@ -36,4 +36,16 @@ describe('insertBits', () => {
     // M inserted from bit 0 to 2: expected binary 111 (decimal 7)
     expect(result).toBe(0b111);
   });
+
+  test('inserts M = 11111 into N = 0 from bit 0 to 4', () => {
+    expect(insertBits(0, 0b11111, 0, 4)).toBe(0b11111);
+  });
+
+  test('inserts M into higher bit positions', () => {
+    // N = 0xFF00 (1111111100000000), M = 0b1010, i = 4, j = 7
+    const result = insertBits(0xff00, 0b1010, 4, 7);
+    // Clear bits 4-7 of 0xFF00: 0xFF00 & ~0xF0 = 0xFF00 & 0xFFFFFF0F = 0xFF00
+    // (bits 4-7 are already 0 in 0xFF00), then OR with 0b1010 << 4 = 0xA0
+    expect(result).toBe(0xff00 | 0xa0);
+  });
 });

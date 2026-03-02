@@ -1,6 +1,19 @@
-// 5. *Recursive Multiply*:
-
-// Write a recursive function to multiply two positive integers without using the * operator. You can use addition, subtraction, and bit shifting, but you should minimize the number of those operations.
+// LCCI 08.05. Recursive Multiply
+//
+// Write a recursive function to multiply two positive integers without using
+// the * operator (or / operator). You can use addition, subtraction, and bit
+// shifting, but you should minimize the number of those operations.
+//
+// Example 1:
+//   Input: A = 1, B = 10
+//   Output: 10
+//
+// Example 2:
+//   Input: A = 3, B = 4
+//   Output: 12
+//
+// Constraints:
+//   The result will not overflow.
 
 export function recursiveMultiply(a: number, b: number): number {
   const smaller = a < b ? a : b;

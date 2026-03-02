@@ -1,4 +1,4 @@
-// 6.1 The Heavy Pill
+// 06.01. The Heavy Pill (Book-only)
 //
 // You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills that weigh 1.1 grams.
 // You have a scale that you can use only once.

@@ -24,4 +24,8 @@ describe('stringRotation', () => {
   test('returns false for non-rotation strings with same length', () => {
     expect(stringRotation('abcde', 'edcba')).toBe(false);
   });
+
+  test('returns false for "aa" and "aba" (LCCI example 2)', () => {
+    expect(stringRotation('aa', 'aba')).toBe(false);
+  });
 });

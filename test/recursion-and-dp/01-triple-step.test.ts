@@ -28,4 +28,12 @@ describe('tripleStep', () => {
   test('n = 10', () => {
     expect(tripleStep(10)).toBe(274);
   });
+
+  test('n = 6', () => {
+    expect(tripleStep(6)).toBe(24);
+  });
+
+  test('n = 7', () => {
+    expect(tripleStep(7)).toBe(44);
+  });
 });

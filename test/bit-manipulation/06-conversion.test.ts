@@ -26,4 +26,14 @@ describe('bitFlipConversion', () => {
     // Every bit is different → 16 flips
     expect(bitFlipConversion(a, b)).toBe(16);
   });
+
+  test('LCCI example 2: A = 1, B = 2 requires 2 flips', () => {
+    // 1 = 0b01, 2 = 0b10 -> differ at bit 0 and bit 1
+    expect(bitFlipConversion(1, 2)).toBe(2);
+  });
+
+  test('single bit difference', () => {
+    // 0 and 1 differ by exactly 1 bit
+    expect(bitFlipConversion(0, 1)).toBe(1);
+  });
 });

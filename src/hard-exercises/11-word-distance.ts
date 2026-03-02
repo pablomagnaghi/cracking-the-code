@@ -1,11 +1,17 @@
-// 17.11 Word Distance
+// LCCI 17.11. Find Closest
 //
-// Problem:
-// Given a list of words and two words word1 and word2, find the shortest distance (in indices) between these two words in the list.
+// You have a large text file containing words. Given any two words, find the
+// shortest distance (in terms of number of words) between them in the file.
+// If the operation will be called multiple times for the same file (but
+// different pairs of words), can you optimize your solution?
 //
-// For example:
-// Input: words = ["practice", "makes", "perfect", "coding", "makes"], word1 = "coding", word2 = "practice"
-// Output: 3
+// Example:
+//   Input: words = ["I","am","a","student","from","a","university","in","a","city"],
+//          word1 = "a", word2 = "student"
+//   Output: 1
+//
+// Constraints:
+//   - words.length <= 100000
 
 export function shortestWordDistance(words: string[], word1: string, word2: string): number {
   let index1 = -1;

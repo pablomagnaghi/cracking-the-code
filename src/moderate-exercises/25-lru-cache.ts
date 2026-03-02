@@ -1,12 +1,26 @@
-// 16.25 LRU Cache
+// LCCI 16.25. LRU Cache
 //
-// Problem:
-// Implement an LRU (Least Recently Used) cache with given capacity.
-// It should support get(key) and put(key, value) operations,
-// both in O(1) time complexity.
+// Design and build a "least recently used" cache, which evicts the least recently
+// used item when the cache reaches capacity. The cache should map keys to values,
+// allowing the following operations:
 //
-// Use a combination of a doubly linked list and a hash map
-// to track recent usage and allow quick lookups and eviction.
+//   - get(key): Get the value (will always be positive) of the key if the key
+//     exists in the cache, otherwise return -1.
+//   - put(key, value): Set or insert the value if the key is not already present.
+//     When the cache reached its capacity, invalidate the least recently used item
+//     before inserting a new item.
+//
+// Example:
+//   LRUCache cache = new LRUCache(2);
+//   cache.put(1, 1);
+//   cache.put(2, 2);
+//   cache.get(1);       // returns 1
+//   cache.put(3, 3);    // evicts key 2
+//   cache.get(2);       // returns -1 (not found)
+//   cache.put(4, 4);    // evicts key 1
+//   cache.get(1);       // returns -1 (not found)
+//   cache.get(3);       // returns 3
+//   cache.get(4);       // returns 4
 
 class Node<K, V> {
   key: K;

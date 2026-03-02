@@ -1,8 +1,19 @@
-// 10.9. Sorted Matrix Search
+// LCCI 10.09. Sorted Matrix Search
 //
-// Given an MxN matrix where each row and each column is sorted in ascending order,
-// write a function to find whether a target value exists in the matrix.
-// Return true if found, otherwise false.
+// Given an M x N matrix in which each row and each column is sorted in ascending order,
+// write a method to find whether a target element exists in the matrix.
+//
+// Example:
+//   Given matrix:
+//     [
+//       [1,   4,  7, 11, 15],
+//       [2,   5,  8, 12, 19],
+//       [3,   6,  9, 16, 22],
+//       [10, 13, 14, 17, 24],
+//       [18, 21, 23, 26, 30]
+//     ]
+//   Target = 5  -> true
+//   Target = 20 -> false
 
 export function searchSortedMatrix(matrix: number[][], target: number): boolean {
   if (matrix.length === 0 || matrix[0].length === 0) return false;

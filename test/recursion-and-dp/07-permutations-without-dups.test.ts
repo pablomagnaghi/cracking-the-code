@@ -15,4 +15,15 @@ describe('permutationsWithoutDups', () => {
   test('returns empty array for empty string', () => {
     expect(permutationsWithoutDups('')).toEqual(['']);
   });
+
+  test('returns all permutations for "qwe" (LCCI example)', () => {
+    const result = permutationsWithoutDups('qwe');
+    expect(result).toHaveLength(6);
+    expect(result.sort()).toEqual(['eqw', 'ewq', 'qew', 'qwe', 'weq', 'wqe']);
+  });
+
+  test('returns correct count for "ab" (LCCI example)', () => {
+    const result = permutationsWithoutDups('ab');
+    expect(result.sort()).toEqual(['ab', 'ba']);
+  });
 });

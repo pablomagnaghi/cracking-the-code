@@ -29,4 +29,14 @@ describe('findLongestBalancedSubarray', () => {
   test('handles empty array', () => {
     expect(findLongestBalancedSubarray([])).toEqual([]);
   });
+
+  test('returns subarray with smallest left index when tied', () => {
+    const input = ['a', '1', 'b', '2'];
+    const result = findLongestBalancedSubarray(input);
+    expect(result).toEqual(['a', '1', 'b', '2']);
+  });
+
+  test('handles only numbers', () => {
+    expect(findLongestBalancedSubarray([1, 2, 3])).toEqual([]);
+  });
 });

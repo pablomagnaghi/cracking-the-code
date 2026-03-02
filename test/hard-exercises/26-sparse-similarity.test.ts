@@ -29,4 +29,15 @@ describe('sparseSimilarity', () => {
   it('handles empty input', () => {
     expect(sparseSimilarity([])).toEqual([]);
   });
+
+  it('handles identical documents', () => {
+    const docs = [[1, 2, 3], [1, 2, 3]];
+    const output = sparseSimilarity(docs);
+    expect(output).toContain('0,1: 1.0000');
+  });
+
+  it('handles single document', () => {
+    const docs = [[1, 2, 3]];
+    expect(sparseSimilarity(docs)).toEqual([]);
+  });
 });

@@ -58,4 +58,21 @@ describe('rotateMatrix function', () => {
 
     expect(() => rotateMatrix(input)).toThrow('Matrix must be square');
   });
+
+  test('correctly rotates a 4x4 matrix clockwise (LCCI example 2)', () => {
+    const matrix: Matrix = [
+      [5, 1, 9, 11],
+      [2, 4, 8, 10],
+      [13, 3, 6, 7],
+      [15, 14, 12, 16],
+    ];
+    const expected: Matrix = [
+      [15, 13, 2, 5],
+      [14, 3, 4, 1],
+      [12, 6, 8, 9],
+      [16, 7, 10, 11],
+    ];
+    rotateMatrix(matrix);
+    expect(matrix).toEqual(expected);
+  });
 });

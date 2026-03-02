@@ -39,4 +39,24 @@ describe('ThreeStacks', () => {
   test('returns undefined when popping empty stack', () => {
     expect(stacks.pop(2)).toBeUndefined();
   });
+
+  test('LCCI example 1: stackSize=1, push overflow ignored', () => {
+    const s = new ThreeStacks<number>(1);
+    s.push(0, 1);
+    expect(() => s.push(0, 2)).toThrow(); // stack full
+    expect(s.pop(0)).toBe(1);
+    expect(s.pop(0)).toBeUndefined();
+    expect(s.isEmpty(0)).toBe(true);
+  });
+
+  test('LCCI example 2: stackSize=2, multiple pushes and pops', () => {
+    const s = new ThreeStacks<number>(2);
+    s.push(0, 1);
+    s.push(0, 2);
+    expect(() => s.push(0, 3)).toThrow(); // stack full
+    expect(s.pop(0)).toBe(2);
+    expect(s.pop(0)).toBe(1);
+    expect(s.pop(0)).toBeUndefined();
+    expect(s.peek(0)).toBeUndefined();
+  });
 });

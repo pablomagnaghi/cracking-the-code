@@ -1,4 +1,4 @@
-// 10.4: Sorted Search, No Size
+// 10.04. Sorted Search, No Size (Book-only)
 //
 // You are given an array-like data structure Listy which lacks a size method. It does,
 // however, have an elementAt(i) method that returns the element at index i in O(1) time.
@@ -8,8 +8,8 @@
 // element x occurs. If x occurs multiple times, return the first index.
 //
 // Example:
-// Input: Listy = [1, 3, 5, 7, 9, 12, 15, 20, 20, 25], x = 20
-// Output: 7
+//   Input: Listy = [1, 3, 5, 7, 9, 12, 15, 20, 20, 25], x = 20
+//   Output: 7
 
 // Define the Listy interface
 interface Listy {

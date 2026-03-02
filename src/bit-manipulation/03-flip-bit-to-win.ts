@@ -1,10 +1,18 @@
-// 5.3 Flip Bit to Win:
+// LCCI 05.03. Reverse Bits
 //
-// You can flip exactly one bit from 0 to 1. Write code to find the length of the longest sequence of 1s
-// you could create by flipping one bit from 0 to 1.
-// Example:
-// Input: 1775 (binary: 11011101111)
-// Output: 8 (by flipping the 0 between two sequences of 1s)
+// You have an integer and you can flip exactly one bit from a 0 to a 1.
+// Write code to find the length of the longest sequence of 1s you could create.
+//
+// Example 1:
+// Input: num = 1775 (binary: 11011101111)
+// Output: 8
+//
+// Example 2:
+// Input: num = 7 (binary: 0111)
+// Output: 4
+//
+// Constraints:
+// - The input is a 32-bit integer.
 
 export function flipBitToWin(num: number): number {
   if (~num === 0) return 32; // All 1s

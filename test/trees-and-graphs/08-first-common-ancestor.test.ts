@@ -42,4 +42,12 @@ describe('firstCommonAncestor', () => {
   //   const missingNode: TreeNode<number> = { value: 100 };
   //   expect(firstCommonAncestor(root, node4, missingNode)).toBeUndefined();
   // });
+
+  test('common ancestor of 6 and 7 is 3', () => {
+    expect(firstCommonAncestor(root, node6, node7)?.value).toBe(3);
+  });
+
+  test('returns undefined for empty tree', () => {
+    expect(firstCommonAncestor(undefined, node4, node5)).toBeUndefined();
+  });
 });

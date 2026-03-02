@@ -7,4 +7,15 @@ describe('antsOnTriangle', () => {
 
     expect(result).toBeCloseTo(expected, 5);
   });
+
+  test('probability is exactly 2/8', () => {
+    const result = antsOnTriangle();
+    expect(result).toBe(2 / 8);
+  });
+
+  test('probability is between 0 and 1', () => {
+    const result = antsOnTriangle();
+    expect(result).toBeGreaterThan(0);
+    expect(result).toBeLessThan(1);
+  });
 });

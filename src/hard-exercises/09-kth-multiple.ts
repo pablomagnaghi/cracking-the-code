@@ -1,17 +1,13 @@
-// 17.9 Kth Multiple
+// LCCI 17.09. Get Kth Magic Number
 //
-// Problem:
-// Design an algorithm to find the kth number whose only prime factors are 3, 5, and 7.
-// In other words, find the kth number in the sequence where each element is a product
-// of powers of 3, 5, and 7 (e.g., 3^x * 5^y * 7^z).
+// Design an algorithm to find the kth number such that the only prime factors
+// are 3, 5, and 7. Note that 3, 5, and 7 do not have to be factors, but it
+// should not have any other prime factors. For example, the first several
+// multiples would be (in order) 1, 3, 5, 7, 9, 15, 21, 25, 27, 35...
 //
-// Example Sequence: 1, 3, 5, 7, 9, 15, 21, 25, 27, 35, ...
-// Input: k = 5
-// Output: 9 (the 5th number in the sequence)
-//
-// Constraints:
-// - No duplicate values
-// - Efficiently ordered sequence
+// Example:
+//   Input: k = 5
+//   Output: 9
 
 export function getKthMagicNumber(k: number): number {
   const nums = new Array(k);

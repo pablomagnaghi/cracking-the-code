@@ -25,4 +25,14 @@ describe('binaryToString', () => {
     // 0.0625 = 1/16 = 0.0001 binary
     expect(binaryToString(0.0625)).toBe('0.0001');
   });
+
+  test('converts 0.625 to 0.101', () => {
+    // LCCI example: 0.625 = 1/2 + 1/8 = 0.101 binary
+    expect(binaryToString(0.625)).toBe('0.101');
+  });
+
+  test('converts 0.875 to 0.111', () => {
+    // 0.875 = 1/2 + 1/4 + 1/8 = 0.111 binary
+    expect(binaryToString(0.875)).toBe('0.111');
+  });
 });

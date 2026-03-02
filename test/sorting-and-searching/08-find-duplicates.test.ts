@@ -24,4 +24,13 @@ describe('findDuplicates', () => {
   test('handles array with one element', () => {
     expect(findDuplicates([10])).toEqual([]);
   });
+
+  test('finds duplicates when all elements are the same', () => {
+    expect(findDuplicates([3, 3, 3])).toEqual([3]);
+  });
+
+  test('finds multiple distinct duplicates', () => {
+    const result = findDuplicates([1, 2, 3, 4, 5, 1, 2, 3]);
+    expect(result.sort()).toEqual([1, 2, 3]);
+  });
 });

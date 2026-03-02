@@ -1,12 +1,20 @@
-// 17.26. Sparse Similarity
+// LCCI 17.26. Sparse Similarity
 //
-// Problem:
-// The similarity of two documents is defined as the size of the intersection divided by the size of the union.
-// Each document has a unique ID (by index in input) and consists of a set of distinct words (represented as numbers).
-// Because similarities are sparse, we only return pairs of document IDs with non-zero similarity.
+// The similarity of two documents (each with distinct words) is defined to be
+// the size of the intersection divided by the size of the union. For example,
+// if two documents consist of words {1, 5, 3} and {1, 7, 2, 3}, the
+// intersection has 2 elements and the union has 5 elements, so similarity is
+// 2/5 = 0.4. Compute similarities for all pairs of documents. Return only
+// those with non-zero similarity. Output in format "{id1},{id2}: {similarity}"
+// with similarity rounded to 4 decimal places and id1 < id2.
 //
-// Input: docs: number[][]
-// Output: string[] formatted as "{id1},{id2}: {similarity}" (rounded to 4 decimal places)
+// Example:
+//   Input: [[14,15,100,9,3],[32,1,9,3,5],[15,29,2,6,8,7],[7,10]]
+//   Output: ["0,1: 0.2500","0,2: 0.1000","2,3: 0.1429"]
+//
+// Constraints:
+//   - docs.length <= 500
+//   - docs[i].length <= 500
 
 export function sparseSimilarity(docs: number[][]): string[] {
   const invertedIndex = new Map<number, number[]>(); // word -> list of document IDs

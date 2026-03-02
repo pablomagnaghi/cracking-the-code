@@ -54,4 +54,22 @@ describe('ticTacWin', () => {
     ];
     expect(ticTacWin(board, 'X')).toBe(false);
   });
+
+  test('detects O winning in the bottom row', () => {
+    const board = [
+      ['X', null, 'X'],
+      [null, 'X', null],
+      ['O', 'O', 'O'],
+    ];
+    expect(ticTacWin(board, 'O')).toBe(true);
+  });
+
+  test('returns false when player has partial row', () => {
+    const board = [
+      ['X', 'X', 'O'],
+      ['O', 'O', 'X'],
+      ['X', 'O', null],
+    ];
+    expect(ticTacWin(board, 'X')).toBe(false);
+  });
 });

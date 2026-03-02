@@ -32,4 +32,18 @@ describe('trulyMostPopular', () => {
     const result = trulyMostPopular(names, synonyms);
     expect(Object.values(result)).toEqual([12]);
   });
+
+  test('handles single name with no synonyms', () => {
+    const names = ['Zara(20)'];
+    const result = trulyMostPopular(names, []);
+    expect(result).toEqual({ Zara: 20 });
+  });
+
+  test('uses lexicographically smallest name as representative', () => {
+    const names = ['Zack(5)', 'Aaron(10)'];
+    const synonyms = [['Zack', 'Aaron']];
+    const result = trulyMostPopular(names, synonyms);
+    expect(result['Aaron']).toBe(15);
+    expect(result['Zack']).toBeUndefined();
+  });
 });

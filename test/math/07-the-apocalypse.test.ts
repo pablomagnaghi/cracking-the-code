@@ -12,4 +12,16 @@ describe('runApocalypseSimulation', () => {
     expect(boys).toBeGreaterThan(0);
     expect(girls).toBeGreaterThan(0);
   });
+
+  test('number of girls equals number of families', () => {
+    const familiesCount = 500;
+    const { girls } = runApocalypseSimulation(familiesCount);
+    // Each family has exactly one girl (they stop after the first girl)
+    expect(girls).toBe(familiesCount);
+  });
+
+  test('works with a single family', () => {
+    const { girls } = runApocalypseSimulation(1);
+    expect(girls).toBe(1);
+  });
 });

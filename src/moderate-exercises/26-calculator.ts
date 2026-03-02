@@ -1,9 +1,24 @@
-// 16.26 Calculator
+// LCCI 16.26. Calculator
 //
-// Problem:
-// Implement a basic calculator to evaluate a simple expression string.
-// The expression string may contain non-negative integers, +, -, *, / operators and empty spaces.
-// The integer division should truncate toward zero.
+// Given an arithmetic expression consisting of non-negative integers and the
+// operators +, -, *, / (no parentheses), compute the result.
+// The expression may contain spaces. Integer division should truncate toward zero.
+//
+// Example 1:
+//   Input: "3+2*2"
+//   Output: 7
+//
+// Example 2:
+//   Input: " 3/2 "
+//   Output: 1
+//
+// Example 3:
+//   Input: " 3+5 / 2 "
+//   Output: 5
+//
+// Constraints:
+//   - The expression is always valid.
+//   - You may not use any built-in eval function.
 
 export function calculate(expression: string): number {
   const stack: number[] = [];

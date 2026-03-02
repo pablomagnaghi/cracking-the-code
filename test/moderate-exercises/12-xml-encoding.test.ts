@@ -72,4 +72,34 @@ describe('encodeXML', () => {
     const expected = '2 0 0';
     expect(encodeXML(input, tagMap)).toBe(expected);
   });
+
+  test('encodes element with attributes but no children', () => {
+    const input: Element = {
+      name: 'person',
+      attributes: { firstName: 'Jane', lastName: 'Smith' },
+    };
+
+    const expected = '2 3 Jane 4 Smith 0 0';
+    expect(encodeXML(input, tagMap)).toBe(expected);
+  });
+
+  test('encodes deeply nested elements', () => {
+    const input: Element = {
+      name: 'family',
+      children: [
+        {
+          name: 'person',
+          children: [
+            {
+              name: 'state',
+              children: [{ name: 'person', text: 'inner' }],
+            },
+          ],
+        },
+      ],
+    };
+
+    const expected = '1 0 2 0 5 0 2 0 inner 0 0 0 0';
+    expect(encodeXML(input, tagMap)).toBe(expected);
+  });
 });

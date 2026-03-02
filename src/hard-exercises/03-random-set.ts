@@ -1,13 +1,8 @@
-// 17.3 Random Set
+// 17.03. Random Set (Book-only)
 //
-// Problem:
 // Given an array of integers (size n) and an integer m (m <= n),
 // randomly generate a set of m unique integers from the array,
 // ensuring no duplicates in the selection.
-//
-// Solution:
-// Use the Fisher-Yates shuffle algorithm to randomly shuffle the array,
-// then return the first m elements from the shuffled array.
 
 export function randomSet(arr: number[], m: number): number[] {
   if (m > arr.length) {

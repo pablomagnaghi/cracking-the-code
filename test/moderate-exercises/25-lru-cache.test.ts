@@ -52,4 +52,21 @@ describe('LRUCache', () => {
     expect(cache.get(1)).toBeNull();
     expect(cache.get(2)).toBe('two');
   });
+
+  test('handles many sequential inserts with eviction', () => {
+    const cache = new LRUCache<number, number>(3);
+    cache.put(1, 10);
+    cache.put(2, 20);
+    cache.put(3, 30);
+    cache.put(4, 40); // evicts key 1
+    expect(cache.get(1)).toBeNull();
+    expect(cache.get(2)).toBe(20);
+    expect(cache.get(3)).toBe(30);
+    expect(cache.get(4)).toBe(40);
+  });
+
+  test('get on non-existent key returns null', () => {
+    const cache = new LRUCache<string, string>(2);
+    expect(cache.get('missing')).toBeNull();
+  });
 });

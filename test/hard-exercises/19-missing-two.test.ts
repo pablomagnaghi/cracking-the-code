@@ -21,4 +21,12 @@ describe('findMissingTwo', () => {
     const result = findMissingTwo([4, 1, 6, 2]);
     expect(result.sort()).toEqual([3, 5]);
   });
+
+  test('LCCI example 1: [1] -> [2,3]', () => {
+    expect(findMissingTwo([1]).sort()).toEqual([2, 3]);
+  });
+
+  test('LCCI example 2: [2,3] -> [1,4]', () => {
+    expect(findMissingTwo([2, 3]).sort()).toEqual([1, 4]);
+  });
 });

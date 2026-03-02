@@ -1,7 +1,19 @@
-// 8. Permutations with Dups*
+// LCCI 08.08. Permutation II
 //
-// Write a method to compute all permutations of a string whose characters are not necessarily unique.
-// The list of permutations should not have duplicates.
+// Write a method to compute all permutations of a string whose characters are
+// not necessarily unique. The list of permutations should not have duplicates.
+//
+// Example 1:
+//   Input: S = "qqe"
+//   Output: ["eqq","qeq","qqe"]
+//
+// Example 2:
+//   Input: S = "ab"
+//   Output: ["ab", "ba"]
+//
+// Constraints:
+//   All characters are English letters.
+//   1 <= S.length <= 9
 
 export function permutationsWithDups(input: string): string[] {
   const chars = input.split('').sort(); // Sort to easily skip duplicates

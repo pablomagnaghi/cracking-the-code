@@ -28,4 +28,8 @@ describe('stringCompression', () => {
   test('mixed case sensitivity', () => {
     expect(stringCompression('aAaaAA')).toBe('aAaaAA');
   });
+
+  test('returns original for "abbccd" (LCCI example 2)', () => {
+    expect(stringCompression('abbccd')).toBe('abbccd');
+  });
 });

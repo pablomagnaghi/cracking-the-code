@@ -20,4 +20,15 @@ describe('measureFourQuarts', () => {
       expect(jug3).toBeLessThanOrEqual(3);
     }
   });
+
+  test('starts from an empty state', () => {
+    const steps = measureFourQuarts();
+    expect(steps[0]).toEqual({ jug5: 0, jug3: 0 });
+  });
+
+  test('produces a deterministic sequence of steps', () => {
+    const steps1 = measureFourQuarts();
+    const steps2 = measureFourQuarts();
+    expect(steps1).toEqual(steps2);
+  });
 });

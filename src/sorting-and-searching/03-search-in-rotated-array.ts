@@ -1,14 +1,18 @@
-// 10.3: Search in Rotated Array
+// LCCI 10.03. Search Rotate Array
 //
 // Given a sorted array of n integers that has been rotated an unknown number of times,
-// write code to find an element in the array. You may assume that the array was originally
-// sorted in increasing order.
+// write code to find an element in the array. The array was originally sorted in increasing
+// order. If there are multiple instances of the target, return the smallest index.
 //
-// Example:
-// Input: arr = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], target = 5
-// Output: 8 (index of 5)
+// Example 1:
+//   Input: arr = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], target = 5
+//   Output: 8
 //
-// You should modify binary search to accommodate the rotation.
+// Example 2:
+//   Input: arr = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], target = 11
+//   Output: -1
+//
+// Constraints: 1 <= arr.length <= 1000000
 
 export function searchRotatedArray(arr: number[], target: number): number {
   return binarySearchRotated(arr, target, 0, arr.length - 1);

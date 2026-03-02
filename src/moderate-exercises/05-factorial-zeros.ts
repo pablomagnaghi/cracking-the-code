@@ -1,8 +1,19 @@
-// 16.5. Factorial Zeros
+// LCCI 16.05. Factorial Zeros
 //
-// Write an algorithm which computes the number of trailing zeros in n! (n factorial).
-// Trailing zeros are created by factors of 10, which come from 2 * 5.
-// Since there are more 2s than 5s, count the number of 5s in the prime factors.
+// Write an algorithm which computes the number of trailing zeros in n factorial.
+//
+// Example 1:
+//   Input: 3
+//   Output: 0
+//   Explanation: 3! = 6, no trailing zeros.
+//
+// Example 2:
+//   Input: 5
+//   Output: 1
+//   Explanation: 5! = 120, one trailing zero.
+//
+// Constraints:
+//   - Your solution should be in logarithmic time complexity: O(log n).
 
 export function countTrailingZeros(n: number): number {
   let count = 0;

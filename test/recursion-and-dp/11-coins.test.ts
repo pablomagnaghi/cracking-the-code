@@ -25,4 +25,12 @@ describe('countChange', () => {
   test('returns correct number of ways for 100 cents (1 dollar)', () => {
     expect(countChange(100)).toBe(242);
   });
+
+  test('returns correct number of ways for 15 cents', () => {
+    expect(countChange(15)).toBe(6);
+  });
+
+  test('returns correct number of ways for 50 cents', () => {
+    expect(countChange(50)).toBe(49);
+  });
 });

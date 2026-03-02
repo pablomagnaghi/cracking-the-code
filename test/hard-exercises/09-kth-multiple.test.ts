@@ -25,4 +25,12 @@ describe('getKthMagicNumber', () => {
   test('returns 315 for 25th element', () => {
     expect(getKthMagicNumber(25)).toBe(315);
   });
+
+  test('returns 1 for k=1', () => {
+    expect(getKthMagicNumber(1)).toBe(1);
+  });
+
+  test('returns 135 for k=15', () => {
+    expect(getKthMagicNumber(15)).toBe(81);
+  });
 });

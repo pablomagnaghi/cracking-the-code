@@ -1,6 +1,18 @@
-// 7.Permutations without Dups
+// LCCI 08.07. Permutation I
 //
-// Write a method to compute all permutations of a string of unique characters.
+// Given a string S of unique characters, compute all permutations of the string.
+//
+// Example 1:
+//   Input: S = "qwe"
+//   Output: ["qwe","qew","wqe","weq","ewq","eqw"]
+//
+// Example 2:
+//   Input: S = "ab"
+//   Output: ["ab", "ba"]
+//
+// Constraints:
+//   All characters are English letters.
+//   1 <= S.length <= 9
 
 export function permutationsWithoutDups(input: string): string[] {
   const used = Array(input.length).fill(false);

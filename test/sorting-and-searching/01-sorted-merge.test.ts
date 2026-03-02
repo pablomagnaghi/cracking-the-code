@@ -38,4 +38,18 @@ describe('sortedMerge', () => {
     sortedMerge(A, B, 3, 3);
     expect(A).toEqual([1, 1, 3, 3, 5, 5]);
   });
+
+  it('should merge LCCI example: A=[1,2,3,0,0,0], B=[2,5,6]', () => {
+    const A = [1, 2, 3, 0, 0, 0];
+    const B = [2, 5, 6];
+    sortedMerge(A, B, 3, 3);
+    expect(A).toEqual([1, 2, 2, 3, 5, 6]);
+  });
+
+  it('should merge when all B elements come before A elements', () => {
+    const A = [10, 20, 30, 0, 0, 0];
+    const B = [1, 2, 3];
+    sortedMerge(A, B, 3, 3);
+    expect(A).toEqual([1, 2, 3, 10, 20, 30]);
+  });
 });

@@ -1,32 +1,21 @@
-// 17.7 Baby Names
+// LCCI 17.07. Baby Names
 //
-// Problem:
-// Each baby name is associated with a frequency count (how often it was used).
-// Some names are synonyms (i.e., they refer to the same person).
-// Given a list of names and a list of synonym pairs,
-// return the true frequency of each name, consolidating synonyms.
+// Each year, the government releases a list of the 10000 most common baby names
+// and their frequencies. The only problem with this is that some names have
+// multiple spellings. Given names and their frequencies, and a list of equivalent
+// name pairs (synonyms), write an algorithm to print a new list of the true
+// frequency of each name. Synonym relationships are transitive and symmetric.
+// In the final list, use the lexicographically smallest name as the
+// representative.
 //
 // Example:
-// Input:
-// Names: [
-//   "John(15)",
-//   "Jon(12)",
-//   "Chris(13)",
-//   "Kris(4)",
-//   "Christopher(19)"
-// ]
-// Synonyms: [
-//   ["Jon", "John"],
-//   ["John", "Johnny"],
-//   ["Chris", "Kris"],
-//   ["Chris", "Christopher"]
-// ]
+//   Input:
+//     names = ["John(15)","Jon(12)","Chris(13)","Kris(4)","Christopher(19)"]
+//     synonyms = ["(Jon,John)","(John,Johnny)","(Chris,Kris)","(Chris,Christopher)"]
+//   Output: ["John(27)","Chris(36)"]
 //
-// Output:
-// {
-//   "John": 27,          // John + Jon + Johnny
-//   "Chris": 36          // Chris + Kris + Christopher
-// }
+// Constraints:
+//   - names.length <= 100000
 
 export function trulyMostPopular(names: string[], synonyms: string[][]): Record<string, number> {
   const parent: Record<string, string> = {};

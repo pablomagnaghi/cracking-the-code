@@ -36,4 +36,15 @@ describe('sparseSearch', () => {
     const arr = ['', '', 'target', '', ''];
     expect(sparseSearch(arr, 'target')).toBe(2);
   });
+
+  it('should return -1 for LCCI example 1: s="ta" not in array', () => {
+    const arr = ['at', '', '', '', 'ball', '', '', 'car', '', '', 'dad', '', ''];
+    expect(sparseSearch(arr, 'ta')).toBe(-1);
+  });
+
+  it('should find the first and last non-empty strings', () => {
+    const arr = ['alpha', '', '', '', '', 'zeta'];
+    expect(sparseSearch(arr, 'alpha')).toBe(0);
+    expect(sparseSearch(arr, 'zeta')).toBe(5);
+  });
 });

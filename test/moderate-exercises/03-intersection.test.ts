@@ -24,4 +24,12 @@ describe('intersection', () => {
   test('handles identical arrays', () => {
     expect(intersection([1, 2, 3], [1, 2, 3])).toEqual([1, 2, 3]);
   });
+
+  test('handles single common element', () => {
+    expect(intersection([10, 20, 30], [30, 40, 50])).toEqual([30]);
+  });
+
+  test('handles negative numbers', () => {
+    expect(intersection([-1, -2, 3], [-2, 3, 4])).toEqual([-2, 3]);
+  });
 });

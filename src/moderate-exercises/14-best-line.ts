@@ -1,14 +1,17 @@
-// 16.14 Best Line
+// LCCI 16.14. Best Line
 //
-// Problem: Given a set of points on a 2D plane, find the line that passes through the
-// maximum number of points.
+// Given a two-dimensional graph with points on it, find a line which passes the
+// most number of points. Return the indices of the two points with the smallest
+// indices on that line.
 //
-// Approach:
-// 1. For each point, compute the slope between it and every other point.
-// 2. Use a hash map to count how many points share the same slope with respect to the current point.
-// 3. Handle vertical lines (infinite slope) separately.
-// 4. Keep track of the maximum count of points that lie on the same line.
-// 5. Return the maximum count (or the line details if needed).
+// Example:
+//   Input: [[0,0],[1,1],[1,0],[2,0]]
+//   Output: [0,2]
+//   Explanation: Points 0, 2, and 3 are collinear.
+//
+// Constraints:
+//   - 2 <= len(Points) <= 300
+//   - len(Points[i]) == 2
 
 interface Point {
   x: number;

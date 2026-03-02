@@ -45,4 +45,22 @@ describe('yearWithMostPeopleAlive', () => {
   test('handles no people (edge case)', () => {
     expect(yearWithMostPeopleAlive([])).toBe(1900); // default range start
   });
+
+  test('all people alive in the same year', () => {
+    const people: Person[] = [
+      { birth: 1970, death: 1980 },
+      { birth: 1970, death: 1990 },
+      { birth: 1970, death: 2000 },
+    ];
+    expect(yearWithMostPeopleAlive(people)).toBe(1970);
+  });
+
+  test('handles non-overlapping lifetimes', () => {
+    const people: Person[] = [
+      { birth: 1900, death: 1910 },
+      { birth: 1920, death: 1930 },
+    ];
+    // Each year has at most 1 person, earliest peak is 1900
+    expect(yearWithMostPeopleAlive(people)).toBe(1900);
+  });
 });

@@ -62,4 +62,27 @@ describe('StackMin', () => {
     const stack = new StackMin<number>();
     expect(stack.min()).toBeUndefined();
   });
+
+  test('LCCI example: push -2, 0, -3 then getMin, pop, top, getMin', () => {
+    const stack = new StackMin<number>();
+    stack.push(-2);
+    stack.push(0);
+    stack.push(-3);
+    expect(stack.min()).toBe(-3);
+    stack.pop();
+    expect(stack.peek()).toBe(0);
+    expect(stack.min()).toBe(-2);
+  });
+
+  test('LCCI: min tracks correctly through sequential pops', () => {
+    const stack = new StackMin<number>();
+    stack.push(3);
+    stack.push(1);
+    stack.push(2);
+    expect(stack.min()).toBe(1);
+    stack.pop(); // removes 2
+    expect(stack.min()).toBe(1);
+    stack.pop(); // removes 1
+    expect(stack.min()).toBe(3);
+  });
 });

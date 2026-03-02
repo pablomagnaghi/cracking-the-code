@@ -69,4 +69,24 @@ describe('listOfDepths', () => {
     const result = listOfDepths(tree);
     expect(levelsToArrays(result)).toEqual([[1], [2], [3]]);
   });
+
+  test('handles tree with uneven branches', () => {
+    const tree: TreeNode<number> = {
+      value: 1,
+      left: {
+        value: 2,
+        left: {
+          value: 4,
+          left: { value: 8 },
+        },
+        right: { value: 5 },
+      },
+      right: {
+        value: 3,
+        right: { value: 7 },
+      },
+    };
+    const result = listOfDepths(tree);
+    expect(levelsToArrays(result)).toEqual([[1], [2, 3], [4, 5, 7], [8]]);
+  });
 });

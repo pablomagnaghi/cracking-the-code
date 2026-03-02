@@ -48,4 +48,22 @@ describe('bestLine', () => {
     ];
     expect(bestLine(points)).toBe(3);
   });
+
+  test('returns 2 for two distinct points', () => {
+    const points = [
+      { x: 0, y: 0 },
+      { x: 5, y: 10 },
+    ];
+    expect(bestLine(points)).toBe(2);
+  });
+
+  test('handles horizontal line', () => {
+    const points = [
+      { x: 1, y: 3 },
+      { x: 2, y: 3 },
+      { x: 3, y: 3 },
+      { x: 4, y: 0 },
+    ];
+    expect(bestLine(points)).toBe(3);
+  });
 });

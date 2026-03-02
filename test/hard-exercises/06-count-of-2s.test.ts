@@ -16,4 +16,12 @@ describe('countTwos', () => {
   test('counts twos from 0 to 222', () => {
     expect(countTwos(222)).toBeGreaterThan(0);
   });
+
+  test('counts twos from 0 to 2', () => {
+    expect(countTwos(2)).toBe(1);
+  });
+
+  test('counts twos from 0 to 22', () => {
+    expect(countTwos(22)).toBe(6);
+  });
 });

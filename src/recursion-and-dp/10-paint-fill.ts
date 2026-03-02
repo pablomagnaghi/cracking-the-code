@@ -1,10 +1,18 @@
-// 8.10. Paint Fill
+// LCCI 08.10. Color Fill
 //
-// Imagine you have a screen represented by a 2D array of colors,
-// each color is represented by a number (like 0, 1, 2...).
-// Implement the "paint fill" function, like the bucket fill tool in a paint program.
-// Given a screen (2D array), a point (row, col), and a new color,
-// fill in the surrounding area of the original color with the new color.
+// Implement the "paint fill" function that one might see on many image editing
+// programs. That is, given a screen (represented by a two-dimensional array of
+// colors), a point, and a new color, fill in the surrounding area until the color
+// changes from the original color.
+//
+// Example:
+//   Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2
+//   Output: [[2,2,2],[2,2,0],[2,0,1]]
+//
+// Constraints:
+//   The height and width of the image are in range [1, 50].
+//   The given starting pixel will satisfy 0 <= sr < image.length and 0 <= sc < image[0].length.
+//   The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
 
 type Screen = number[][];
 

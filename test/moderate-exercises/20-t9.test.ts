@@ -26,4 +26,12 @@ describe('t9Words', () => {
   test('returns empty for empty dictionary', () => {
     expect(t9Words('8733', [])).toEqual([]);
   });
+
+  test('returns no match when no words match the digits', () => {
+    expect(t9Words('9999', ['tree', 'used', 'home'])).toEqual([]);
+  });
+
+  test('matches single digit to single letter words', () => {
+    expect(t9Words('2', ['a', 'b', 'c', 'd'])).toEqual(['a', 'b', 'c']);
+  });
 });

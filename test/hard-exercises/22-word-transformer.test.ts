@@ -39,6 +39,17 @@ describe('wordTransformerSequence', () => {
     const smallDict = new Set(['aaa', 'aab', 'xyz', 'bbb']);
     expect(wordTransformerSequence('aaa', 'bbb', smallDict)).toEqual([]);
   });
+
+  test('handles single step transformation', () => {
+    const dict = new Set(['abc', 'adc']);
+    const result = wordTransformerSequence('abc', 'adc', dict);
+    expect(result).toEqual(['abc', 'adc']);
+  });
+
+  test('returns empty when different lengths', () => {
+    const dict = new Set(['hi', 'hey']);
+    expect(wordTransformerSequence('hi', 'hey', dict)).toEqual([]);
+  });
 });
 
 // Helper function for tests

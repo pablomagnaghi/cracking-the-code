@@ -50,4 +50,16 @@ describe('removeDupsUnsorted', () => {
     const result = removeDups(head);
     expect(linkedListToArray(result)).toEqual([42]);
   });
+
+  test('LCCI example 1: removes duplicates from [1, 2, 3, 3, 2, 1]', () => {
+    const head = buildLinkedList([1, 2, 3, 3, 2, 1]);
+    const result = removeDups(head);
+    expect(linkedListToArray(result)).toEqual([1, 2, 3]);
+  });
+
+  test('LCCI example 2: removes duplicates from [1, 1, 1, 1, 2]', () => {
+    const head = buildLinkedList([1, 1, 1, 1, 2]);
+    const result = removeDups(head);
+    expect(linkedListToArray(result)).toEqual([1, 2]);
+  });
 });

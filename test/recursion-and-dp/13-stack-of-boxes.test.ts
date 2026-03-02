@@ -19,4 +19,23 @@ describe('stackOfBoxes', () => {
   test('returns height of single box', () => {
     expect(stackOfBoxes([{ width: 1, height: 1, depth: 1 }])).toBe(1);
   });
+
+  test('LCCI example 1: three stackable boxes', () => {
+    const boxes: Box[] = [
+      { width: 1, height: 1, depth: 1 },
+      { width: 2, height: 2, depth: 2 },
+      { width: 3, height: 3, depth: 3 },
+    ];
+    expect(stackOfBoxes(boxes)).toBe(6);
+  });
+
+  test('LCCI example 2: some boxes cannot stack', () => {
+    const boxes: Box[] = [
+      { width: 1, height: 1, depth: 1 },
+      { width: 2, height: 4, depth: 3 },
+      { width: 2, height: 7, depth: 6 },
+      { width: 3, height: 5, depth: 4 },
+    ];
+    expect(stackOfBoxes(boxes)).toBe(10);
+  });
 });

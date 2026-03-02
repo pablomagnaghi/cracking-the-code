@@ -1,16 +1,21 @@
-// 17.25. Word Rectangle
+// LCCI 17.25. Word Rectangle
 //
-// Problem:
-// Given a list of millions of words, design an algorithm to create the largest possible rectangle of letters such that every row forms a word (reading left to right) and every column forms a word (reading top to bottom).
-// The words need not be chosen consecutively from the list but all rows must be the same length and all columns must be the same height.
-// Return the largest such rectangle (array of strings), or empty array if none exists.
-
-// Trie node structure for prefix checking
-// 17.25. Word Rectangle
+// Given a list of words, find the largest rectangle of letters such that every
+// row forms a word (reading left to right) and every column forms a word
+// (reading top to bottom). Words can be reused. All rows must have the same
+// length and all columns must have the same height.
 //
-// Problem:
-// Given a list of millions of words, design an algorithm to create the largest possible rectangle of letters such that every row forms a word (reading left to right) and every column forms a word (reading top to bottom).
-// Return the largest such rectangle (array of strings), or empty array if none exists.
+// Example 1:
+//   Input: ["this","real","hard","trh","hea","iar","sld"]
+//   Output: ["this","real","hard"]
+//
+// Example 2:
+//   Input: ["aa"]
+//   Output: ["aa","aa"]
+//
+// Constraints:
+//   - words.length <= 1000
+//   - words[i].length <= 100
 
 class TrieNode {
   children: Map<string, TrieNode>;

@@ -49,4 +49,21 @@ describe('sumSwap', () => {
       expect(sumA).toBe(sumB);
     }
   });
+
+  test('returns null when difference is odd', () => {
+    const A = [1, 2];
+    const B = [3, 5];
+    expect(sumSwap(A, B)).toBeNull();
+  });
+
+  test('handles arrays already having equal sums', () => {
+    const A = [1, 2, 3];
+    const B = [3, 2, 1];
+    // Sums are equal; need to find a pair that can be swapped and keep them equal
+    const result = sumSwap(A, B);
+    if (result) {
+      const [a, b] = result;
+      expect(a).toBe(b); // only works if a == b
+    }
+  });
 });

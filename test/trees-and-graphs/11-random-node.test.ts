@@ -46,4 +46,20 @@ describe('TreeNode - getRandomNode', () => {
       expect(count).toBeLessThanOrEqual(expected + tolerance);
     });
   });
+
+  test('size is correctly maintained after inserts', () => {
+    const tree = new TreeNode(10);
+    expect(tree.size).toBe(1);
+    tree.insert(5);
+    expect(tree.size).toBe(2);
+    tree.insert(15);
+    expect(tree.size).toBe(3);
+    tree.insert(3);
+    expect(tree.size).toBe(4);
+  });
+
+  test('single node tree returns itself from getRandomNode', () => {
+    const tree = new TreeNode(42);
+    expect(tree.getRandomNode().value).toBe(42);
+  });
 });

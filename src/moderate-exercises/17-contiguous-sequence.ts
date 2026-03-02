@@ -1,13 +1,12 @@
-// 16.17 Contiguous Sequence
+// LCCI 16.17. Contiguous Sequence
 //
-// Problem: Find the maximum sum of any contiguous subsequence (subarray)
-// within an array of integers.
+// You are given an array of integers (both positive and negative). Find the
+// contiguous sequence with the largest sum. Return the sum.
 //
-// Approach:
-// Use Kadane's algorithm:
-// - Iterate through the array, maintaining current running sum and max sum found.
-// - If current sum drops below zero, reset it to zero (start a new subarray).
-// - Return the maximum sum encountered.
+// Example:
+//   Input: [-2,1,-3,4,-1,2,1,-5,4]
+//   Output: 6
+//   Explanation: The contiguous subarray [4,-1,2,1] has the largest sum = 6.
 
 export function maxContiguousSequence(arr: number[]): number {
   let maxSum = -Infinity;

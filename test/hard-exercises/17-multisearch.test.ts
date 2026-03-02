@@ -38,4 +38,12 @@ describe('multiSearch', () => {
   test('handles small string equal to big string', () => {
     expect(multiSearch('hello', ['hello'])).toEqual({ hello: [0] });
   });
+
+  test('handles overlapping occurrences', () => {
+    expect(multiSearch('aaa', ['aa'])).toEqual({ aa: [0, 1] });
+  });
+
+  test('handles single character searches', () => {
+    expect(multiSearch('abcabc', ['a', 'c'])).toEqual({ a: [0, 3], c: [2, 5] });
+  });
 });

@@ -1,8 +1,17 @@
-// 10.10. Rank from Stream
+// LCCI 10.10. Rank from Stream
 //
-// Imagine you are reading integers from a stream. Periodically, you want to be able to
+// Imagine you are reading in a stream of integers. Periodically, you wish to be able to
 // look up the rank of a number x (the number of values less than or equal to x).
-// Implement the data structure that supports `track(x)` and `getRankOfNumber(x)`.
+// Implement the data structure and algorithms to support these operations: track(x)
+// is called when each number is generated, and getRankOfNumber(x) returns the number
+// of values less than or equal to x (not including x itself).
+//
+// Example:
+//   Input: ["StreamRank", "getRankOfNumber", "track", "getRankOfNumber"]
+//          [[], [1], [0], [0]]
+//   Output: [null, 0, null, 1]
+//
+// Constraints: x <= 50000. The number of calls to track and getRankOfNumber is at most 2000.
 
 export class StreamRanker {
   private root: RankNode | null = null;

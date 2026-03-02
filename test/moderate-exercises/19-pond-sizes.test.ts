@@ -45,4 +45,14 @@ describe('pondSizes', () => {
     ];
     expect(pondSizes(land).sort((a, b) => a - b)).toEqual([1, 1, 1, 1]);
   });
+
+  test('handles single row matrix', () => {
+    const land = [[0, 1, 0, 0, 1, 0]];
+    expect(pondSizes(land).sort((a, b) => a - b)).toEqual([1, 1, 2]);
+  });
+
+  test('handles single column matrix', () => {
+    const land = [[0], [1], [0], [0]];
+    expect(pondSizes(land).sort((a, b) => a - b)).toEqual([1, 2]);
+  });
 });

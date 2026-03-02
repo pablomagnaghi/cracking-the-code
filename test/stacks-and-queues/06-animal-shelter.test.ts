@@ -64,4 +64,23 @@ describe('AnimalShelter', () => {
     expect(shelter.dequeueCat()?.type).toBe('cat'); // order 2
     expect(shelter.dequeueAny()?.type).toBe('dog'); // order 3
   });
+
+  test('LCCI example 1: enqueue two cats, dequeueCat, dequeueDog, dequeueAny', () => {
+    const shelter = new AnimalShelter();
+    shelter.enqueue('cat'); // [0, cat]
+    shelter.enqueue('cat'); // [1, cat]
+    expect(shelter.dequeueCat()?.type).toBe('cat');
+    expect(shelter.dequeueDog()).toBeUndefined(); // no dogs
+    expect(shelter.dequeueAny()?.type).toBe('cat');
+  });
+
+  test('LCCI example 2: enqueue cat, cat, dog, then dequeueDog, dequeueCat, dequeueAny', () => {
+    const shelter = new AnimalShelter();
+    shelter.enqueue('cat'); // order 0
+    shelter.enqueue('cat'); // order 1
+    shelter.enqueue('dog'); // order 2
+    expect(shelter.dequeueDog()?.type).toBe('dog');
+    expect(shelter.dequeueCat()?.type).toBe('cat'); // order 0
+    expect(shelter.dequeueAny()?.type).toBe('cat'); // order 1
+  });
 });

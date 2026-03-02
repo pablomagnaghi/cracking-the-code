@@ -29,4 +29,12 @@ describe('reSpace', () => {
   test('handles empty dictionary', () => {
     expect(reSpace([], 'anything')).toBe('anything'.length);
   });
+
+  test('handles overlapping dictionary words', () => {
+    expect(reSpace(['abc', 'bcd', 'cd'], 'abcd')).toBe(1);
+  });
+
+  test('handles single character words', () => {
+    expect(reSpace(['a', 'b'], 'abc')).toBe(1);
+  });
 });

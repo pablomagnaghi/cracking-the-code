@@ -36,4 +36,8 @@ describe('palindromePermutation', () => {
   it('works with odd-length palindrome', () => {
     expect(palindromePermutation('madam')).toBe(true);
   });
+
+  it('returns true for "tactcoa" (LCCI example)', () => {
+    expect(palindromePermutation('tactcoa')).toBe(true);
+  });
 });

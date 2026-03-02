@@ -20,4 +20,12 @@ describe('majorityElement', () => {
   test('all elements the same', () => {
     expect(majorityElement([5, 5, 5, 5, 5])).toBe(5);
   });
+
+  test('LCCI example: [1,2,5,9,5,9,5,5,5] -> 5', () => {
+    expect(majorityElement([1, 2, 5, 9, 5, 9, 5, 5, 5])).toBe(5);
+  });
+
+  test('majority element with two distinct values', () => {
+    expect(majorityElement([7, 7, 7, 3, 3])).toBe(7);
+  });
 });

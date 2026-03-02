@@ -1,13 +1,16 @@
-// 17.18. Shortest Supersequence (Number Version)
+// LCCI 17.18. Shortest Supersequence
 //
-// Problem:
-// Given two arrays of numbers, `big` and `small`, find the shortest contiguous subsequence
-// in `big` that contains all the elements of `small` in the same order.
+// You are given two arrays, one shorter (with all distinct elements) and one
+// longer. Find the shortest subarray in the longer array that contains all
+// the elements in the shorter array. The items can appear in any order.
 //
 // Example:
-// big = [1, 2, 3, 4, 5, 6]
-// small = [2, 4, 6]
-// Output: [1, 5] (subarray [2, 3, 4, 5, 6] contains 2, 4, 6 in order)
+//   Input: big = [7,5,9,0,2,1,3,5,7,9,1,1,5,8,8,9,7], small = [1,5,9]
+//   Output: [7,10]
+//
+// Constraints:
+//   - big.length <= 100000
+//   - 1 <= small.length <= 100000
 
 export function shortestSupersequence(big: number[], small: number[]): [number, number] | null {
   let minWindow: [number, number] | null = null;

@@ -34,4 +34,12 @@ describe('volumeOfHistogram', () => {
     const heights = [3, 0, 2, 0, 4];
     expect(volumeOfHistogram(heights)).toBe(7);
   });
+
+  test('handles V-shaped histogram', () => {
+    expect(volumeOfHistogram([5, 0, 5])).toBe(5);
+  });
+
+  test('handles plateau in the middle', () => {
+    expect(volumeOfHistogram([4, 1, 1, 4])).toBe(6);
+  });
 });

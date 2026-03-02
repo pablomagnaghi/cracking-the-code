@@ -1,8 +1,24 @@
-// 7.  *Intersection*;
-
-// Given two (singly) linked lists, determine if the two lists intersect.
-// Return the first intersecting node. Note that the intersection is defined
-// based on reference, not value.
+// LCCI 02.07. Intersection of Two Linked Lists
+//
+// Given two singly linked lists, determine if the two lists intersect. Return
+// the intersecting node. The intersection is defined based on reference, not value.
+//
+// Example 1:
+//   Input: listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+//   Output: node with value 8
+//
+// Example 2:
+//   Input: listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+//   Output: node with value 2
+//
+// Example 3:
+//   Input: listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+//   Output: null (no intersection)
+//
+// Constraints:
+//   - Return null if no intersection exists
+//   - No cycles exist in the entire structure
+//   - Preserve original list structure after execution
 
 export type Node<T> = {
   value: T;

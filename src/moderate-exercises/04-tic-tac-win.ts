@@ -1,7 +1,27 @@
-// 16.4. Tic Tac Win
+// LCCI 16.04. Tic-Tac-Toe
 //
-// Write a function to determine if a player has won a game of tic-tac-toe.
-// The board is represented by a 2D array of 'X', 'O', or null.
+// Design an algorithm to figure out if someone has won a game of tic-tac-toe.
+// Input is an N x N string array board containing "X", "O", and " " characters.
+//
+// Rules:
+//   - A player wins by filling an entire row, column, or diagonal.
+//   - "O" moves first, "X" moves second.
+//
+// Example 1:
+//   Input: board = ["O X"," XO","X O"]
+//   Output: "X"
+//
+// Example 2:
+//   Input: board = ["OOX","XXO","OXO"]
+//   Output: "Draw"
+//
+// Example 3:
+//   Input: board = ["OOX","XXO","OX "]
+//   Output: "Pending"
+//
+// Constraints:
+//   - 1 <= board.length == board[i].length <= 100
+//   - Input follows valid tic-tac-toe game rules.
 
 export function ticTacWin(board: (string | null)[][], player: string): boolean {
   const n = board.length;

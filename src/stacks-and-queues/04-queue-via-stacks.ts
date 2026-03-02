@@ -1,6 +1,19 @@
-// 4. *Queue via Stacks*:
-
+// LCCI 03.04. Implement Queue using Stacks
+//
 // Implement a MyQueue class which implements a queue using two stacks.
+// You must use only standard operations of a stack -- which means only push to top,
+// peek/pop from top, size, and is empty operations are valid.
+//
+// Example:
+//   MyQueue queue = new MyQueue();
+//   queue.push(1);
+//   queue.push(2);
+//   queue.peek();  // returns 1
+//   queue.pop();   // returns 1
+//   queue.empty(); // returns false
+//
+// Constraints:
+//   - All operations are valid (no pop or peek on an empty queue).
 
 export class MyQueue<T> {
   private stackNewest: T[];

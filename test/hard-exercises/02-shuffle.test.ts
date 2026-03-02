@@ -37,4 +37,17 @@ describe('shuffle', () => {
   test('handles single element array', () => {
     expect(shuffle([42])).toEqual([42]);
   });
+
+  test('does not mutate the original array', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const copy = [...arr];
+    shuffle(arr);
+    expect(arr).toEqual(copy);
+  });
+
+  test('handles string elements', () => {
+    const arr = ['a', 'b', 'c'];
+    const shuffled = shuffle(arr);
+    expect(shuffled.slice().sort()).toEqual(['a', 'b', 'c']);
+  });
 });

@@ -1,8 +1,16 @@
-// 5. *One Away*:
-
-// There are three types of edits that can be performed on strings:
-// insert a character, remove a character, or replace a character.
-// Given two strings, write a function to check if they are one edit (or zero edits) away.
+// LCCI 01.05. One Away
+//
+// There are three types of edits that can be performed on strings: insert a character,
+// remove a character, or replace a character. Given two strings, write a function to
+// check if they are one edit (or zero edits) away.
+//
+// Example 1:
+//   Input: first = "pale", second = "ple"
+//   Output: true
+//
+// Example 2:
+//   Input: first = "pales", second = "pal"
+//   Output: false
 
 export function isOneAway(str1: string, str2: string): boolean {
   if (Math.abs(str1.length - str2.length) > 1) {

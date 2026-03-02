@@ -1,4 +1,4 @@
-// 6.10. 100 Lockers
+// 06.09. 100 Lockers (Book-only)
 //
 // There are 100 lockers in a hallway, all initially closed.
 // You make 100 passes by the lockers. On the ith pass, you toggle every ith locker (open it if closed, close it if open).

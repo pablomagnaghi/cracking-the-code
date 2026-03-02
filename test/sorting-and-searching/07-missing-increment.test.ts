@@ -30,4 +30,14 @@ describe('findMissingIncrement', () => {
     const arr = [-3, -2, -1, 1, 2];
     expect(findMissingIncrement(arr)).toBe(0);
   });
+
+  test('finds missing number in a large sequence', () => {
+    const arr = Array.from({ length: 999 }, (_, i) => (i < 500 ? i + 1 : i + 2));
+    expect(findMissingIncrement(arr)).toBe(501);
+  });
+
+  test('finds missing number when gap is near the end', () => {
+    const arr = [1, 2, 3, 4, 5, 7];
+    expect(findMissingIncrement(arr)).toBe(6);
+  });
 });
