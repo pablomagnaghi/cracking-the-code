@@ -99,6 +99,18 @@ Each exercise maps to a chapter and problem in the LCCI collection. Problems mar
 | 9 | 100 Lockers | \* | Book only |
 | 10 | Poison | \* | Book only |
 
+### Object-Oriented Design (Chapter 07)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Deck of Cards | \* | Book only |
+| 2 | Call Center | \* | Book only |
+| 3 | Jukebox | \* | Book only |
+| 4 | Parking Lot | \* | Book only |
+| 5 | Online Book Reader | \* | Book only |
+| 6 | Jigsaw | \* | Book only |
+| 7 | Chat Server | \* | Book only |
+
 ### Recursion and Dynamic Programming (Chapter 08)
 
 | # | Exercise | LCCI | Link |
@@ -118,6 +130,19 @@ Each exercise maps to a chapter and problem in the LCCI collection. Problems mar
 | 13 | Stack of Boxes | 08.13 | [Pile Box](https://leetcode.cn/problems/pile-box-lcci/) |
 | 14 | Boolean Evaluation | 08.14 | [Boolean Evaluation](https://leetcode.cn/problems/boolean-evaluation-lcci/) |
 
+### System Design and Scalability (Chapter 09)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Stock Data | \* | Book only |
+| 2 | Social Network | \* | Book only |
+| 3 | Web Crawler | \* | Book only |
+| 4 | Duplicate URLs | \* | Book only |
+| 5 | Cache | \* | Book only |
+| 6 | Sales Rank | \* | Book only |
+| 7 | Personal Financial Manager | \* | Book only |
+| 8 | Pastebin | \* | Book only |
+
 ### Sorting and Searching (Chapter 10)
 
 | # | Exercise | LCCI | Link |
@@ -133,6 +158,68 @@ Each exercise maps to a chapter and problem in the LCCI collection. Problems mar
 | 9 | Sorted Matrix Search | 10.09 | [Sorted Matrix Search](https://leetcode.cn/problems/sorted-matrix-search-lcci/) |
 | 10 | Rank from Stream | 10.10 | [Rank from Stream](https://leetcode.cn/problems/rank-from-stream-lcci/) |
 | 11 | Peaks and Valleys | 10.11 | [Peaks and Valleys](https://leetcode.cn/problems/peaks-and-valleys-lcci/) |
+
+### Testing (Chapter 11)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Mistake | \* | Book only |
+| 2 | Random Crashes | \* | Book only |
+| 3 | Chess Test | \* | Book only |
+| 4 | No Test Tools | \* | Book only |
+
+### C and C++ (Chapter 12)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Last K Lines | \* | Book only |
+| 2 | Reverse String | \* | Book only |
+| 3 | Hash Table vs STL Map | \* | Book only |
+| 4 | Virtual Functions | \* | Book only |
+| 5 | Shallow vs Deep Copy | \* | Book only |
+| 6 | Volatile | \* | Book only |
+| 7 | Virtual Base Class | \* | Book only |
+| 8 | Copy Node | \* | Book only |
+| 9 | Smart Pointer | \* | Book only |
+| 10 | Malloc | \* | Book only |
+| 11 | 2D Alloc | \* | Book only |
+
+### Java (Chapter 13)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Private Constructor | \* | Book only |
+| 2 | Return from Finally | \* | Book only |
+| 3 | Final, etc. | \* | Book only |
+| 4 | Generics vs Templates | \* | Book only |
+| 5 | TreeMap, HashMap, LinkedHashMap | \* | Book only |
+| 6 | Object Reflection | \* | Book only |
+| 7 | Lambda Expressions | \* | Book only |
+| 8 | Lambda Random | \* | Book only |
+
+### Databases (Chapter 14)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Multiple Apartments | \* | Book only |
+| 2 | Open Requests | \* | Book only |
+| 3 | Close All Requests | \* | Book only |
+| 4 | Joins | \* | Book only |
+| 5 | Denormalization | \* | Book only |
+| 6 | Entity-Relationship Diagram | \* | Book only |
+| 7 | Design Grade Database | \* | Book only |
+
+### Threads and Locks (Chapter 15)
+
+| # | Exercise | LCCI | Link |
+|---|----------|------|------|
+| 1 | Thread vs Process | \* | Book only |
+| 2 | Context Switch | \* | Book only |
+| 3 | Dining Philosophers | \* | Book only |
+| 4 | Deadlock-Free Class | \* | Book only |
+| 5 | Call In Order | \* | Book only |
+| 6 | Synchronized Methods | \* | Book only |
+| 7 | FizzBuzz Multithreaded | \* | Book only |
 
 ### Moderate (Chapter 16)
 
