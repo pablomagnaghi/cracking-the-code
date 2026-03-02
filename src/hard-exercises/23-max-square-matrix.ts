@@ -1,7 +1,20 @@
-// 17.23. Max Square Matrix
+// LCCI 17.23. Max Black Square
 //
-// Given a square matrix of 0/1 (white/black), find the largest subsquare whose border is all black pixels.
-// Return [row, col, size] for the top-left corner and side length. Return [] if none found.
+// Imagine you have a square matrix, where each cell (pixel) is either filled
+// (1) or empty (0). Design an algorithm to find the maximum subsquare such
+// that all four borders are filled with 1s.
+//
+// Return an array [r, c, size], where r, c are the row number and the column
+// number of the subsquare's upper left corner respectively, and size is the
+// side length. If there are more than one answers, return the one that has
+// the smallest r. If there are still more than one, return the one that has
+// the smallest c. If no answer, return an empty array.
+//
+// Note: This implementation uses 1 as "black" (filled), which is inverted
+// from the original LCCI problem that uses 0 as black.
+//
+// Constraints:
+//   - matrix.length == matrix[0].length <= 200
 
 export function maxBlackBorderSquare(matrix: number[][]): [number, number, number] | [] {
   if (matrix.length === 0 || matrix[0].length === 0) return [];

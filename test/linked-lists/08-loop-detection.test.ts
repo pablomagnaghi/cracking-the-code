@@ -54,4 +54,30 @@ describe('detectLoop', () => {
     const loopStart = detectLoop(nodes[0]);
     expect(loopStart).toBe(nodes[4]);
   });
+
+  test('LCCI example 1: head=[3,2,0,-4] with tail connecting to index 1', () => {
+    const node0: Node<number> = { value: 3 };
+    const node1: Node<number> = { value: 2 };
+    const node2: Node<number> = { value: 0 };
+    const node3: Node<number> = { value: -4 };
+
+    node0.next = node1;
+    node1.next = node2;
+    node2.next = node3;
+    node3.next = node1; // cycle at index 1
+
+    const loopStart = detectLoop(node0);
+    expect(loopStart).toBe(node1);
+  });
+
+  test('LCCI example 2: head=[1,2] with tail connecting to index 0', () => {
+    const node0: Node<number> = { value: 1 };
+    const node1: Node<number> = { value: 2 };
+
+    node0.next = node1;
+    node1.next = node0; // cycle at index 0
+
+    const loopStart = detectLoop(node0);
+    expect(loopStart).toBe(node0);
+  });
 });

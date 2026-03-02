@@ -1,9 +1,20 @@
-// 1. *Remove Dups*:
-
-// Write code to remove duplicates from an unsorted linked list. FOLLOW UP
-// How would you solve this problem if a temporary buffer is not allowed?
+// LCCI 02.01. Remove Duplicate Node
 //
-// 1 -> 2 -> 2-> 2 -> 4
+// Write code to remove duplicates from an unsorted linked list.
+//
+// Example 1:
+//   Input: [1, 2, 3, 3, 2, 1]
+//   Output: [1, 2, 3]
+//
+// Example 2:
+//   Input: [1, 1, 1, 1, 2]
+//   Output: [1, 2]
+//
+// Constraints:
+//   - List length is in the range [0, 20000]
+//   - Element values are in the range [0, 20000]
+//
+// Follow up: How would you solve this problem if a temporary buffer is not allowed?
 
 export type Node<T> = {
   value: T;

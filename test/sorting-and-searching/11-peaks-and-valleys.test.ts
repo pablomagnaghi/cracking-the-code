@@ -45,4 +45,16 @@ describe('peaksAndValleys', () => {
     peaksAndValleys(input);
     expect(input).not.toEqual(original); // If needed: deep clone before mutation
   });
+
+  test('handles LCCI example [5,3,1,2,3] producing valid peaks and valleys', () => {
+    const result = peaksAndValleys([5, 3, 1, 2, 3]);
+    expect(isPeaksAndValleys(result)).toBe(true);
+    expect(result).toHaveLength(5);
+  });
+
+  test('handles already alternating array', () => {
+    const input = [1, 5, 1, 5, 1];
+    const result = peaksAndValleys(input.slice());
+    expect(isPeaksAndValleys(result)).toBe(true);
+  });
 });

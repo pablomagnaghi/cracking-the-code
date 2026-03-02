@@ -25,4 +25,13 @@ describe('longestWord', () => {
     const words = ['hello'];
     expect(longestWord(words)).toBe('');
   });
+
+  test('handles empty word list', () => {
+    expect(longestWord([])).toBe('');
+  });
+
+  test('all words are components of another', () => {
+    const words = ['x', 'y', 'xy', 'yx', 'xyxy'];
+    expect(longestWord(words)).toBe('xyxy');
+  });
 });

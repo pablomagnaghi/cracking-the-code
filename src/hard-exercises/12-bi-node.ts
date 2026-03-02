@@ -1,8 +1,17 @@
-// 17.12 Bi Node
+// LCCI 17.12. BiNode
 //
-// Problem:
-// Given a binary search tree, convert it to a sorted doubly linked list in-place.
-// The left and right pointers in nodes are to be used as previous and next pointers respectively.
+// The data structure TreeNode is used for binary tree, but it can also be used
+// to represent a single linked list (where left is null and right is the next
+// node). Implement a method to convert a binary search tree into a linked list
+// using the TreeNode class. The values should be kept in order and the
+// operation should be performed in-place (on the original data structure).
+//
+// Example:
+//   Input: [4,2,5,1,3,null,6,0]
+//   Output: [0,null,1,null,2,null,3,null,4,null,5,null,6]
+//
+// Constraints:
+//   - The number of nodes <= 100000
 
 export class TreeNode {
   val: number;

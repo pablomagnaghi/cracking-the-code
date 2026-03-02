@@ -31,4 +31,29 @@ describe('findHeavyBottle', () => {
 
     expect(findHeavyBottle(measureWeight)).toBe(heavyBottle);
   });
+
+  test('correctly takes i+1 pills from each bottle i', () => {
+    let capturedPills: number[] = [];
+    const measureWeight = (pillsTaken: number[]) => {
+      capturedPills = [...pillsTaken];
+      const baseWeight = pillsTaken.reduce((a, b) => a + b, 0);
+      return baseWeight + pillsTaken[0] * 0.1;
+    };
+
+    findHeavyBottle(measureWeight);
+    expect(capturedPills).toHaveLength(20);
+    for (let i = 0; i < 20; i++) {
+      expect(capturedPills[i]).toBe(i + 1);
+    }
+  });
+
+  test('detects a middle bottle (bottle 11) as heavy', () => {
+    const heavyBottle = 11;
+    const measureWeight = (pillsTaken: number[]) => {
+      const baseWeight = pillsTaken.reduce((a, b) => a + b, 0);
+      return baseWeight + pillsTaken[heavyBottle - 1] * 0.1;
+    };
+
+    expect(findHeavyBottle(measureWeight)).toBe(heavyBottle);
+  });
 });

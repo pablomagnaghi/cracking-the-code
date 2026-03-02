@@ -22,4 +22,14 @@ describe('permutationsWithDups', () => {
   test('returns empty array for empty string', () => {
     expect(permutationsWithDups('')).toEqual(['']);
   });
+
+  test('returns unique permutations for "qqe" (LCCI example)', () => {
+    const result = permutationsWithDups('qqe');
+    expect(result.sort()).toEqual(['eqq', 'qeq', 'qqe']);
+  });
+
+  test('returns correct count for string with all unique chars', () => {
+    const result = permutationsWithDups('abc');
+    expect(result).toHaveLength(6);
+  });
 });

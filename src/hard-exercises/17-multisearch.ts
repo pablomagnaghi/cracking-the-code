@@ -1,21 +1,18 @@
-// 17.17 Multisearch
+// LCCI 17.17. Multi Search
 //
-// Problem:
-// Given a large string and an array of smaller strings,
-// find all the starting indices in the big string where each small string appears.
+// Given a string band an array of smaller strings T, design a method to search
+// b for each small string in T. Output positions of each small string in b.
 //
-// For example:
-// big = "mississippi"
-// smalls = ["is", "ppi", "hi", "sis", "i", "ssippi"]
-// Output:
-// {
-//   is: [1, 4],
-//   ppi: [8],
-//   hi: [],
-//   sis: [3],
-//   i: [1, 4, 7, 10],
-//   ssippi: [5]
-// }
+// Example:
+//   Input: big = "mississippi", smalls = ["is","ppi","hi","sis","i","ssippi"]
+//   Output: [[1,4],[8],[],[3],[1,4,7,10],[5]]
+//
+// Constraints:
+//   - 0 <= len(googlebig) <= 1000
+//   - 0 <= len(smalls[i]) <= 1000
+//   - Total characters across all smalls <= 100000
+//   - No duplicate strings in smalls.
+//   - All characters are lowercase letters.
 
 export function multiSearch(big: string, smalls: string[]): Record<string, number[]> {
   const result: Record<string, number[]> = {};

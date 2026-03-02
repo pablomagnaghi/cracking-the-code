@@ -25,4 +25,21 @@ describe('searchSortedMatrix', () => {
     expect(searchSortedMatrix([], 1)).toBe(false);
     expect(searchSortedMatrix([[]], 1)).toBe(false);
   });
+
+  test('finds element in LCCI 5x5 matrix example', () => {
+    const m = [
+      [1, 4, 7, 11, 15],
+      [2, 5, 8, 12, 19],
+      [3, 6, 9, 16, 22],
+      [10, 13, 14, 17, 24],
+      [18, 21, 23, 26, 30],
+    ];
+    expect(searchSortedMatrix(m, 5)).toBe(true);
+    expect(searchSortedMatrix(m, 20)).toBe(false);
+  });
+
+  test('works with single-element matrix', () => {
+    expect(searchSortedMatrix([[42]], 42)).toBe(true);
+    expect(searchSortedMatrix([[42]], 7)).toBe(false);
+  });
 });

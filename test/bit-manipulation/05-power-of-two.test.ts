@@ -27,4 +27,13 @@ describe('isPowerOfTwo', () => {
     expect(isPowerOfTwo(-2)).toBe(false);
     expect(isPowerOfTwo(-8)).toBe(false);
   });
+
+  test('returns true for 2^20 (1048576)', () => {
+    expect(isPowerOfTwo(1048576)).toBe(true);
+  });
+
+  test('returns false for numbers just above/below powers of two', () => {
+    expect(isPowerOfTwo(255)).toBe(false); // 2^8 - 1
+    expect(isPowerOfTwo(257)).toBe(false); // 2^8 + 1
+  });
 });

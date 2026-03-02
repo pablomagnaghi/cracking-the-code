@@ -1,4 +1,4 @@
-// 6.6. Blue-Eyed Island
+// 06.06. Blue-Eyed Island (Book-only)
 //
 // There is a group of people on an island. All the inhabitants are perfect logicians.
 // Each person has either blue or brown eyes. They can see everyone else’s eye color, but not their own.

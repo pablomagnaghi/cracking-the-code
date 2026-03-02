@@ -1,13 +1,14 @@
-// 17.1 Add Without Plus
+// LCCI 17.01. Add Without Plus
 //
-// Problem:
-// Write a function that adds two numbers without using the + or - operators.
-// Use bitwise operations instead.
+// Write a function that adds two numbers. You should not use + or any arithmetic operators.
 //
-// Approach:
-// - Use XOR (^) to add without carrying.
-// - Use AND (&) and shift (<<) to calculate the carry.
-// - Repeat the process until the carry becomes 0.
+// Example:
+//   Input: a = 1, b = 1
+//   Output: 2
+//
+// Constraints:
+//   - a, b may be negative or zero.
+//   - The result will fit within a 32-bit signed integer range.
 
 export function add(a: number, b: number): number {
   while (b !== 0) {

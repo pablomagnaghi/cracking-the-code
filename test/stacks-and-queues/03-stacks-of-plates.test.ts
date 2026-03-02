@@ -96,4 +96,23 @@ describe('StackOfPlates', () => {
     expect(stacks.popAt(0)).toBe(1);
     expect(stacks.popAt(0)).toBeUndefined();
   });
+
+  test('LCCI example 1: capacity=1, push 1, push 2, popAt(1), pop, pop', () => {
+    const stacks = new StackOfPlates<number>(1);
+    stacks.push(1);
+    stacks.push(2);
+    expect(stacks.popAt(1)).toBe(2);
+    expect(stacks.pop()).toBe(1);
+    expect(stacks.pop()).toBeUndefined();
+  });
+
+  test('LCCI example 2: capacity=2, push 1,2,3, popAt(0), popAt(0), popAt(0)', () => {
+    const stacks = new StackOfPlates<number>(2);
+    stacks.push(1);
+    stacks.push(2);
+    stacks.push(3);
+    expect(stacks.popAt(0)).toBe(2);
+    expect(stacks.popAt(0)).toBe(1);
+    expect(stacks.popAt(0)).toBe(3);
+  });
 });

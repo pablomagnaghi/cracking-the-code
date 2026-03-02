@@ -1,14 +1,15 @@
-// 17.6 Count of 2s
+// LCCI 17.06. Number Of 2s In Range
 //
-// Problem:
-// Given an integer n, count how many times the digit '2' appears
-// in all numbers from 0 up to n (inclusive).
+// Write a method to count the number of 2s that appear in all the numbers
+// from 0 to n (inclusive).
 //
 // Example:
-// Input: 25
-// Output: 9
-// Explanation: The digit '2' appears in 2, 12, 20, 21, 22, 23, 24, 25
-// In 22, '2' appears twice.
+//   Input: 25
+//   Output: 9
+//   Explanation: (2, 12, 20, 21, 22, 23, 24, 25) -- 22 has two 2s.
+//
+// Constraints:
+//   - n <= 10^9
 
 export function countTwos(n: number): number {
   let count = 0;

@@ -1,13 +1,16 @@
-// 17.24 Max Submatrix
+// LCCI 17.24. Max Submatrix
 //
-// Problem:
-// Given an NxN matrix of positive and negative integers, write code to find the submatrix
-// with the largest possible sum.
+// Given a positive and negative integer matrix (NxN), find the submatrix with
+// the largest possible sum. Return [r1, c1, r2, c2], where r1, c1 are the row
+// and column of the upper left corner, and r2, c2 are the row and column of
+// the lower right corner. If there are more than one answers, return any.
 //
-// Return an array [r1, c1, r2, c2], where r1, c1 are the row number and the column number
-// of the submatrix's upper left corner respectively, and r2, c2 are the row number and
-// the column number of the lower right corner.
-// If there are more than one answers, return any one of them.
+// Example:
+//   Input: [[-1,0],[0,-1]]
+//   Output: [0,1,0,1]
+//
+// Constraints:
+//   - 1 <= matrix.length, matrix[0].length <= 200
 
 export function maxSubmatrix(matrix: number[][]): [number, number, number, number] {
   const n = matrix.length;

@@ -30,4 +30,16 @@ describe('swapNumbers', () => {
     expect(a).toBe(5);
     expect(b).toBe(5);
   });
+
+  test('swaps large positive numbers', () => {
+    const [a, b] = swapNumbers(1000000, 9999999);
+    expect(a).toBe(9999999);
+    expect(b).toBe(1000000);
+  });
+
+  test('swaps when both are zero', () => {
+    const [a, b] = swapNumbers(0, 0);
+    expect(a).toBe(0);
+    expect(b).toBe(0);
+  });
 });

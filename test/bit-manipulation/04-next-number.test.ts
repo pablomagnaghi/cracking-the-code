@@ -45,4 +45,15 @@ describe('Next Number (5.4)', () => {
     expect(getNext(input)).toBe(expectedNext);
     expect(getPrev(input)).toBe(expectedPrev);
   });
+
+  test('LCCI example: getNext of 2 is 4 and getPrev of 2 is 1', () => {
+    // 2 = 0b10, next with same bit count = 4 (0b100), prev = 1 (0b1)
+    expect(getNext(2)).toBe(4);
+    expect(getPrev(2)).toBe(1);
+  });
+
+  test('getPrev of 3 returns valid smaller number with same bit count', () => {
+    // 3 = 0b11, no smaller positive integer has same number of 1-bits
+    expect(getPrev(3)).toBeUndefined();
+  });
 });

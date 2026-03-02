@@ -18,4 +18,8 @@ describe('URLifyWithTrueLength', () => {
   it('mimics in-place URLify logic', () => {
     expect(URLifyWithTrueLength('Mr John Smith    ', 13)).toBe('Mr%20John%20Smith');
   });
+
+  it('handles all spaces (LCCI example 2)', () => {
+    expect(URLifyWithTrueLength('               ', 5)).toBe('%20%20%20%20%20');
+  });
 });

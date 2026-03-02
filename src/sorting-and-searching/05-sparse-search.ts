@@ -1,11 +1,17 @@
-// 10.5: Sparse Search
+// LCCI 10.05. Sparse Array Search
 //
 // Given a sorted array of strings that is interspersed with empty strings,
 // write a method to find the location of a given string.
 //
-// Example:
-// Input: ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""], target = "ball"
-// Output: 4 (index of "ball")
+// Example 1:
+//   Input: words = ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""], s = "ta"
+//   Output: -1
+//
+// Example 2:
+//   Input: words = ["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""], s = "ball"
+//   Output: 4
+//
+// Constraints: 1 <= words.length <= 1000000
 
 export function sparseSearch(arr: string[], target: string): number {
   return sparseSearchHelper(arr, target, 0, arr.length - 1);

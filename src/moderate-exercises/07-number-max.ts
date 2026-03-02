@@ -1,7 +1,11 @@
-// 16.7. Number Max
+// LCCI 16.07. Maximum
 //
-// Write a method that finds the maximum of two numbers without using if-else, comparison operators, or any other direct comparison.
-// Use bitwise or arithmetic operations only.
+// Write a method that finds the maximum of two numbers. You should not use
+// if-else or any other comparison operator.
+//
+// Example:
+//   Input: a = 1, b = 2
+//   Output: 2
 
 export function numberMax(a: number, b: number): number {
   const difference = a - b;

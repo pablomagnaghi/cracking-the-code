@@ -1,6 +1,17 @@
-// 16.9. Operations
+// LCCI 16.09. Operations
 //
-// Implement addition, subtraction, multiplication, and division without using +, -, *, or /
+// Write methods to implement the multiply, subtract, and divide operations for integers.
+// The results of all of these are integers. Use only the add operator.
+//
+// Example:
+//   operations.minus(1, 2)   -> -1
+//   operations.multiply(3, 4) -> 12
+//   operations.divide(5, -2)  -> -2
+//
+// Constraints:
+//   - You can assume that all inputs are valid and division by zero will not occur.
+//   - There will be at most 1000 calls.
+//   - Only the add operator may be used.
 
 // ➕ Bitwise Addition
 function add(a: number, b: number): number {

@@ -1,7 +1,17 @@
-// 16.10 Living People
+// LCCI 16.10. Living People
 //
-// Given an array of people with birth and death years, return the year with the most people alive.
-// People are alive from birthYear to deathYear (inclusive). Assume range is [1900, 2000].
+// Given a list of people with their birth and death years, find the year with
+// the most number of people alive. If a person was alive during any portion of
+// that year, they should be included. Return the earliest year in case of a tie.
+//
+// Example:
+//   Input: birth = {1900, 1901, 1950}, death = {1948, 1951, 2000}
+//   Output: 1901
+//
+// Constraints:
+//   - 0 < birth.length == death.length <= 10000
+//   - birth[i] <= death[i]
+//   - Years range from 1900 to 2000.
 
 export interface Person {
   birth: number;

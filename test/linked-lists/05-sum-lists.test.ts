@@ -53,4 +53,18 @@ describe('sumLists', () => {
     const result = sumLists(list1, list2); // 100 → [0, 0, 1]
     expect(linkedListToArray(result)).toEqual([0, 0, 1]);
   });
+
+  test('LCCI example: (7->1->6) + (5->9->2) = (2->1->9)', () => {
+    const list1 = createLinkedList([7, 1, 6]); // 617
+    const list2 = createLinkedList([5, 9, 2]); // 295
+    const result = sumLists(list1, list2); // 912 → [2, 1, 9]
+    expect(linkedListToArray(result)).toEqual([2, 1, 9]);
+  });
+
+  test('adds single digit lists with no carry', () => {
+    const list1 = createLinkedList([3]); // 3
+    const list2 = createLinkedList([4]); // 4
+    const result = sumLists(list1, list2); // 7 → [7]
+    expect(linkedListToArray(result)).toEqual([7]);
+  });
 });

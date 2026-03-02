@@ -1,11 +1,12 @@
-// 10.2: Group Anagrams
+// LCCI 10.02. Group Anagrams
 //
-// Write a method to sort an array of strings so that all the anagrams are next to each other.
-// An anagram is a word formed by rearranging the letters of another word.
+// Write a method to sort an array of strings so that all the anagrams are grouped together.
 //
 // Example:
-// Input: ["bat", "tab", "tap", "pat", "cat"]
-// Output: ["bat", "tab", "tap", "pat", "cat"] (anagrams grouped together, order within group doesn't matter)
+//   Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+//   Output: [["ate","eat","tea"], ["nat","tan"], ["bat"]]
+//
+// Note: All inputs will be in lowercase. The order of the output does not matter.
 
 export function groupAnagrams(words: string[]): string[] {
   const map = new Map<string, string[]>();

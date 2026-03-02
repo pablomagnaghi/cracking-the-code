@@ -1,7 +1,8 @@
-// 16.12 XML Encoding
+// 16.12. XML Encoding (Book-only)
 //
-// Problem: Encode an XML-like element (with attributes, children, and optional text)
-// into a compact integer-tagged format using a tag map.
+// Since XML is very verbose, you are given a way of encoding it where each tag gets
+// mapped to a pre-defined integer value. Encode an XML element (with attributes,
+// children, and optional text) into a compact integer-tagged format using a tag map.
 // Each element is encoded as:
 //   [tagId] [attrKeyId] [attrValue] ... 0 [text?] [encoded children] 0
 

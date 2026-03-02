@@ -39,6 +39,14 @@ describe('checkPermutations', () => {
   it('returns false for long strings that are not permutations', () => {
     expect(checkPermutations('thequickbrownfox', 'jumpsovethefoxdog')).toBe(false);
   });
+
+  it('returns true for "abc" and "bca" (LCCI example 1)', () => {
+    expect(checkPermutations('abc', 'bca')).toBe(true);
+  });
+
+  it('returns false for "abc" and "bad" (LCCI example 2)', () => {
+    expect(checkPermutations('abc', 'bad')).toBe(false);
+  });
 });
 
 describe('checkPermutationsWithHash', () => {
@@ -76,5 +84,13 @@ describe('checkPermutationsWithHash', () => {
 
   it('returns false for long strings that are not permutations', () => {
     expect(checkPermutationsWithHash('thequickbrownfox', 'jumpsovethefoxdog')).toBe(false);
+  });
+
+  it('returns true for "abc" and "bca" (LCCI example 1)', () => {
+    expect(checkPermutationsWithHash('abc', 'bca')).toBe(true);
+  });
+
+  it('returns false for "abc" and "bad" (LCCI example 2)', () => {
+    expect(checkPermutationsWithHash('abc', 'bad')).toBe(false);
   });
 });

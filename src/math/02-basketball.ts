@@ -1,4 +1,4 @@
-// 6.2 Basketball
+// 06.02. Basketball (Book-only)
 //
 // You have a basketball hoop and someone says that you can play one of two games:
 // Game 1: You get one shot to make the hoop.

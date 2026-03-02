@@ -34,4 +34,12 @@ describe('patternMatching', () => {
   test('pattern with repeated character but different substrings', () => {
     expect(patternMatching('aba', 'xyzxyzxyz')).toBe(false);
   });
+
+  test('pattern abba matches dogcatcatdog', () => {
+    expect(patternMatching('abba', 'dogcatcatdog')).toBe(true);
+  });
+
+  test('pattern abba does not match dogcatcatfish', () => {
+    expect(patternMatching('abba', 'dogcatcatfish')).toBe(false);
+  });
 });

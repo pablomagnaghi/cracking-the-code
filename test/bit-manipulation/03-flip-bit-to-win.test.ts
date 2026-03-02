@@ -28,4 +28,14 @@ describe('flipBitToWin', () => {
   test('returns correct for single 1s spaced apart', () => {
     expect(flipBitToWin(0b100001000010000)).toBe(2);
   });
+
+  test('returns 4 for num = 7 (LCCI example 2)', () => {
+    // 7 = 0b0111, flipping the next 0 gives 0b1111 => length 4
+    expect(flipBitToWin(7)).toBe(4);
+  });
+
+  test('returns 2 for a single 1 bit (num = 1)', () => {
+    // 1 = 0b1, flipping the adjacent 0 gives longest sequence of 2
+    expect(flipBitToWin(1)).toBe(2);
+  });
 });

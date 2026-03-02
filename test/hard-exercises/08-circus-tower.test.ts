@@ -32,4 +32,25 @@ describe('circusTower', () => {
   test('handles empty list', () => {
     expect(circusTower([])).toEqual([]);
   });
+
+  test('handles all same height people', () => {
+    const input: Person[] = [
+      { height: 65, weight: 100 },
+      { height: 65, weight: 110 },
+      { height: 65, weight: 120 },
+    ];
+    const tower = circusTower(input);
+    expect(tower.length).toBe(1);
+  });
+
+  test('handles two-person tower', () => {
+    const input: Person[] = [
+      { height: 60, weight: 100 },
+      { height: 70, weight: 150 },
+    ];
+    const result = circusTower(input);
+    expect(result.length).toBe(2);
+    expect(result[0].height).toBeLessThan(result[1].height);
+    expect(result[0].weight).toBeLessThan(result[1].weight);
+  });
 });

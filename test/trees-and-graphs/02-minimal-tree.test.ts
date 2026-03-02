@@ -81,4 +81,17 @@ describe('minimalTree', () => {
     };
     expect(minimalTree([1, 2, 3, 4, 5])).toEqual(expectedTree);
   });
+
+  test('creates BST from LCCI example [-10, -3, 0, 5, 9]', () => {
+    const result = minimalTree([-10, -3, 0, 5, 9]);
+    expect(result?.value).toBe(0);
+    expect(result?.left?.value).toBe(-10);
+    expect(result?.left?.right?.value).toBe(-3);
+    expect(result?.right?.value).toBe(5);
+    expect(result?.right?.right?.value).toBe(9);
+  });
+
+  test('returns undefined for undefined input', () => {
+    expect(minimalTree(undefined as unknown as number[])).toBeUndefined();
+  });
 });

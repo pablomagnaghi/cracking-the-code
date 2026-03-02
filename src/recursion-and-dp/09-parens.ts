@@ -1,8 +1,14 @@
-// 8.9 Parens:
-// Implement a method to print all valid (e.g., properly opened and closed) combinations of n pairs of parentheses.
+// LCCI 08.09. Bracket
+//
+// Implement an algorithm to print all valid (e.g., properly opened and closed)
+// combinations of n pairs of parentheses.
+//
 // Example:
-//   Input: 3
-//   Output: ["((()))", "(()())", "(())()", "()(())", "()()()"]
+//   Input: n = 3
+//   Output: ["((()))","(()())","(())()","()(())","()()()"]
+//
+// Constraints:
+//   1 <= n <= 8
 
 export function generateParens(n: number): string[] {
   const result: string[] = [];

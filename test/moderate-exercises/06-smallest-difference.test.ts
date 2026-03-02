@@ -30,4 +30,12 @@ describe('smallestDifference', () => {
   test('returns Infinity for both arrays empty', () => {
     expect(smallestDifference([], [])).toBe(Infinity);
   });
+
+  test('returns correct result for single-element arrays', () => {
+    expect(smallestDifference([1], [7])).toBe(6);
+  });
+
+  test('returns 1 for adjacent values', () => {
+    expect(smallestDifference([10, 20, 30], [11, 21, 31])).toBe(1);
+  });
 });

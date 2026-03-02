@@ -36,4 +36,20 @@ describe('ContinuousMedianHandler', () => {
     cm.insert(3);
     expect(cm.getMedian()).toBe(2);
   });
+
+  test('handles descending insertions', () => {
+    const cm = new ContinuousMedianHandler();
+    cm.insert(10);
+    cm.insert(5);
+    cm.insert(1);
+    expect(cm.getMedian()).toBe(5);
+  });
+
+  test('handles duplicate values', () => {
+    const cm = new ContinuousMedianHandler();
+    cm.insert(4);
+    cm.insert(4);
+    cm.insert(4);
+    expect(cm.getMedian()).toBe(4);
+  });
 });

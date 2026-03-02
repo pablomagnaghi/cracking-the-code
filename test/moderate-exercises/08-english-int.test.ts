@@ -38,4 +38,12 @@ describe('numberToWords', () => {
       'Two Billion One Hundred Forty Seven Million Four Hundred Eighty Three Thousand Six Hundred Forty Seven'
     );
   });
+
+  test('converts numbers with zeros in the middle', () => {
+    expect(numberToWords(1001)).toBe('One Thousand One');
+  });
+
+  test('converts number 10', () => {
+    expect(numberToWords(10)).toBe('Ten');
+  });
 });

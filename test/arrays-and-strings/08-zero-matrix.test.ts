@@ -67,4 +67,19 @@ describe('zeroMatrix', () => {
 
     expect(zeroMatrix(input)).toEqual(expected);
   });
+
+  test('should handle MxN matrix with zeros in corners (LCCI example 2)', () => {
+    const input: Matrix = [
+      [0, 1, 2, 0],
+      [3, 4, 5, 2],
+      [1, 3, 1, 5],
+    ];
+    const expected: Matrix = [
+      [0, 0, 0, 0],
+      [0, 4, 5, 0],
+      [0, 3, 1, 0],
+    ];
+
+    expect(zeroMatrix(input)).toEqual(expected);
+  });
 });

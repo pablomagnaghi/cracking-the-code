@@ -1,8 +1,11 @@
-// 10.7. Missing Increment
+// 10.07. Missing Int (Book-only)
 //
 // Given an array of integers sorted in ascending order but missing one number in the sequence,
 // find the missing number. The array represents a sequence from some start number increasing by 1 each time.
-// For example, [1, 2, 3, 5, 6] is missing 4.
+//
+// Example:
+//   Input: [1, 2, 3, 5, 6]
+//   Output: 4
 
 export function findMissingIncrement(arr: number[]): number | null {
   if (arr.length < 2) return null;

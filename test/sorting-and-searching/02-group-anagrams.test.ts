@@ -38,4 +38,30 @@ describe('groupAnagrams', () => {
   it('should handle single word input', () => {
     expect(groupAnagrams(['solo'])).toEqual(['solo']);
   });
+
+  it('should group LCCI example: eat/tea/tan/ate/nat/bat', () => {
+    const input = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat'];
+    const output = groupAnagrams(input);
+
+    // Verify anagrams are adjacent by checking sorted character keys form contiguous groups
+    const keys = output.map((w) => w.split('').sort().join(''));
+    const groups = new Set<string>();
+    let lastKey = '';
+    for (const key of keys) {
+      if (key !== lastKey) {
+        expect(groups.has(key)).toBe(false); // Should not revisit a group
+        groups.add(key);
+        lastKey = key;
+      }
+    }
+    expect(groups.size).toBe(3); // "aet", "ant", "abt"
+  });
+
+  it('should keep all words with identical letters together', () => {
+    const input = ['abc', 'cba', 'bca', 'xyz', 'zyx'];
+    const output = groupAnagrams(input);
+    const abcIdx = output.map((w) => w.split('').sort().join('')).indexOf('abc');
+    // All 3 abc-anagrams should be contiguous
+    expect(output.slice(abcIdx, abcIdx + 3).every((w) => w.split('').sort().join('') === 'abc')).toBe(true);
+  });
 });

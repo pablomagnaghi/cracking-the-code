@@ -66,4 +66,20 @@ describe('partition', () => {
     const result = partition(head, pivot);
     expect(linkedListToArray(result)).toEqual([3]);
   });
+
+  test('LCCI example: partitions 3->5->8->5->10->2->1 around 5', () => {
+    const head = createLinkedList([3, 5, 8, 5, 10, 2, 1]);
+    const pivot = 5;
+
+    const partitionedHead = partition(head, pivot);
+    const result = linkedListToArray(partitionedHead);
+
+    // All values < 5 must come before all values >= 5
+    const indexOfFirstGE = result.findIndex((x) => x >= pivot);
+    expect(result.slice(0, indexOfFirstGE).every((x) => x < pivot)).toBe(true);
+    expect(result.slice(indexOfFirstGE).every((x) => x >= pivot)).toBe(true);
+
+    // Must contain the same elements
+    expect(result.sort((a, b) => a - b)).toEqual([1, 2, 3, 5, 5, 8, 10]);
+  });
 });

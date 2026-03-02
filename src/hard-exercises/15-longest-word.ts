@@ -1,11 +1,17 @@
-// 17.15 Longest Word
+// LCCI 17.15. Longest Word
 //
-// Problem:
-// Given a list of words, write a method to find the longest word made of other words in the list.
+// Given a list of words, write a program to find the longest word made of
+// other words in the list. If there are more than one answer, return the one
+// that has the smallest lexicographic order. If no answer, return an empty
+// string.
 //
 // Example:
-// Input: ['cat', 'banana', 'dog', 'nana', 'walk', 'walker', 'dogwalker']
-// Output: 'dogwalker' (because it is made of 'dog' + 'walker')
+//   Input: ["cat","banana","dog","nana","walk","walker","dogwalker"]
+//   Output: "dogwalker"
+//
+// Constraints:
+//   - 0 <= words.length <= 100
+//   - 1 <= words[i].length <= 100
 
 export function longestWord(words: string[]): string {
   const wordSet = new Set(words);

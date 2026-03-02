@@ -1,4 +1,4 @@
-// 10.6: Sort Big File
+// 10.06. Sort Big File (Book-only)
 //
 // You have a file with 4 billion integers. Assume you have 1 GB of memory available.
 // How would you sort the file?

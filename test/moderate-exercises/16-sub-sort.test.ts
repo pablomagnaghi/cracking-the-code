@@ -34,4 +34,12 @@ describe('subSort', () => {
     const arr = [1, 2, 2, 2, 3, 3, 2, 4];
     expect(subSort(arr)).toEqual([4, 6]);
   });
+
+  test('handles two-element unsorted array', () => {
+    expect(subSort([2, 1])).toEqual([0, 1]);
+  });
+
+  test('handles two-element sorted array', () => {
+    expect(subSort([1, 2])).toEqual([-1, -1]);
+  });
 });

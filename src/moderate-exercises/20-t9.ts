@@ -1,8 +1,22 @@
-// 16.20 T9
-
-// Problem:
-// Implement T9 predictive text. Given a digit sequence and a dictionary of valid words,
-// return all words that match the digit sequence based on classic T9 keypad mapping.
+// LCCI 16.20. T9
+//
+// On old cell phones, users typed on a numeric keypad and the phone would provide
+// a list of words that matched these numbers. Given a digit string, return all
+// matching words from a provided dictionary.
+//
+// Example 1:
+//   Input: num = "8733", words = ["tree", "used"]
+//   Output: ["tree", "used"]
+//
+// Example 2:
+//   Input: num = "2", words = ["a", "b", "c", "d"]
+//   Output: ["a", "b", "c"]
+//
+// Constraints:
+//   - num.length <= 1000
+//   - words.length <= 500
+//   - words[i].length == num.length
+//   - num does not contain 0 or 1 digits.
 
 const t9Mapping: Record<string, string[]> = {
   '2': ['a', 'b', 'c'],

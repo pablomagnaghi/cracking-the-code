@@ -1,10 +1,14 @@
-// 4. *Power Set*:
-
-// Write a method to return all subsets of a set.
-
-// Example
-// Input: [1, 2, 3]
-// Output: [ [], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3] ];
+// LCCI 08.04. Power Set
+//
+// Write a method to return all subsets of a set. The solution set must not contain
+// duplicate subsets.
+//
+// Example:
+//   Input: nums = [1,2,3]
+//   Output: [[3],[1],[2],[1,2,3],[1,3],[2,3],[1,2],[]]
+//
+// Constraints:
+//   Elements are pairwise distinct.
 
 export function powerSet(set: number[]): number[][] {
   const result: number[][] = [];

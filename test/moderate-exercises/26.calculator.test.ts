@@ -42,4 +42,12 @@ describe('calculate', () => {
   test('handles empty string', () => {
     expect(calculate('')).toBe(0);
   });
+
+  test('handles subtraction only', () => {
+    expect(calculate('10-3-2')).toBe(5);
+  });
+
+  test('handles multiplication with higher precedence', () => {
+    expect(calculate('2+3*4-1')).toBe(13);
+  });
 });

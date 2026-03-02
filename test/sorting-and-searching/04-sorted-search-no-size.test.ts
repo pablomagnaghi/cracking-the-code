@@ -50,4 +50,15 @@ describe('sortedSearchNoSize', () => {
     const listy = new MockListy([10, 20, 30]);
     expect(sortedSearchNoSize(listy, 40)).toBe(-1);
   });
+
+  it('should find target at the very end of a large Listy', () => {
+    const data = Array.from({ length: 100 }, (_, i) => (i + 1) * 3);
+    const listy = new MockListy(data);
+    expect(sortedSearchNoSize(listy, 300)).toBe(99);
+  });
+
+  it('should find the first occurrence when duplicates span a wide range', () => {
+    const listy = new MockListy([1, 2, 3, 3, 3, 3, 3, 4, 5]);
+    expect(sortedSearchNoSize(listy, 3)).toBe(2);
+  });
 });

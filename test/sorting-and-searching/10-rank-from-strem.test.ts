@@ -34,4 +34,19 @@ describe('StreamRanker', () => {
     const emptyRanker = new StreamRanker();
     expect(emptyRanker.getRankOfNumber(5)).toBe(0);
   });
+
+  test('tracks a single element and returns correct rank', () => {
+    const r = new StreamRanker();
+    r.track(10);
+    expect(r.getRankOfNumber(10)).toBe(0);
+    expect(r.getRankOfNumber(15)).toBe(1);
+    expect(r.getRankOfNumber(5)).toBe(0);
+  });
+
+  test('handles descending insertion order', () => {
+    const r = new StreamRanker();
+    [10, 8, 6, 4, 2].forEach((n) => r.track(n));
+    expect(r.getRankOfNumber(6)).toBe(2); // 2, 4, 6
+    expect(r.getRankOfNumber(10)).toBe(4); // all 5 values
+  });
 });

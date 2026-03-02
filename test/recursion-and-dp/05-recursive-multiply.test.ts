@@ -15,4 +15,13 @@ describe('recursiveMultiply', () => {
     expect(recursiveMultiply(4, 3)).toBe(recursiveMultiply(3, 4));
     expect(recursiveMultiply(7, 8)).toBe(recursiveMultiply(8, 7));
   });
+
+  test('multiplies 1 and 10 (LCCI example 1)', () => {
+    expect(recursiveMultiply(1, 10)).toBe(10);
+  });
+
+  test('handles larger values', () => {
+    expect(recursiveMultiply(12, 13)).toBe(156);
+    expect(recursiveMultiply(100, 50)).toBe(5000);
+  });
 });

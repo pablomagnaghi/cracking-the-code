@@ -26,4 +26,20 @@ describe('towersOfHanoi', () => {
     expect(tower2).toEqual([]);
     expect(tower3).toEqual([]);
   });
+
+  test('solves Towers of Hanoi for n=2 (LCCI example)', () => {
+    const [tower1, tower2, tower3] = towersOfHanoi(2);
+
+    expect(tower1).toEqual([]);
+    expect(tower2).toEqual([]);
+    expect(tower3).toEqual([2, 1]);
+  });
+
+  test('solves Towers of Hanoi for n=5', () => {
+    const [tower1, tower2, tower3] = towersOfHanoi(5);
+
+    expect(tower1).toEqual([]);
+    expect(tower2).toEqual([]);
+    expect(tower3).toEqual([5, 4, 3, 2, 1]);
+  });
 });

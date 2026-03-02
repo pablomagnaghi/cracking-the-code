@@ -1,8 +1,15 @@
-// 8.12 – Eight Queens Problem
+// LCCI 08.12. Eight Queens
 //
-// The goal is to place 8 queens on an 8x8 chessboard such that no two queens threaten each other.
-// A queen can attack any other piece in the same row, column, or diagonal.
-// This function returns all valid arrangements of 8 queens on the board.
+// Write an algorithm to print all ways of arranging n queens on an n x n chess
+// board so that none of them share the same row, column, or diagonal. In this
+// case, "diagonal" means all diagonals, not just the two that bisect the board.
+//
+// Example:
+//   Input: 4
+//   Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+//
+// The output is a list of boards where each board is a list of strings,
+// "Q" indicates a queen and "." indicates an empty position.
 
 type Board = number[]; // board[i] = column of queen in row i
 

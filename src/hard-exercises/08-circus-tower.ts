@@ -1,8 +1,17 @@
-// 17.8 Circus Tower
+// LCCI 17.08. Circus Tower
 //
-// Problem:
-// Given a list of people with height and weight, build the tallest tower such that
-// each person is shorter and lighter than the one below.
+// A circus is designing a tower routine consisting of people standing atop one
+// another's shoulders. Each person must be both shorter and lighter than the
+// person below them. Given the heights and weights of each person, write a
+// method to compute the largest possible number of people in such a tower.
+//
+// Example:
+//   Input: height = [65,70,56,75,60,68], weight = [100,150,90,190,95,110]
+//   Output: 6
+//   Explanation: From top to bottom: (56,90),(60,95),(65,100),(68,110),(70,150),(75,190)
+//
+// Constraints:
+//   - height.length == weight.length <= 10000
 
 export type Person = { height: number; weight: number };
 

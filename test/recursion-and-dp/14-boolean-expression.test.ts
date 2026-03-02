@@ -22,4 +22,13 @@ describe('countEval', () => {
   test('returns 0 when empty expression', () => {
     expect(countEval('', true)).toBe(0);
   });
+
+  test('LCCI example 2: "0&0&0&1^1|0" result=1 returns 10', () => {
+    expect(countEval('0&0&0&1^1|0', true)).toBe(10);
+  });
+
+  test('handles simple AND expression', () => {
+    expect(countEval('1&0', false)).toBe(1);
+    expect(countEval('1&1', true)).toBe(1);
+  });
 });

@@ -1,8 +1,19 @@
-// 3. *List of Depths*:
-
-// Given a binary tree, design an algorithm which creates a linked list
-// of all the nodes at each depth (e.g., if you have a tree with depth D,
-// you'll have D linked lists).
+// LCCI 04.03. List of Depth
+//
+// Given a binary tree, design an algorithm which creates a linked list of all the
+// nodes at each depth (e.g., if you have a tree with depth D, you'll have D
+// linked lists). Return an array containing all the linked lists.
+//
+// Example:
+//   Input: [1, 2, 3, 4, 5, null, 7, 8]
+//        1
+//       / \
+//      2   3
+//     / \   \
+//    4   5   7
+//   /
+//  8
+//   Output: [[1], [2, 3], [4, 5, 7], [8]]
 
 export type TreeNode<T> = {
   value: T;

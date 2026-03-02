@@ -1,14 +1,27 @@
-// 16.18 Pattern Matching
+// LCCI 16.18. Pattern Matching
 //
-// Problem: Given a pattern string and a text string, check if the text
-// matches the pattern, where pattern characters map to non-empty substrings
-// in the text. Different pattern characters must map to different substrings.
+// You are given two strings, pattern and value. The pattern string consists of
+// just the letters a and b, describing a pattern within a string. Determine if
+// the value string follows this pattern. For example, "catcatgocatgo" matches
+// pattern "aabab" (with a="cat" and b="go"). A pattern of "a" or "b" can
+// represent an empty string.
 //
-// Approach:
-// Use backtracking to try all possible mappings:
-// - For each character in pattern, try all possible substrings in text.
-// - Keep track of assigned mappings and ensure consistency.
-// - If full pattern and text are matched, return true, else false.
+// Example 1:
+//   Input: pattern = "abba", value = "dogcatcatdog"
+//   Output: true
+//
+// Example 2:
+//   Input: pattern = "abba", value = "dogcatcatfish"
+//   Output: false
+//
+// Example 3:
+//   Input: pattern = "abba", value = "dogdogdogdog"
+//   Output: true (a="dogdog", b="" or vice versa)
+//
+// Constraints:
+//   - 0 <= len(pattern) <= 1000
+//   - 0 <= len(value) <= 1000
+//   - pattern only contains "a" and "b", value only lowercase letters.
 
 export function patternMatching(pattern: string, text: string): boolean {
   return backtrack(pattern, 0, text, 0, new Map(), new Set());

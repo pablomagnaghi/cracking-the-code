@@ -1,4 +1,4 @@
-// 6.4. *Ants on a Triangle*
+// 06.04. Ants on a Triangle (Book-only)
 //
 // Three ants are sitting at the corners of an equilateral triangle.
 // Each ant randomly picks a direction (clockwise or counter-clockwise) and starts moving.

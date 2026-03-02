@@ -24,4 +24,12 @@ describe('pairwiseSwap', () => {
     expect(pairwiseSwap(input) >>> 0).toBe(expected);
     expect(pairwiseSwap(expected) >>> 0).toBe(input);
   });
+
+  test('LCCI example: swaps bits of 2 (0b10) to get 1 (0b01)', () => {
+    expect(pairwiseSwap(2)).toBe(1);
+  });
+
+  test('LCCI example: num = 3 stays 3 (0b11 -> 0b11)', () => {
+    expect(pairwiseSwap(3)).toBe(3);
+  });
 });

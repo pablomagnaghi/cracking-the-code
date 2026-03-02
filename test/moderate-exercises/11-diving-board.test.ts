@@ -25,4 +25,12 @@ describe('divingBoard', () => {
   test('returns correct values for larger k', () => {
     expect(divingBoard(1, 2, 5)).toEqual([5, 6, 7, 8, 9, 10]);
   });
+
+  test('returns two values for k=1 with different lengths', () => {
+    expect(divingBoard(4, 10, 1)).toEqual([4, 10]);
+  });
+
+  test('returns k+1 values for k=2', () => {
+    expect(divingBoard(1, 3, 2)).toEqual([2, 4, 6]);
+  });
 });

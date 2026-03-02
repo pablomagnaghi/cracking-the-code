@@ -87,4 +87,30 @@ describe('countPathsWithSum', () => {
     // Only one valid path sums to 22: 5 → 4 → 11 → 2
     expect(countPathsWithSum(tree, 22)).toBe(2);
   });
+
+  test('counts paths with target sum of 0', () => {
+    const tree: TreeNode = {
+      value: 1,
+      left: {
+        value: -1,
+      },
+      right: {
+        value: -1,
+      },
+    };
+    // Paths summing to 0: [1, -1] (left), [1, -1] (right)
+    expect(countPathsWithSum(tree, 0)).toBe(2);
+  });
+
+  test('handles all-same-value nodes', () => {
+    const tree: TreeNode = {
+      value: 5,
+      left: { value: 5 },
+      right: { value: 5 },
+    };
+    // Paths summing to 5: root alone, left alone, right alone = 3
+    // Paths summing to 10: root->left, root->right = 2
+    expect(countPathsWithSum(tree, 5)).toBe(3);
+    expect(countPathsWithSum(tree, 10)).toBe(2);
+  });
 });

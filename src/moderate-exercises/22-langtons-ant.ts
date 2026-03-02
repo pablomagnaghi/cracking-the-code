@@ -1,13 +1,24 @@
-// 16.22 – Langton's Ant
+// LCCI 16.22. Langton's Ant
 //
-// Problem:
-// Langton's Ant is a Turing machine with a very simple set of rules but complex emergent behavior.
-// It is a grid of black and white squares, an ant is placed on the grid and can face in one of four directions.
-// It moves based on the color of the square it is on:
-//   - On a white square: turn right 90°, flip the color of the square to black, move forward one unit
-//   - On a black square: turn left 90°, flip the color of the square to white, move forward one unit
+// An ant is sitting on an infinite grid of white and black squares. Initially,
+// the grid is all white and the ant faces right. At each step, it does the following:
+//   - On a white square: flip the color to black, turn 90 degrees right (clockwise),
+//     move forward one unit.
+//   - On a black square: flip the color to white, turn 90 degrees left (counter-clockwise),
+//     move forward one unit.
 //
-// Implement Langton's Ant with a way to print the grid after `k` moves.
+// Given K moves, output the final board as a minimal grid.
+//   - 'X' represents black squares, '_' represents white squares.
+//   - 'L', 'U', 'R', 'D' represent the ant's position and facing direction.
+//
+// Example (K = 0):
+//   Output: ["R"]
+//
+// Example (K = 2):
+//   Output: ["_X", "LX"]
+//
+// Constraints:
+//   - 0 <= K <= 100000
 
 enum Direction {
   UP,

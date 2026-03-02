@@ -1,13 +1,16 @@
-// 5.1 Insertion
+// LCCI 05.01. Insert Into Bits
 //
-// You are given two 32-bit numbers, N and M, and two bit positions, i and j.
+// You are given two 32-bit integers, N and M, along with two bit positions, i and j.
 // Write a method to insert M into N such that M starts at bit j and ends at bit i.
-// You can assume that the bits j through i have enough space to fit all of M.
-// That is, M can be "inserted" into N starting at bit j.
+// You can assume that there are enough bits between j and i to fit all of M.
 //
-// Example:
-// Input: N = 10000000000 (1024), M = 10011 (19), i = 2, j = 6
-// Output: N = 10001001100 (1100)
+// Example 1:
+// Input: N = 10000000000, M = 10011, i = 2, j = 6
+// Output: 10001001100
+//
+// Example 2:
+// Input: N = 0, M = 11111, i = 0, j = 4
+// Output: 11111
 
 export function insertBits(N: number, M: number, i: number, j: number): number {
   // Create a mask to clear bits i through j in N

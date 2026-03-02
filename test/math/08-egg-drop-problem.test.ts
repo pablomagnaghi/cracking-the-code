@@ -27,4 +27,14 @@ describe('Egg Drop Problem', () => {
   test('two eggs and 100 floors requires minimum 14 drops', () => {
     expect(eggDrop(2, 100)).toBe(14);
   });
+
+  test('many eggs reduce to binary search (log2 floors)', () => {
+    // With enough eggs, optimal strategy is binary search: ceil(log2(n+1))
+    // For 100 floors with 10 eggs: ceil(log2(101)) = 7
+    expect(eggDrop(10, 100)).toBe(7);
+  });
+
+  test('two eggs and 10 floors requires minimum 4 drops', () => {
+    expect(eggDrop(2, 10)).toBe(4);
+  });
 });

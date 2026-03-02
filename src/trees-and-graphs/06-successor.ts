@@ -1,8 +1,15 @@
-// 6. *Successor*:
-
-// Write an algorithm to find the "next" node
-// (i.e., in-order successor) of a given node in a binary search tree.
-// You may assume that each node has a link to its parent.
+// LCCI 04.06. Successor
+//
+// Write an algorithm to find the "next" node (i.e., in-order successor) of a given
+// node in a binary search tree. Return null if no successor exists.
+//
+// Example 1:
+//   Input: root = [2, 1, 3], p = 1
+//   Output: 2
+//
+// Example 2:
+//   Input: root = [5, 3, 6, 2, 4, null, null, 1], p = 6
+//   Output: null
 
 export type TreeNode<T> = {
   value: T;

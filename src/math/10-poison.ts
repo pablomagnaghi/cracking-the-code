@@ -1,4 +1,4 @@
-// 6.10 Poison
+// 06.10. Poison (Book-only)
 //
 // You have 1000 bottles of soda, one of which is poisoned.
 // You have 10 test strips that can be used to detect poison.

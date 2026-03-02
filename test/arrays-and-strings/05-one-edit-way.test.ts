@@ -45,4 +45,12 @@ describe('isOneAway', () => {
   test('returns false for empty and two-char string', () => {
     expect(isOneAway('', 'ab')).toBe(false);
   });
+
+  test('returns true for one removal "pale" -> "ple" (LCCI example 1)', () => {
+    expect(isOneAway('pale', 'ple')).toBe(true);
+  });
+
+  test('returns false for two edits "pales" -> "pal" (LCCI example 2)', () => {
+    expect(isOneAway('pales', 'pal')).toBe(false);
+  });
 });

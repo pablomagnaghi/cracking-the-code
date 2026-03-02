@@ -1,13 +1,20 @@
-// 16.15 Master Mind
+// LCCI 16.15. Master Mind
 //
-// Problem: Given a secret code and a guess (both strings), return the count of
-// "hits" (correct character in correct position) and "pseudo-hits"
-// (correct character in wrong position).
+// The Game of Master Mind is played as follows:
+// The computer has four slots, and each slot will contain a ball that is red (R),
+// yellow (Y), green (G) or blue (B). The player guesses the solution and is told
+// the number of hits and pseudo-hits.
+//   - "Hit": correct color in the correct slot.
+//   - "Pseudo-hit": correct color but in the wrong slot.
+// (A color can only be counted as a pseudo-hit if it is not already a hit.)
 //
-// Approach:
-// 1. Iterate through secret and guess to count hits.
-// 2. Track counts of characters in secret and guess for non-hit positions.
-// 3. Calculate pseudo-hits based on minimum counts of matched characters.
+// Example:
+//   Input: solution = "RGBY", guess = "GGRR"
+//   Output: [1, 1] (1 hit, 1 pseudo-hit)
+//
+// Constraints:
+//   - len(googled) == len(solution) == 4
+//   - Only characters "R", "G", "B", "Y" are used.
 
 export interface MasterMindResult {
   hits: number;

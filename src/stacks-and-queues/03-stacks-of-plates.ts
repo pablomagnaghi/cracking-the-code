@@ -1,14 +1,21 @@
-// 3. *Stack of Plates*:
-
+// LCCI 03.03. Stack of Plates
+//
 // Imagine a (literal) stack of plates. If the stack gets too high, it might topple.
 // Therefore, in real life, we would likely start a new stack when the previous stack
 // exceeds some threshold. Implement a data structure SetOfStacks that mimics this.
 // SetOfStacks should be composed of several stacks and should create a new stack once
-// the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave
-// identically to a single stack (that is, pop() should return the same values as it would if
-// there were just a single stack).
-
-// FOLLOW UP: Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+// the previous one exceeds capacity. push() and pop() should behave identically to a
+// single stack. Also implement popAt(index) which performs a pop on a specific sub-stack.
+//
+// Example 1:
+//   Input: ["StackOfPlates", "push", "push", "popAt", "pop", "pop"]
+//          [[1], [1], [2], [1], [], []]
+//   Output: [null, null, null, 2, 1, -1]
+//
+// Example 2:
+//   Input: ["StackOfPlates", "push", "push", "push", "popAt", "popAt", "popAt"]
+//          [[2], [1], [2], [3], [0], [0], [0]]
+//   Output: [null, null, null, null, 2, 1, 3]
 
 export class StackOfPlates<T> {
   private stacks: T[][];

@@ -32,4 +32,12 @@ describe('chooseBetterGame', () => {
       expect(['Game 1', 'Game 2']).toContain(result);
     }
   });
+
+  test('prefers Game 1 for very low probability (0.01)', () => {
+    expect(chooseBetterGame(0.01)).toBe('Game 1');
+  });
+
+  test('prefers Game 2 for probability just above 0.5 (0.51)', () => {
+    expect(chooseBetterGame(0.51)).toBe('Game 2');
+  });
 });

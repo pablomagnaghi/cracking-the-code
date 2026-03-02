@@ -1,10 +1,18 @@
-// 17.22 Word Transformer
+// LCCI 17.22. Word Transformer
 //
-// Given two words of equal length that are in the dictionary,
-// return any one sequence of words starting with start and ending with end,
-// changing only one letter at a time,
-// and all intermediate words are in the dictionary.
-// If no such sequence exists, return [].
+// Given two words of equal length that are in a dictionary, write a method to
+// transform one word into another word by changing only one letter at a time.
+// The new word you get in each step must be in the dictionary.
+//
+// Example 1:
+//   Input: beginWord = "hit", endWord = "cog",
+//          wordList = ["hot","dot","dog","lot","log","cog"]
+//   Output: ["hit","hot","dot","lot","log","cog"]
+//
+// Example 2:
+//   Input: beginWord = "hit", endWord = "cog",
+//          wordList = ["hot","dot","dog","lot","log"]
+//   Output: []  (endWord "cog" is not in the word list)
 
 export function wordTransformerSequence(
   start: string,

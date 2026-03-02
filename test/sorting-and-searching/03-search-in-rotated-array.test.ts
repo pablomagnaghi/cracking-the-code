@@ -39,4 +39,15 @@ describe('searchRotatedArray', () => {
   it('should handle empty array', () => {
     expect(searchRotatedArray([], 10)).toBe(-1);
   });
+
+  it('should return -1 for LCCI example 2: target=11 not in array', () => {
+    const arr = [15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14];
+    expect(searchRotatedArray(arr, 11)).toBe(-1);
+  });
+
+  it('should find element when rotation point is at the middle', () => {
+    const arr = [4, 5, 6, 7, 0, 1, 2];
+    expect(searchRotatedArray(arr, 0)).toBe(4);
+    expect(searchRotatedArray(arr, 7)).toBe(3);
+  });
 });

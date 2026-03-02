@@ -1,13 +1,23 @@
-// 16.13. Bisect Squares
+// LCCI 16.13. Bisect Squares
 //
-// Problem: Given two squares (each defined by the coordinates of their bottom-left
-// and top-right corners), find the line segment that bisects both squares.
+// Given two squares on a two-dimensional plane, find a line that would cut these
+// two squares in half. Assume that the top and the bottom sides of the square run
+// parallel to the x-axis.
 //
-// Approach:
-// 1. Compute the center points of both squares.
-// 2. The bisecting line passes through these centers.
-// 3. Find the intersection points of this line with each square's boundary.
-// 4. Return the segment defined by these two intersection points.
+// Each square is represented by [X, Y, side] where (X,Y) is the bottom-left corner
+// and side is the side length. The bisecting line must pass through the centers of
+// both squares. Return the two intersection points as [X1, Y1, X2, Y2].
+//
+// If X1 != X2, then X1 < X2. Otherwise, Y1 <= Y2.
+// If multiple lines exist, return the one with the steepest slope.
+//
+// Example:
+//   Input: square1 = [-1, -1, 2], square2 = [0, -1, 2]
+//   Output: [-1, 0, 2, 0]
+//
+// Constraints:
+//   - square.length == 3
+//   - square[2] > 0
 
 interface Point {
   x: number;

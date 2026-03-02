@@ -41,4 +41,16 @@ describe('pairsWithSum', () => {
     expect(pairsWithSum(arr, target)).toEqual(expect.arrayContaining(expectedPairs));
     expect(pairsWithSum(arr, target).length).toBe(expectedPairs.length);
   });
+
+  test('handles single pair target', () => {
+    const arr = [5, 6, 5];
+    const target = 11;
+    expect(pairsWithSum(arr, target)).toEqual([[5, 6]]);
+  });
+
+  test('handles all same elements summing to target', () => {
+    const arr = [3, 3, 3, 3];
+    const target = 6;
+    expect(pairsWithSum(arr, target)).toEqual([[3, 3]]);
+  });
 });

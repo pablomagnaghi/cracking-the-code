@@ -1,11 +1,19 @@
-// 4.10 *Check Subtree*
+// LCCI 04.10. Check SubTree
 //
-// T1 and T2 are two very large binary trees, with T1 much bigger than T2.
-// Create an algorithm to determine if T2 is a subtree of T1.
+// T1 and T2 are two large binary trees, with T1 being significantly larger than T2.
+// Determine whether T2 is a subtree of T1. A tree T2 is a subtree of T1 if there
+// exists a node n in T1 such that the subtree rooted at n is identical to T2.
 //
-// A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree
-// of n is identical to T2. That is, if you cut off the tree at node n, the two
-// trees would be identical.
+// Example 1:
+//   Input: t1 = [1, 2, 3], t2 = [2]
+//   Output: true
+//
+// Example 2:
+//   Input: t1 = [1, null, 2, 4], t2 = [3, 2]
+//   Output: false
+//
+// Constraints:
+//   - The node count in both trees ranges from 0 to 20,000
 
 export type TreeNode<T> = {
   value: T;

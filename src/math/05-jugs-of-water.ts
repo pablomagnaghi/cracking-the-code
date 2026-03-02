@@ -1,4 +1,4 @@
-// 6.5. Jugs of Water
+// 06.05. Jugs of Water (Book-only)
 //
 // You have a 5-quart jug, a 3-quart jug, and an unlimited supply of water.
 // How would you measure exactly 4 quarts?

@@ -47,4 +47,14 @@ describe('shortestSupersequence (number arrays)', () => {
   test('empty big array returns null', () => {
     expect(shortestSupersequence([], [1, 2])).toBeNull();
   });
+
+  test('handles single element in both arrays', () => {
+    expect(shortestSupersequence([5], [5])).toEqual([0, 0]);
+  });
+
+  test('small element repeated in big', () => {
+    const big = [1, 3, 1, 2, 1];
+    const small = [1, 2];
+    expect(shortestSupersequence(big, small)).toEqual([2, 3]);
+  });
 });

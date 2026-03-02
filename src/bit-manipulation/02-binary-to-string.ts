@@ -1,8 +1,19 @@
-// 5.2 *Binary to String*:
+// LCCI 05.02. Binary Number to String
 //
 // Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double,
 // print the binary representation. If the number cannot be represented accurately
 // in binary with at most 32 characters, print "ERROR".
+//
+// Example 1:
+// Input: 0.625
+// Output: "0.101"
+//
+// Example 2:
+// Input: 0.1
+// Output: "ERROR" (0.1 cannot be precisely represented in binary)
+//
+// Constraints:
+// - The maximum length for the binary representation is 32 characters.
 
 export default function binaryToString(num: number): string {
   if (num <= 0 || num >= 1) return 'ERROR';

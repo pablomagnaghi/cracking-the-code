@@ -28,6 +28,10 @@ describe('smallestK', () => {
   test('works with single element array', () => {
     expect(smallestK([42], 1)).toEqual([42]);
   });
+
+  test('LCCI example: arr=[1,3,5,7,2,4,6,8], k=4', () => {
+    expect(smallestK([1, 3, 5, 7, 2, 4, 6, 8], 4).sort((a, b) => a - b)).toEqual([1, 2, 3, 4]);
+  });
 });
 
 describe('smallestKQuickselect', () => {
@@ -57,5 +61,9 @@ describe('smallestKQuickselect', () => {
 
   test('works with single element array', () => {
     expect(smallestKQuickselect([42], 1)).toEqual([42]);
+  });
+
+  test('LCCI example: arr=[1,3,5,7,2,4,6,8], k=4', () => {
+    expect(smallestKQuickselect([1, 3, 5, 7, 2, 4, 6, 8], 4).sort((a, b) => a - b)).toEqual([1, 2, 3, 4]);
   });
 });

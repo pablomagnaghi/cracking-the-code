@@ -50,4 +50,30 @@ describe('paintFill', () => {
     paintFill(screen, 1, 1, 9);
     expect(screen).toEqual(expected);
   });
+
+  it('fills LCCI example: image = [[1,1,1],[1,1,0],[1,0,1]], sr=1, sc=1, newColor=2', () => {
+    const screen = [
+      [1, 1, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+    ];
+    paintFill(screen, 1, 1, 2);
+    expect(screen).toEqual([
+      [2, 2, 2],
+      [2, 2, 0],
+      [2, 0, 1],
+    ]);
+  });
+
+  it('fills entire uniform grid', () => {
+    const screen = [
+      [0, 0],
+      [0, 0],
+    ];
+    paintFill(screen, 0, 0, 3);
+    expect(screen).toEqual([
+      [3, 3],
+      [3, 3],
+    ]);
+  });
 });

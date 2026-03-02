@@ -42,4 +42,19 @@ describe('sortBigFile', () => {
       expect(sortedNumbers[i]).toBeGreaterThanOrEqual(sortedNumbers[i - 1]);
     }
   });
+
+  test('sorts file with duplicate values', async () => {
+    const dupeInput = './test_input_dupes.txt';
+    const dupeOutput = './test_output_dupes.txt';
+    const data = [5, 3, 5, 1, 3, 1];
+    await fs.writeFile(dupeInput, data.join('\n'));
+
+    await sortBigFile(dupeInput, dupeOutput, 4 * 2);
+
+    const content = await fs.readFile(dupeOutput, 'utf-8');
+    const sorted = content.split('\n').filter(Boolean).map(Number);
+    expect(sorted).toEqual([1, 1, 3, 3, 5, 5]);
+
+    await Promise.all([fs.unlink(dupeInput), fs.unlink(dupeOutput)].map((p) => p.catch(() => {})));
+  });
 });

@@ -1,6 +1,14 @@
-// 5. *Validate BST*:
-
+// LCCI 04.05. Legal Binary Search Tree
+//
 // Implement a function to check if a binary tree is a binary search tree.
+//
+// Example 1:
+//   Input: [2, 1, 3]
+//   Output: true
+//
+// Example 2:
+//   Input: [5, 1, 4, null, null, 3, 6]
+//   Output: false
 
 export type TreeNode<T> = {
   value: T;

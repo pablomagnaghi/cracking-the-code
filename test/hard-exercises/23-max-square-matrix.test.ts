@@ -42,4 +42,18 @@ describe('maxBlackBorderSquare', () => {
     ];
     expect(maxBlackBorderSquare(matrix)).toEqual([0, 0, 2]);
   });
+
+  test('handles 3x3 matrix with 2x2 border at bottom-left', () => {
+    const matrix = [
+      [0, 1, 1],
+      [1, 1, 0],
+      [1, 1, 0],
+    ];
+    expect(maxBlackBorderSquare(matrix)).toEqual([1, 0, 2]);
+  });
+
+  test('single cell with filled pixel', () => {
+    const matrix = [[1]];
+    expect(maxBlackBorderSquare(matrix)).toEqual([0, 0, 1]);
+  });
 });

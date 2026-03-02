@@ -1,13 +1,22 @@
-// 16.19 Pond Sizes
+// LCCI 16.19. Pond Sizes
 //
-// Problem:
-// Given a 2D matrix representing land elevations where 0 represents water,
-// find the sizes of all ponds. A pond is a group of connected water cells
-// (connected vertically, horizontally, and diagonally).
+// You have an integer matrix representing a plot of land, where the value at
+// that location represents the height above sea level. A value of zero indicates
+// water. A pond is a region of water connected vertically, horizontally, or
+// diagonally. The size of a pond is the total number of connected water cells.
+// Write a method to compute the sizes of all ponds in the matrix.
 //
-// Approach:
-// Use DFS to explore each water cell and count all connected water cells.
-// Mark visited cells to avoid counting multiple times.
+// Example:
+//   Input:
+//     [[0,2,1,0],
+//      [0,1,0,1],
+//      [1,1,0,1],
+//      [0,1,0,1]]
+//   Output: [1, 2, 4]
+//
+// Constraints:
+//   - 0 < len(land) <= 1000
+//   - 0 < len(land[i]) <= 1000
 
 export function pondSizes(land: number[][]): number[] {
   const rows = land.length;

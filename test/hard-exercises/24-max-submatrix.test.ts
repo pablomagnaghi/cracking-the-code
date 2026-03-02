@@ -45,4 +45,16 @@ describe('maxSubmatrix', () => {
     //  [2]]
     expect(maxSubmatrix(matrix)).toEqual([0, 2, 1, 2]);
   });
+
+  test('LCCI example: [[-1,0],[0,-1]] -> [0,1,0,1]', () => {
+    const matrix = [
+      [-1, 0],
+      [0, -1],
+    ];
+    expect(maxSubmatrix(matrix)).toEqual([0, 1, 0, 1]);
+  });
+
+  test('handles 1x1 positive matrix', () => {
+    expect(maxSubmatrix([[42]])).toEqual([0, 0, 0, 0]);
+  });
 });

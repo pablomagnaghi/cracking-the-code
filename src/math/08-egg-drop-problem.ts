@@ -1,4 +1,4 @@
-// 6.8. Egg Drop Problem
+// 06.08. Egg Drop Problem (Book-only)
 //
 // Problem: You have a building with `floors` floors and `eggs` eggs.
 // An egg breaks if dropped from a certain floor or above, and doesn't break below it.

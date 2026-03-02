@@ -40,6 +40,27 @@ describe('deleteMiddleNode', () => {
     expect(node6.value).toBe(7);
     expect(node6.next).toBeUndefined();
   });
+
+  test('LCCI example: deletes node c from a->b->c->d->e->f', () => {
+    const nodeF: Node<string> = { value: 'f' };
+    const nodeE: Node<string> = { value: 'e', next: nodeF };
+    const nodeD: Node<string> = { value: 'd', next: nodeE };
+    const nodeC: Node<string> = { value: 'c', next: nodeD };
+    const nodeB: Node<string> = { value: 'b', next: nodeC };
+    const nodeA: Node<string> = { value: 'a', next: nodeB };
+
+    const deleted = deleteMiddleNode(nodeC);
+    expect(deleted).toBe(true);
+
+    // Verify list is now a->b->d->e->f
+    const values: string[] = [];
+    let current: Node<string> | undefined = nodeA;
+    while (current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    expect(values).toEqual(['a', 'b', 'd', 'e', 'f']);
+  });
 });
 
 describe('deleteMiddleNodeByPosition', () => {

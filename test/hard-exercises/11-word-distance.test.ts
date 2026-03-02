@@ -22,4 +22,14 @@ describe('shortestWordDistance', () => {
     const words = ['a', 'b', 'a', 'c', 'a'];
     expect(shortestWordDistance(words, 'a', 'a')).toBe(0);
   });
+
+  test('LCCI example: words with "a" and "student"', () => {
+    const words = ['I', 'am', 'a', 'student', 'from', 'a', 'university', 'in', 'a', 'city'];
+    expect(shortestWordDistance(words, 'a', 'student')).toBe(1);
+  });
+
+  test('handles words at opposite ends', () => {
+    const words = ['first', 'x', 'y', 'z', 'last'];
+    expect(shortestWordDistance(words, 'first', 'last')).toBe(4);
+  });
 });

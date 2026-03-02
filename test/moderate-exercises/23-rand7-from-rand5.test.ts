@@ -27,4 +27,11 @@ describe('rand7', () => {
       expect(count).toBeLessThanOrEqual(mean + tolerance);
     }
   });
+
+  test('returns only integers', () => {
+    for (let i = 0; i < 100; i++) {
+      const val = rand7();
+      expect(Number.isInteger(val)).toBe(true);
+    }
+  });
 });

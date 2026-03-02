@@ -65,4 +65,12 @@ describe('operations.divide', () => {
   test('throws on division by zero', () => {
     expect(() => divide(5, 0)).toThrow('Division by zero');
   });
+
+  test('divides 1 by 1', () => {
+    expect(divide(1, 1)).toBe(1);
+  });
+
+  test('divides 0 by any number', () => {
+    expect(divide(0, 5)).toBe(0);
+  });
 });

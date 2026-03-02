@@ -30,4 +30,14 @@ describe('Magic Index - Non-Distinct', () => {
     const arr = [5, 5, 5, 5, 5];
     expect(findMagicIndexNonDistinct(arr)).toBeNull();
   });
+
+  test('returns first magic index at position 0', () => {
+    const arr = [0, 2, 3, 4, 5];
+    expect(findMagicIndexDistinct(arr)).toBe(0);
+  });
+
+  test('returns magic index for single element array', () => {
+    expect(findMagicIndexDistinct([0])).toBe(0);
+    expect(findMagicIndexDistinct([1])).toBeNull();
+  });
 });

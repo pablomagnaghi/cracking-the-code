@@ -28,4 +28,12 @@ describe('maxContiguousSequence', () => {
   test('returns max sum for single element array', () => {
     expect(maxContiguousSequence([5])).toBe(5);
   });
+
+  test('returns correct sum for LCCI example', () => {
+    expect(maxContiguousSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])).toBe(6);
+  });
+
+  test('handles alternating positive and negative values', () => {
+    expect(maxContiguousSequence([2, -1, 2, -1, 2])).toBe(4);
+  });
 });

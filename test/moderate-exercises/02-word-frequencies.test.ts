@@ -33,4 +33,18 @@ describe('wordFrequencies', () => {
     expect(freq.get('test')).toBe(2);
     expect(freq.get('123')).toBe(3);
   });
+
+  test('handles single word repeated many times', () => {
+    const doc = 'apple apple apple apple';
+    const freq = wordFrequencies(doc);
+    expect(freq.get('apple')).toBe(4);
+    expect(freq.size).toBe(1);
+  });
+
+  test('handles tabs and newlines as whitespace', () => {
+    const doc = "hello\tworld\nhello";
+    const freq = wordFrequencies(doc);
+    expect(freq.get('hello')).toBe(2);
+    expect(freq.get('world')).toBe(1);
+  });
 });

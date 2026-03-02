@@ -44,4 +44,16 @@ describe('isSubtree', () => {
     const t2 = createTree(1, createTree(2), createTree(3));
     expect(isSubtree(t1, t2)).toBe(true);
   });
+
+  it('returns true for LCCI example: t1 = [1,2,3], t2 = [2]', () => {
+    const t1 = createTree(1, createTree(2), createTree(3));
+    const t2 = createTree(2);
+    expect(isSubtree(t1, t2)).toBe(true);
+  });
+
+  it('returns false when subtree has extra children not in t1', () => {
+    const t1 = createTree(1, createTree(2), createTree(3));
+    const t2 = createTree(2, createTree(99));
+    expect(isSubtree(t1, t2)).toBe(false);
+  });
 });

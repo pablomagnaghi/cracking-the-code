@@ -1,8 +1,15 @@
-// 10.11. Peaks and Valleys
+// LCCI 10.11. Peaks and Valleys
 //
-// In an array of integers, a "peak" is an element that is greater than or equal to its neighbors,
-// and a "valley" is an element that is less than or equal to its neighbors.
-// Rearrange the array into an alternating sequence of peaks and valleys.
+// In an array of integers, a "peak" is an element which is greater than or equal to
+// the adjacent integers and a "valley" is an element which is less than or equal to
+// the adjacent integers. Given an array of integers, sort the array into an alternating
+// sequence of peaks and valleys.
+//
+// Example:
+//   Input: [5, 3, 1, 2, 3]
+//   Output: [5, 1, 3, 2, 3]
+//
+// Constraints: nums.length <= 10000
 
 export function peaksAndValleys(arr: number[]): number[] {
   // Loop through the array, stepping every 2 elements

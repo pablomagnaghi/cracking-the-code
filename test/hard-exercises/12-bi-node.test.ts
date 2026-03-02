@@ -50,4 +50,28 @@ describe('convertBSTToDoublyLinkedList', () => {
     expect(head!.left).toBeNull();
     expect(head!.right).toBeNull();
   });
+
+  test('handles right-skewed tree', () => {
+    const root = new TreeNode(1, null, new TreeNode(2, null, new TreeNode(3)));
+    const head = convertBSTToDoublyLinkedList(root);
+    const values: number[] = [];
+    let current = head;
+    while (current) {
+      values.push(current.val);
+      current = current.right;
+    }
+    expect(values).toEqual([1, 2, 3]);
+  });
+
+  test('handles left-skewed tree', () => {
+    const root = new TreeNode(3, new TreeNode(2, new TreeNode(1)));
+    const head = convertBSTToDoublyLinkedList(root);
+    const values: number[] = [];
+    let current = head;
+    while (current) {
+      values.push(current.val);
+      current = current.right;
+    }
+    expect(values).toEqual([1, 2, 3]);
+  });
 });

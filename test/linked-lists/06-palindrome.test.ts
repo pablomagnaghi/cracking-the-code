@@ -35,4 +35,14 @@ describe('isPalindrome', () => {
     const list = buildList([42]);
     expect(isPalindrome(list)).toBe(true);
   });
+
+  test('LCCI example 1: 1->2 is not a palindrome', () => {
+    const list = buildList([1, 2]);
+    expect(isPalindrome(list)).toBe(false);
+  });
+
+  test('LCCI example 2: 1->2->2->1 is a palindrome', () => {
+    const list = buildList([1, 2, 2, 1]);
+    expect(isPalindrome(list)).toBe(true);
+  });
 });

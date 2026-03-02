@@ -1,13 +1,20 @@
-// 17.13. Re-Space
+// LCCI 17.13. Re-Space
 //
-// Problem:
-// Given a dictionary of valid words and a sentence (string without spaces),
-// find the minimum number of unrecognized characters after inserting spaces to
-// form valid dictionary words in the sentence.
-
-// Solution:
-// Use dynamic programming to track the minimum unrecognized characters at each position
-// by checking all possible dictionary words that can end at that position.
+// Oh, no! You have accidentally removed all spaces, punctuation, and
+// capitalization in a lengthy document. A sentence like "I reset the
+// computer. It still didn't boot!" became "iresetthecomputeritstilldidntboot".
+// Given a dictionary and the document, design an algorithm to unconcatenate
+// the document in a way that minimizes the number of unrecognized characters.
+//
+// Example:
+//   Input: dictionary = ["looked","just","like","her","brother"]
+//          sentence = "jesslookedjustliketimherbrother"
+//   Output: 7  ("jess looked just like tim her brother" - 7 unrecognized)
+//
+// Constraints:
+//   - 0 <= len(sentence) <= 1000
+//   - Total number of characters in dictionary <= 150000
+//   - There are only lowercase letters.
 
 export function reSpace(dictionary: string[], sentence: string): number {
   const n = sentence.length;

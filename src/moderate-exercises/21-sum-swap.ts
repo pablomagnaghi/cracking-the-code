@@ -1,14 +1,20 @@
-// 16.21 – Sum Swap
+// LCCI 16.21. Sum Swap
 //
-// Problem:
-// Given two arrays of integers, find a pair of values (one value from each array)
-// that you can swap so that the sums of the two arrays become equal.
+// Given two arrays of integers, find a pair of values (one from each array) that
+// you can swap to give the two arrays the same sum. Return an array with the two
+// values. If there are multiple answers, return any one. If no swap exists, return
+// an empty array.
 //
-// Example:
-//   A = [4, 1, 2, 1, 1, 2]
-//   B = [3, 6, 3, 3]
-//   Result = [1, 3]
-//   Explanation: swapping 1 and 3 equalizes the array sums.
+// Example 1:
+//   Input: array1 = [4, 1, 2, 1, 1, 2], array2 = [3, 6, 3, 3]
+//   Output: [1, 3]
+//
+// Example 2:
+//   Input: array1 = [1, 2, 3], array2 = [4, 5, 6]
+//   Output: []
+//
+// Constraints:
+//   - 1 <= array1.length, array2.length <= 100000
 
 export function sumSwap(arrA: number[], arrB: number[]): [number, number] | null {
   const sumA = arrA.reduce((acc, val) => acc + val, 0);

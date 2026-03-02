@@ -26,4 +26,12 @@ describe('numberMax', () => {
     expect(numberMax(Number.MAX_SAFE_INTEGER, -100)).toBe(Number.MAX_SAFE_INTEGER);
     expect(numberMax(-100000, 0)).toBe(0); // Still large, but 32-bit safe
   });
+
+  test('returns correct max for large positive numbers', () => {
+    expect(numberMax(999, 1000)).toBe(1000);
+  });
+
+  test('returns correct max when first argument is larger', () => {
+    expect(numberMax(42, 1)).toBe(42);
+  });
 });

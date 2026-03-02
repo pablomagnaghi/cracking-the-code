@@ -9,4 +9,14 @@ describe('findPoisonedBottle', () => {
       expect(result).toBe(poisonedIndex);
     }
   );
+
+  test('correctly identifies bottle 1 (single bit set)', () => {
+    const testStrips = simulateTestStrips(1);
+    expect(findPoisonedBottle(testStrips)).toBe(1);
+  });
+
+  test('correctly identifies bottle 512 (highest single bit for 10 strips)', () => {
+    const testStrips = simulateTestStrips(512);
+    expect(findPoisonedBottle(testStrips)).toBe(512);
+  });
 });

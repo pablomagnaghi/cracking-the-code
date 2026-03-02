@@ -60,4 +60,22 @@ describe('SortStack', () => {
     stack.push(1);
     expect(stack.isEmpty()).toBe(false);
   });
+
+  test('LCCI example 1: push 1, push 2, peek, pop, peek', () => {
+    const stack = new SortStack<number>();
+    stack.push(1);
+    stack.push(2);
+    expect(stack.peek()).toBe(1);
+    stack.pop();
+    expect(stack.peek()).toBe(2);
+  });
+
+  test('LCCI example 2: pop on empty, push 1, pop, isEmpty', () => {
+    const stack = new SortStack<number>();
+    stack.pop(); // no-op on empty
+    stack.pop(); // no-op on empty
+    stack.push(1);
+    stack.pop();
+    expect(stack.isEmpty()).toBe(true);
+  });
 });

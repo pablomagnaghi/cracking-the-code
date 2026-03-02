@@ -1,4 +1,4 @@
-// 6.3. Dominos:
+// 06.03. Dominos (Book-only)
 //
 // There is an 8x8 chessboard in which two diagonally opposite corners have been removed.
 // You are given 31 dominos, and a single domino can cover exactly two squares.

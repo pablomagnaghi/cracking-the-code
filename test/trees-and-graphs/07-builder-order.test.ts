@@ -41,4 +41,20 @@ describe('buildOrder', () => {
       'Dependency references unknown project'
     );
   });
+
+  test('handles single project with no dependencies', () => {
+    const projects = ['a'];
+    const dependencies: [string, string][] = [];
+    expect(buildOrder(projects, dependencies)).toEqual(['a']);
+  });
+
+  test('handles linear chain of dependencies', () => {
+    const projects = ['a', 'b', 'c', 'd'];
+    const dependencies: [string, string][] = [
+      ['a', 'b'],
+      ['b', 'c'],
+      ['c', 'd'],
+    ];
+    expect(buildOrder(projects, dependencies)).toEqual(['a', 'b', 'c', 'd']);
+  });
 });

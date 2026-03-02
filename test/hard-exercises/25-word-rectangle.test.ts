@@ -27,4 +27,19 @@ describe('wordRectangle', () => {
       expect(words.includes(colWord)).toBe(true);
     }
   });
+
+  test('handles two-letter words forming a 2x2 rectangle', () => {
+    const words = ['ab', 'aa', 'ba', 'bb'];
+    const result = wordRectangle(words);
+    expect(result.length).toBeGreaterThanOrEqual(2);
+    // verify rows are words
+    for (const row of result) {
+      expect(words.includes(row)).toBe(true);
+    }
+  });
+
+  test('returns empty for no valid rectangle', () => {
+    const result = wordRectangle([]);
+    expect(result).toEqual([]);
+  });
 });

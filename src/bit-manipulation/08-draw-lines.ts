@@ -1,9 +1,16 @@
-// 5.8 Draw Line
+// LCCI 05.08. Draw Line
 //
-// Implement a function to draw a horizontal line on a monochrome screen represented by a byte array.
-// The screen is represented by a single array of bytes, where each byte represents 8 pixels.
-// The width of the screen is given in pixels (multiple of 8).
-// Draw a horizontal line from (x1, y) to (x2, y).
+// A monochrome screen is stored as a single array of bytes, allowing eight consecutive
+// pixels to be stored in one byte. The screen has width w, where w is divisible by 8.
+// Implement a function that draws a horizontal line from (x1, y) to (x2, y).
+//
+// Example 1:
+// Input: length = 1, w = 32, x1 = 30, x2 = 31, y = 0
+// Output: [3]
+//
+// Example 2:
+// Input: length = 3, w = 96, x1 = 0, x2 = 95, y = 0
+// Output: [-1, -1, -1]
 
 // Draws a horizontal line from (x1, y) to (x2, y) on a monochrome screen represented by a byte array.
 export function drawLine(

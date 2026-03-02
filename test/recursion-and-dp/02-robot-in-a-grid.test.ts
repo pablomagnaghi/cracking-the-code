@@ -97,4 +97,22 @@ describe('robotInAGrid', () => {
     ];
     expect(robotInAGrid(grid)).toBe(false);
   });
+
+  test('returns valid path for a 3x3 grid with no obstacles', () => {
+    const grid = [
+      [true, true, true],
+      [true, true, true],
+      [true, true, true],
+    ];
+    const path = robotInAGrid(grid);
+    expect(path).not.toBe(false);
+    expect(isValidPath(grid, path as [number, number][])).toBe(true);
+  });
+
+  test('returns valid path for a 1x1 grid', () => {
+    const grid = [[true]];
+    const path = robotInAGrid(grid);
+    expect(path).not.toBe(false);
+    expect(path).toEqual([[0, 0]]);
+  });
 });

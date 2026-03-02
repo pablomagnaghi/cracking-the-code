@@ -21,4 +21,12 @@ describe('canCoverWithDominos', () => {
     expect(black).toBe(white);
     expect((black + white) % 2).toBe(0);
   });
+
+  test('returns false for a 6x6 board with opposite corners removed', () => {
+    expect(canCoverWithDominos(6)).toBe(false);
+  });
+
+  test('returns false for a 2x2 board with opposite corners removed', () => {
+    expect(canCoverWithDominos(2)).toBe(false);
+  });
 });

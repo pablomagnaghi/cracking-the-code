@@ -30,4 +30,19 @@ describe('eightQueens', () => {
       expect(noConflicts(solution)).toBe(true);
     });
   });
+
+  test('all solutions are unique', () => {
+    const solutions = eightQueens();
+    const serialized = solutions.map((s) => s.join(','));
+    const unique = new Set(serialized);
+    expect(unique.size).toBe(solutions.length);
+  });
+
+  test('each solution uses columns 0-7 exactly once (no two queens in same column)', () => {
+    const solutions = eightQueens();
+    solutions.forEach((solution) => {
+      const cols = new Set(solution);
+      expect(cols.size).toBe(8);
+    });
+  });
 });

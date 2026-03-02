@@ -31,4 +31,17 @@ describe('generateParens', () => {
       expect(balance).toBe(0); // final balance should be zero
     }
   });
+
+  it('returns 14 combinations for n = 4', () => {
+    const result = generateParens(4);
+    expect(result).toHaveLength(14);
+  });
+
+  it('each combination has length 2n', () => {
+    const n = 3;
+    const result = generateParens(n);
+    result.forEach((s) => {
+      expect(s.length).toBe(2 * n);
+    });
+  });
 });

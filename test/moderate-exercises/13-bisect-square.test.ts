@@ -54,4 +54,19 @@ describe('bisectSquares', () => {
     expect(p2.x).toBeCloseTo(4); // left edge of square2
     expect(p2.y).toBeCloseTo(2);
   });
+
+  test('works with vertically aligned squares', () => {
+    const square1 = { bottomLeft: { x: 0, y: 0 }, topRight: { x: 4, y: 4 } };
+    const square2 = { bottomLeft: { x: 0, y: 6 }, topRight: { x: 4, y: 10 } };
+
+    const result = bisectSquares(square1, square2);
+    expect(result).not.toBeNull();
+
+    const [p1, p2] = result!;
+    // Centers: (2,2) and (2,8), vertical line x=2
+    expect(p1.x).toBeCloseTo(2);
+    expect(p1.y).toBeCloseTo(4); // top edge of square1
+    expect(p2.x).toBeCloseTo(2);
+    expect(p2.y).toBeCloseTo(6); // bottom edge of square2
+  });
 });

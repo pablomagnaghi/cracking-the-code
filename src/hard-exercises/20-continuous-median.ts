@@ -1,17 +1,19 @@
-// 17.20 Continuous Median
+// LCCI 17.20. Continuous Median
 //
-// Problem:
-// Numbers are randomly generated and passed to a method.
-// Write a class to maintain and return the median of all numbers seen so far.
+// Numbers are randomly generated and stored into an (expanding) array. How
+// would you keep track of the median?
 //
-// Approach:
-// Use two heaps:
-// - A max-heap (lower half)
-// - A min-heap (upper half)
-// Balance them to ensure the size difference is at most 1.
-// Median is:
-// - Middle of both heaps when size is even
-// - Top of the larger heap when odd
+// Median is the middle value in an ordered integer list. If the size of the
+// list is even, there is no middle value. So the median is the mean of the
+// two middle values.
+//
+// Example:
+//   [2,3,4], the median is 3
+//   [2,3], the median is (2 + 3) / 2 = 2.5
+//
+// Design a data structure that supports:
+//   addNum(int num) - Add a integer number from the data stream to the structure.
+//   findMedian() - Return the median of all elements so far.
 
 export class ContinuousMedianHandler {
   private lowers: number[] = []; // Max-heap (as negative numbers)

@@ -33,4 +33,12 @@ describe('maxMassageTime', () => {
   test('handles alternating large and small durations', () => {
     expect(maxMassageTime([100, 1, 100, 1, 100])).toBe(300);
   });
+
+  test('LCCI example 1: [1,2,3,1] -> 4', () => {
+    expect(maxMassageTime([1, 2, 3, 1])).toBe(4);
+  });
+
+  test('LCCI example 2: [2,7,9,3,1] -> 12', () => {
+    expect(maxMassageTime([2, 7, 9, 3, 1])).toBe(12);
+  });
 });

@@ -9,4 +9,17 @@ describe('hundredLockers', () => {
 
     expect(openLockers).toEqual(expectedOpenLockers);
   });
+
+  it('returns exactly 10 open lockers', () => {
+    const openLockers = hundredLockers();
+    expect(openLockers).toHaveLength(10);
+  });
+
+  it('all open lockers are perfect squares', () => {
+    const openLockers = hundredLockers();
+    for (const locker of openLockers) {
+      const sqrt = Math.sqrt(locker);
+      expect(Number.isInteger(sqrt)).toBe(true);
+    }
+  });
 });

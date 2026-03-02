@@ -20,4 +20,12 @@ describe('daysUntilBlueEyedPeopleLeave', () => {
   test('returns 100 when there are 100 blue-eyed people', () => {
     expect(daysUntilBlueEyedPeopleLeave(100)).toBe(100);
   });
+
+  test('returns 0 for negative input', () => {
+    expect(daysUntilBlueEyedPeopleLeave(-1)).toBe(0);
+  });
+
+  test('returns 1000 when there are 1000 blue-eyed people', () => {
+    expect(daysUntilBlueEyedPeopleLeave(1000)).toBe(1000);
+  });
 });

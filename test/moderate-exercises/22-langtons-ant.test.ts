@@ -34,4 +34,23 @@ describe('langtonsAnt', () => {
     }
     expect(foundAnt).toBe(true);
   });
+
+  test('after 2 steps, grid matches expected pattern', () => {
+    const grid = langtonsAnt(2);
+    // After 2 steps the grid should contain black cells and the ant
+    const flat = grid.flat();
+    const antSymbols = ['^', '>', 'v', '<'];
+    const hasAnt = flat.some((cell) => antSymbols.includes(cell));
+    const hasBlack = flat.some((cell) => cell === '#');
+    expect(hasAnt).toBe(true);
+    expect(hasBlack).toBe(true);
+  });
+
+  test('after 100 steps, grid has the ant and multiple black cells', () => {
+    const grid = langtonsAnt(100);
+    const flat = grid.flat();
+    const antSymbols = ['^', '>', 'v', '<'];
+    expect(flat.filter((c) => antSymbols.includes(c)).length).toBe(1);
+    expect(flat.filter((c) => c === '#').length).toBeGreaterThan(0);
+  });
 });
