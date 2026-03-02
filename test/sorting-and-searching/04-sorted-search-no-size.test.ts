@@ -61,4 +61,22 @@ describe('sortedSearchNoSize', () => {
     const listy = new MockListy([1, 2, 3, 3, 3, 3, 3, 4, 5]);
     expect(sortedSearchNoSize(listy, 3)).toBe(2);
   });
+
+  it('should find element at the beginning of Listy', () => {
+    const listy = new MockListy([2, 4, 6, 8, 10, 12]);
+    expect(sortedSearchNoSize(listy, 2)).toBe(0);
+  });
+
+  it('should handle Listy with consecutive integers', () => {
+    const listy = new MockListy([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    expect(sortedSearchNoSize(listy, 7)).toBe(6);
+    expect(sortedSearchNoSize(listy, 1)).toBe(0);
+    expect(sortedSearchNoSize(listy, 10)).toBe(9);
+  });
+
+  it('should return -1 for target between existing elements', () => {
+    const listy = new MockListy([10, 20, 30, 40, 50]);
+    expect(sortedSearchNoSize(listy, 25)).toBe(-1);
+    expect(sortedSearchNoSize(listy, 15)).toBe(-1);
+  });
 });

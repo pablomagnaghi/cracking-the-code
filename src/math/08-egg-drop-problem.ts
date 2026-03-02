@@ -1,12 +1,33 @@
-// 06.08. Egg Drop Problem (Book-only)
+// 06.08. The Egg Drop Problem
 //
-// Problem: You have a building with `floors` floors and `eggs` eggs.
-// An egg breaks if dropped from a certain floor or above, and doesn't break below it.
-// Goal: Find the minimum number of drops required in the worst case to find the critical floor.
-// You may assume:
-// - If the egg breaks, you cannot use it again.
-// - If the egg doesn't break, you can reuse it.
-// - You must minimize the number of worst-case drops.
+// There is a building of 100 floors. If an egg drops from the Nth floor or
+// above, it will break. If it is dropped from any floor below floor N, it
+// will not break. You are given two eggs. Find N, while minimizing the
+// number of drops in the worst case.
+//
+// Generalized: given `eggs` eggs and `floors` floors, find the minimum
+// number of drops required in the worst case to determine the critical
+// floor.
+//
+// Rules:
+//   - If an egg breaks when dropped, it cannot be reused.
+//   - If an egg survives, it can be reused.
+//   - With only 1 egg, you must do a linear search (worst case = floors).
+//   - With many eggs, binary search gives ceil(log2(floors + 1)) drops.
+//
+// Example:
+//   Input: eggs = 2, floors = 100
+//   Output: 14 (minimum worst-case drops)
+//
+//   Input: eggs = 2, floors = 10
+//   Output: 4
+//
+//   Input: eggs = 1, floors = 10
+//   Output: 10 (must try every floor)
+//
+// Constraints:
+//   - eggs >= 1
+//   - floors >= 0
 
 export function eggDrop(eggs: number, floors: number): number {
   const memo: Map<string, number> = new Map();

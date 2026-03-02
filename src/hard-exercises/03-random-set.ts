@@ -1,8 +1,22 @@
-// 17.03. Random Set (Book-only)
+// 17.03. Random Set
 //
-// Given an array of integers (size n) and an integer m (m <= n),
-// randomly generate a set of m unique integers from the array,
-// ensuring no duplicates in the selection.
+// Write a method to randomly generate a set of m integers from an array of
+// size n. Each element must have equal probability of being chosen.
+//
+// Example:
+//   Input:  arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], m = 4
+//   Output: [3, 7, 1, 9]  (one possible equally-likely subset of size 4)
+//
+// Approach:
+//   Use a partial Fisher-Yates shuffle. Shuffle only the first m positions
+//   of a copy of the array by swapping each position i (0 <= i < m) with a
+//   random position from i to n-1. Return the first m elements.
+//
+// Constraints:
+//   - Each element must have equal probability (m/n) of being chosen
+//   - m must be <= n; throw an error otherwise
+//   - The original array should not be mutated
+//   - Must run in O(m) time (not O(n))
 
 export function randomSet(arr: number[], m: number): number[] {
   if (m > arr.length) {

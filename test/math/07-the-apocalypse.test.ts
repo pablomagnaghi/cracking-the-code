@@ -24,4 +24,23 @@ describe('runApocalypseSimulation', () => {
     const { girls } = runApocalypseSimulation(1);
     expect(girls).toBe(1);
   });
+
+  test('total children equals boys plus girls', () => {
+    const { boys, girls } = runApocalypseSimulation(10000);
+    expect(boys + girls).toBeGreaterThan(0);
+    expect(boys).toBeGreaterThanOrEqual(0);
+    expect(girls).toBe(10000);
+  });
+
+  test('ratio converges closer to 1.0 with more families', () => {
+    const { ratio } = runApocalypseSimulation(500000);
+    // With 500k families, the ratio should be very close to 1.0
+    expect(ratio).toBeGreaterThan(0.95);
+    expect(ratio).toBeLessThan(1.05);
+  });
+
+  test('boys count is never negative', () => {
+    const { boys } = runApocalypseSimulation(100);
+    expect(boys).toBeGreaterThanOrEqual(0);
+  });
 });

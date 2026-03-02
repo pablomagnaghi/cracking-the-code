@@ -22,4 +22,26 @@ describe('hundredLockers', () => {
       expect(Number.isInteger(sqrt)).toBe(true);
     }
   });
+
+  it('first open locker is 1 and last is 100', () => {
+    const openLockers = hundredLockers();
+    expect(openLockers[0]).toBe(1);
+    expect(openLockers[openLockers.length - 1]).toBe(100);
+  });
+
+  it('no non-perfect-square lockers are open', () => {
+    const openLockers = hundredLockers();
+    const nonSquares = openLockers.filter((n) => {
+      const sqrt = Math.sqrt(n);
+      return !Number.isInteger(sqrt);
+    });
+    expect(nonSquares).toHaveLength(0);
+  });
+
+  it('open lockers are sorted in ascending order', () => {
+    const openLockers = hundredLockers();
+    for (let i = 1; i < openLockers.length; i++) {
+      expect(openLockers[i]).toBeGreaterThan(openLockers[i - 1]);
+    }
+  });
 });

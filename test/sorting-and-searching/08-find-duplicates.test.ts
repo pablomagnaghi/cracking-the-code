@@ -33,4 +33,21 @@ describe('findDuplicates', () => {
     const result = findDuplicates([1, 2, 3, 4, 5, 1, 2, 3]);
     expect(result.sort()).toEqual([1, 2, 3]);
   });
+
+  test('finds duplicates in array with numbers 1 to N', () => {
+    const result = findDuplicates([1, 5, 1, 10, 12, 10]);
+    expect(result.sort()).toEqual([1, 10]);
+  });
+
+  test('finds duplicates when every element is duplicated', () => {
+    const result = findDuplicates([4, 2, 4, 2, 1, 1]);
+    expect(result.sort()).toEqual([1, 2, 4]);
+  });
+
+  test('handles large range of numbers with few duplicates', () => {
+    const arr = Array.from({ length: 100 }, (_, i) => i + 1);
+    arr.push(50, 75); // add two duplicates
+    const result = findDuplicates(arr);
+    expect(result.sort((a, b) => a - b)).toEqual([50, 75]);
+  });
 });

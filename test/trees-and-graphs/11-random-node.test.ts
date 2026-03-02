@@ -62,4 +62,41 @@ describe('TreeNode - getRandomNode', () => {
     const tree = new TreeNode(42);
     expect(tree.getRandomNode().value).toBe(42);
   });
+
+  test('find returns undefined for value not in the tree', () => {
+    expect(root.find(1)).toBeUndefined();
+    expect(root.find(100)).toBeUndefined();
+    expect(root.find(11)).toBeUndefined();
+  });
+
+  test('left-skewed tree maintains correct size and random distribution', () => {
+    const tree = new TreeNode(50);
+    [40, 30, 20, 10].forEach((n) => tree.insert(n));
+    expect(tree.size).toBe(5);
+
+    const validValues = new Set([10, 20, 30, 40, 50]);
+    for (let i = 0; i < 100; i++) {
+      expect(validValues.has(tree.getRandomNode().value)).toBe(true);
+    }
+  });
+
+  test('two-node tree returns both nodes with roughly equal probability', () => {
+    const tree = new TreeNode(10);
+    tree.insert(20);
+    const counts: Record<number, number> = {};
+    const iterations = 10000;
+
+    for (let i = 0; i < iterations; i++) {
+      const node = tree.getRandomNode();
+      counts[node.value] = (counts[node.value] || 0) + 1;
+    }
+
+    // Each node should be selected roughly 50% of the time
+    const expected = iterations / 2;
+    const tolerance = expected * 0.2; // allow +/-20% deviation
+    expect(counts[10]).toBeGreaterThanOrEqual(expected - tolerance);
+    expect(counts[10]).toBeLessThanOrEqual(expected + tolerance);
+    expect(counts[20]).toBeGreaterThanOrEqual(expected - tolerance);
+    expect(counts[20]).toBeLessThanOrEqual(expected + tolerance);
+  });
 });

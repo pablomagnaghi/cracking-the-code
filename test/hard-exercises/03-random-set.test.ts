@@ -44,4 +44,45 @@ describe('randomSet', () => {
     expect(result).toHaveLength(1);
     expect(arr).toContain(result[0]);
   });
+
+  test('does not mutate the original array', () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+    const copy = [...arr];
+    randomSet(arr, 4);
+    expect(arr).toEqual(copy);
+  });
+
+  test('each element has roughly equal probability of being chosen', () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const m = 4;
+    const counts = Array(10).fill(0);
+    const iterations = 50000;
+
+    for (let i = 0; i < iterations; i++) {
+      const result = randomSet(arr, m);
+      for (const val of result) {
+        counts[val - 1]++;
+      }
+    }
+
+    // Each element should appear m/n = 40% of the time
+    const expected = (iterations * m) / arr.length;
+    const tolerance = expected * 0.05;
+    for (const count of counts) {
+      expect(count).toBeGreaterThanOrEqual(expected - tolerance);
+      expect(count).toBeLessThanOrEqual(expected + tolerance);
+    }
+  });
+
+  test('handles large array and selection', () => {
+    const arr = Array.from({ length: 100 }, (_, i) => i + 1);
+    const result = randomSet(arr, 50);
+    expect(result).toHaveLength(50);
+    // All elements should be unique
+    expect(new Set(result).size).toBe(50);
+    // All elements should be from the original array
+    for (const val of result) {
+      expect(arr).toContain(val);
+    }
+  });
 });

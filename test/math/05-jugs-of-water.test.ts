@@ -31,4 +31,32 @@ describe('measureFourQuarts', () => {
     const steps2 = measureFourQuarts();
     expect(steps1).toEqual(steps2);
   });
+
+  test('takes exactly 9 steps (including the initial empty state)', () => {
+    const steps = measureFourQuarts();
+    expect(steps).toHaveLength(9);
+  });
+
+  test('follows the expected sequence of jug states', () => {
+    const steps = measureFourQuarts();
+    expect(steps).toEqual([
+      { jug5: 0, jug3: 0 },
+      { jug5: 0, jug3: 3 },
+      { jug5: 3, jug3: 0 },
+      { jug5: 3, jug3: 3 },
+      { jug5: 5, jug3: 1 },
+      { jug5: 0, jug3: 1 },
+      { jug5: 1, jug3: 0 },
+      { jug5: 1, jug3: 3 },
+      { jug5: 4, jug3: 0 },
+    ]);
+  });
+
+  test('never has negative water in either jug', () => {
+    const steps = measureFourQuarts();
+    for (const step of steps) {
+      expect(step.jug5).toBeGreaterThanOrEqual(0);
+      expect(step.jug3).toBeGreaterThanOrEqual(0);
+    }
+  });
 });

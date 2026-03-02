@@ -40,4 +40,16 @@ describe('chooseBetterGame', () => {
   test('prefers Game 2 for probability just above 0.5 (0.51)', () => {
     expect(chooseBetterGame(0.51)).toBe('Game 2');
   });
+
+  test('prefers Game 1 for prob = 0.3 (below the 0.5 threshold)', () => {
+    expect(chooseBetterGame(0.3)).toBe('Game 1');
+  });
+
+  test('prefers Game 2 for prob = 0.8 (high accuracy shooter)', () => {
+    expect(chooseBetterGame(0.8)).toBe('Game 2');
+  });
+
+  test('prefers Game 1 for prob = 0.1 (poor shooter)', () => {
+    expect(chooseBetterGame(0.1)).toBe('Game 1');
+  });
 });

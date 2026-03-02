@@ -56,4 +56,36 @@ describe('findHeavyBottle', () => {
 
     expect(findHeavyBottle(measureWeight)).toBe(heavyBottle);
   });
+
+  test('detects bottle 5 as heavy (excess = 0.5)', () => {
+    const heavyBottle = 5;
+    const measureWeight = (pillsTaken: number[]) => {
+      const baseWeight = pillsTaken.reduce((a, b) => a + b, 0);
+      return baseWeight + pillsTaken[heavyBottle - 1] * 0.1;
+    };
+
+    expect(findHeavyBottle(measureWeight)).toBe(heavyBottle);
+  });
+
+  test('detects bottle 15 as heavy (excess = 1.5)', () => {
+    const heavyBottle = 15;
+    const measureWeight = (pillsTaken: number[]) => {
+      const baseWeight = pillsTaken.reduce((a, b) => a + b, 0);
+      return baseWeight + pillsTaken[heavyBottle - 1] * 0.1;
+    };
+
+    expect(findHeavyBottle(measureWeight)).toBe(heavyBottle);
+  });
+
+  test('uses the scale exactly once', () => {
+    let scaleUseCount = 0;
+    const measureWeight = (pillsTaken: number[]) => {
+      scaleUseCount++;
+      const baseWeight = pillsTaken.reduce((a, b) => a + b, 0);
+      return baseWeight + pillsTaken[0] * 0.1;
+    };
+
+    findHeavyBottle(measureWeight);
+    expect(scaleUseCount).toBe(1);
+  });
 });
