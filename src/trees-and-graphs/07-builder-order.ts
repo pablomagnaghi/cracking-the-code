@@ -1,15 +1,34 @@
-// 04.07. Build Order (Book-only)
+// 04.07. Build Order
 //
-// You are given a list of projects and a list of dependencies (which is a list of
-// pairs of projects, where the second project is dependent on the first project).
-// All of a project's dependencies must be built before the project is. Find a build
-// order that will allow the projects to be built. If there is no valid build order,
-// return an error.
+// You are given a list of projects and a list of dependencies (which is a list
+// of pairs of projects, where the second project is dependent on the first
+// project). All of a project's dependencies must be built before the project is.
+// Find a build order that will allow the projects to be built. If there is no
+// valid build order, return an error.
+//
+// This is essentially a topological sort problem on a directed acyclic graph
+// (DAG). Each project is a node and each dependency is a directed edge. A valid
+// build order is any topological ordering of the graph. If the graph contains a
+// cycle, no valid build order exists.
 //
 // Example:
-//   Input: projects: a, b, c, d, e, f
-//          dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
-//   Output: e, f, a, b, d, c
+//   Input:
+//     projects: a, b, c, d, e, f
+//     dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
+//   Output: f, e, a, b, d, c
+//   (or any other valid topological ordering)
+//
+// Example:
+//   Input:
+//     projects: a, b, c
+//     dependencies: (a, b), (b, c), (c, a)
+//   Output: Error (circular dependency, no valid build order)
+//
+// Constraints:
+//   - A dependency (x, y) means x must be built before y.
+//   - All dependencies reference valid projects in the projects list.
+//   - If a cycle exists among the dependencies, there is no valid build order.
+//   - Multiple valid orderings may exist; any correct topological order is acceptable.
 
 export function buildOrder(projects: string[], dependencies: string[][]): string[] {
   const graph = new Map<string, string[]>();

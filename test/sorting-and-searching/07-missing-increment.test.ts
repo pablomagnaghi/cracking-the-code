@@ -40,4 +40,19 @@ describe('findMissingIncrement', () => {
     const arr = [1, 2, 3, 4, 5, 7];
     expect(findMissingIncrement(arr)).toBe(6);
   });
+
+  test('finds missing number in sequence starting from 0', () => {
+    const arr = [0, 1, 2, 3, 4, 5, 7, 8, 9];
+    expect(findMissingIncrement(arr)).toBe(6);
+  });
+
+  test('finds missing second element in sequence', () => {
+    const arr = [1, 3, 4, 5, 6, 7, 8];
+    expect(findMissingIncrement(arr)).toBe(2);
+  });
+
+  test('finds missing number in two-element sequence', () => {
+    const arr = [1, 3];
+    expect(findMissingIncrement(arr)).toBe(2);
+  });
 });

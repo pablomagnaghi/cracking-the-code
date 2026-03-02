@@ -28,4 +28,18 @@ describe('daysUntilBlueEyedPeopleLeave', () => {
   test('returns 1000 when there are 1000 blue-eyed people', () => {
     expect(daysUntilBlueEyedPeopleLeave(1000)).toBe(1000);
   });
+
+  test('returns 5 when there are 5 blue-eyed people', () => {
+    expect(daysUntilBlueEyedPeopleLeave(5)).toBe(5);
+  });
+
+  test('returns 10 when there are 10 blue-eyed people', () => {
+    expect(daysUntilBlueEyedPeopleLeave(10)).toBe(10);
+  });
+
+  test('result always equals input for positive counts', () => {
+    for (let n = 1; n <= 50; n++) {
+      expect(daysUntilBlueEyedPeopleLeave(n)).toBe(n);
+    }
+  });
 });

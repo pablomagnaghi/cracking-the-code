@@ -57,4 +57,50 @@ describe('sortBigFile', () => {
 
     await Promise.all([fs.unlink(dupeInput), fs.unlink(dupeOutput)].map((p) => p.catch(() => {})));
   });
+
+  test('sorts file with negative and positive numbers', async () => {
+    const mixedInput = './test_input_mixed.txt';
+    const mixedOutput = './test_output_mixed.txt';
+    const data = [10, -5, 3, -1, 0, 7, -3, 2];
+    await fs.writeFile(mixedInput, data.join('\n'));
+
+    await sortBigFile(mixedInput, mixedOutput, 4 * 3);
+
+    const content = await fs.readFile(mixedOutput, 'utf-8');
+    const sorted = content.split('\n').filter(Boolean).map(Number);
+    expect(sorted).toEqual([-5, -3, -1, 0, 2, 3, 7, 10]);
+
+    await Promise.all([fs.unlink(mixedInput), fs.unlink(mixedOutput)].map((p) => p.catch(() => {})));
+  });
+
+  test('sorts file that fits in a single chunk', async () => {
+    const singleInput = './test_input_single.txt';
+    const singleOutput = './test_output_single.txt';
+    const data = [4, 2, 7, 1];
+    await fs.writeFile(singleInput, data.join('\n'));
+
+    // Large memory limit so all data fits in one chunk
+    await sortBigFile(singleInput, singleOutput, 4 * 100);
+
+    const content = await fs.readFile(singleOutput, 'utf-8');
+    const sorted = content.split('\n').filter(Boolean).map(Number);
+    expect(sorted).toEqual([1, 2, 4, 7]);
+
+    await Promise.all([fs.unlink(singleInput), fs.unlink(singleOutput)].map((p) => p.catch(() => {})));
+  });
+
+  test('sorts already sorted file', async () => {
+    const sortedInput = './test_input_sorted.txt';
+    const sortedOutput = './test_output_sorted.txt';
+    const data = [1, 2, 3, 4, 5, 6, 7, 8];
+    await fs.writeFile(sortedInput, data.join('\n'));
+
+    await sortBigFile(sortedInput, sortedOutput, 4 * 2);
+
+    const content = await fs.readFile(sortedOutput, 'utf-8');
+    const sorted = content.split('\n').filter(Boolean).map(Number);
+    expect(sorted).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+
+    await Promise.all([fs.unlink(sortedInput), fs.unlink(sortedOutput)].map((p) => p.catch(() => {})));
+  });
 });

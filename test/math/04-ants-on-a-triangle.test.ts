@@ -18,4 +18,22 @@ describe('antsOnTriangle', () => {
     expect(result).toBeGreaterThan(0);
     expect(result).toBeLessThan(1);
   });
+
+  test('collision probability is 3/4', () => {
+    const noCollision = antsOnTriangle();
+    const collision = 1 - noCollision;
+    expect(collision).toBeCloseTo(0.75, 5);
+  });
+
+  test('result equals 2 divided by 2^3 (general formula for 3 ants)', () => {
+    const result = antsOnTriangle();
+    const expected = 2 / Math.pow(2, 3);
+    expect(result).toBe(expected);
+  });
+
+  test('result is a rational number with denominator 8', () => {
+    const result = antsOnTriangle();
+    // 0.25 * 8 should be an integer
+    expect(Number.isInteger(result * 8)).toBe(true);
+  });
 });

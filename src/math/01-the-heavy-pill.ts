@@ -1,8 +1,26 @@
-// 06.01. The Heavy Pill (Book-only)
+// 06.01. The Heavy Pill
 //
-// You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one has pills that weigh 1.1 grams.
-// You have a scale that you can use only once.
-// How can you find the heavy bottle?
+// You have 20 bottles of pills. 19 bottles have 1.0 gram pills, but one
+// bottle has pills of weight 1.1 grams. Given a scale that provides an
+// exact measurement, how would you find the heavy bottle? You can only
+// use the scale once.
+//
+// Approach:
+//   Take a different number of pills from each bottle: 1 pill from bottle 1,
+//   2 pills from bottle 2, ..., 20 pills from bottle 20. Weigh them all
+//   together. The expected weight if all pills weighed 1.0g is
+//   1 + 2 + ... + 20 = 210g. The excess weight above 210g, divided by 0.1,
+//   tells you which bottle contains the heavy pills.
+//
+// Example:
+//   Input: heavy bottle is bottle #3
+//   Scale reads: 210 + 3 * 0.1 = 210.3
+//   Output: (210.3 - 210) / 0.1 = 3
+//
+// Constraints:
+//   - Exactly 20 bottles numbered 1 through 20
+//   - Exactly one bottle has 1.1g pills, the rest have 1.0g pills
+//   - The scale may only be used once
 
 // Strategy:
 // Take 1 pill from bottle 1, 2 pills from bottle 2, ..., 20 pills from bottle 20.

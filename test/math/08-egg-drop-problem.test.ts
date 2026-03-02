@@ -37,4 +37,16 @@ describe('Egg Drop Problem', () => {
   test('two eggs and 10 floors requires minimum 4 drops', () => {
     expect(eggDrop(2, 10)).toBe(4);
   });
+
+  test('two eggs and 36 floors requires minimum 8 drops', () => {
+    expect(eggDrop(2, 36)).toBe(8);
+  });
+
+  test('two eggs and 21 floors requires minimum 6 drops', () => {
+    expect(eggDrop(2, 21)).toBe(6);
+  });
+
+  test('three eggs and 100 floors requires minimum 9 drops', () => {
+    expect(eggDrop(3, 100)).toBe(9);
+  });
 });

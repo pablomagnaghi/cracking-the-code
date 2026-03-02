@@ -1,10 +1,31 @@
-// 16.12. XML Encoding (Book-only)
+// 16.12. XML Encoding
 //
 // Since XML is very verbose, you are given a way of encoding it where each tag gets
-// mapped to a pre-defined integer value. Encode an XML element (with attributes,
-// children, and optional text) into a compact integer-tagged format using a tag map.
-// Each element is encoded as:
-//   [tagId] [attrKeyId] [attrValue] ... 0 [text?] [encoded children] 0
+// mapped to a pre-defined integer value. The language/grammar is as follows:
+//   Element   --> Tag Attributes END Children END
+//   Attribute --> Tag Value
+//   END       --> 0
+//   Tag       --> some predefined mapping to int
+//   Value     --> string value
+//
+// Write code to print the encoded version of an XML element (passed in as Element
+// and Attribute objects).
+//
+// Example:
+//   Input (XML):
+//     <family lastName="McDowell" state="CA">
+//       <person firstName="Gayle">Some Message</person>
+//     </family>
+//
+//   Tag mapping: family -> 1, person -> 2, firstName -> 3, lastName -> 4, state -> 5
+//
+//   Output: "1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0"
+//
+// Constraints:
+//   - Each tag and attribute name maps to a known integer via the tag map
+//   - END (0) marks the end of an attribute list and the end of an element
+//   - Elements can be nested arbitrarily deep
+//   - An element may have text content, attributes, children, or any combination
 
 export interface Element {
   name: string;

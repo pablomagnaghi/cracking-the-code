@@ -1,13 +1,28 @@
-// 10.06. Sort Big File (Book-only)
+// 10.06. Sort Big File
 //
-// You have a file with 4 billion integers. Assume you have 1 GB of memory available.
-// How would you sort the file?
+// Imagine you have a 20 GB file with one string per line. Explain how you
+// would sort the file.
 //
-// Approach:
-// Since the data cannot fit into memory, use External Merge Sort:
-// 1. Break the file into chunks that fit into memory.
-// 2. Sort each chunk in memory and write it back to disk as a sorted sub-file.
-// 3. Merge all sorted sub-files using a k-way merge to produce a fully sorted file.
+// Since the file is too large to fit entirely into memory, we use an External
+// Merge Sort:
+//   1. Divide the file into chunks small enough to fit in available memory
+//      (e.g., if you have X MB of memory, each chunk is X MB).
+//   2. Sort each chunk in memory using a standard O(n log n) algorithm
+//      (e.g., quicksort or mergesort) and write each sorted chunk to disk.
+//   3. Merge all sorted chunks together using a k-way merge (min-heap) to
+//      produce the final fully sorted file.
+//
+// Example:
+//   Input:  A 900 MB file, 100 MB of available RAM
+//   Step 1: Read 100 MB chunks, sort each, write 9 sorted chunk files
+//   Step 2: Merge the 9 sorted chunks into the final sorted output
+//   Output: A single sorted file with all data in order
+//
+// Constraints:
+//   - File size exceeds available memory
+//   - Must use disk-based (external) sorting
+//   - k-way merge uses O(k) memory for the heap plus one buffer per chunk
+//   - Overall time complexity: O(n log n), where n is total number of elements
 
 import * as fs from 'fs';
 import * as readline from 'readline';

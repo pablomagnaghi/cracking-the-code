@@ -1,9 +1,35 @@
-// 04.11. Random Node (Book-only)
+// 04.11. Random Node
 //
-// You are implementing a binary tree class from scratch which, in addition to
-// insert, find, and delete, has a method getRandomNode() which returns a random
-// node from the tree. All nodes should be equally likely to be chosen. Design and
-// implement this method.
+// You are implementing a binary search tree class from scratch which, in
+// addition to insert, find, and delete, has a method getRandomNode() which
+// returns a random node from the tree. All nodes should be equally likely to be
+// chosen. Design and implement an algorithm for getRandomNode, and explain how
+// you would implement the rest of the methods.
+//
+// The key insight is to maintain a size field on each node that tracks the
+// number of nodes in its subtree (including itself). To select a random node,
+// generate a random index in [0, size) and use the left subtree's size to
+// decide whether to go left, return the current node, or go right. This
+// achieves O(log N) expected time for balanced trees.
+//
+// Example:
+//   Tree:       10
+//              /  \
+//             5    15
+//            / \   / \
+//           3   7 13  17
+//
+//   getRandomNode() -> any of {3, 5, 7, 10, 13, 15, 17} with equal probability (1/7 each)
+//
+// Example:
+//   Tree with single node: 42
+//   getRandomNode() -> 42 (always)
+//
+// Constraints:
+//   - Each node must be equally likely to be returned by getRandomNode().
+//   - The tree supports insert and find operations following BST ordering.
+//   - Each node tracks the size of its subtree to enable O(log N) random selection.
+//   - Duplicate values are inserted into the right subtree.
 
 export class TreeNode<T> {
   value: T;

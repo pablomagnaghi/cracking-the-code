@@ -1,15 +1,25 @@
-// 10.04. Sorted Search, No Size (Book-only)
+// 10.04. Sorted Search, No Size
 //
-// You are given an array-like data structure Listy which lacks a size method. It does,
-// however, have an elementAt(i) method that returns the element at index i in O(1) time.
-// If i is beyond the bounds of the data structure, it returns -1.
+// You are given an array-like data structure Listy which lacks a size method.
+// It does, however, have an elementAt(i) method that returns the element at
+// index i in O(1) time. If i is beyond the bounds of the data structure, it
+// returns -1. (For the purposes of this problem, -1 is used because the data
+// structure only supports positive integers.)
 //
-// Given a Listy that contains sorted, positive integers, find the index at which an
-// element x occurs. If x occurs multiple times, return the first index.
+// Given a Listy which contains sorted, positive integers, find the index at
+// which an element value x occurs. If x occurs multiple times, you may return
+// any index.
 //
 // Example:
 //   Input: Listy = [1, 3, 5, 7, 9, 12, 15, 20, 20, 25], x = 20
-//   Output: 7
+//   Output: 7 (or 8, since 20 appears at both indices)
+//
+// Constraints:
+//   - The Listy contains only sorted, positive integers
+//   - There is no size or length property available
+//   - elementAt(i) returns -1 for out-of-bounds indices
+//   - The solution should run in O(log n) time using exponential search
+//     to find bounds, followed by binary search
 
 // Define the Listy interface
 interface Listy {

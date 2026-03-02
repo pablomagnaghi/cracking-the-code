@@ -1,14 +1,34 @@
-// 06.06. Blue-Eyed Island (Book-only)
+// 06.06. Blue-Eyed Island
 //
-// There is a group of people on an island. All the inhabitants are perfect logicians.
-// Each person has either blue or brown eyes. They can see everyone else’s eye color, but not their own.
-// They are not allowed to tell each other what they see.
-// Once a day, a ferry comes. Any islander who has discovered they have blue eyes must leave that day.
-// The islanders all know the rules and that all others are perfect logicians.
-// If there are N people with blue eyes, what happens?
+// A bunch of people are living on an island, when a visitor comes with a
+// strange order: all blue-eyed people must leave the island as soon as
+// possible. There will be a flight out at 8:00 pm every evening. Each
+// person can see everyone else’s eye color, but they do not know their own
+// (nor is anyone allowed to tell them). Additionally, they do not know how
+// many people have blue eyes, although they do know that at least one
+// person does. How many days will it take the blue-eyed people to leave?
 //
-// Statement: If a foreigner visits and says “I see someone with blue eyes”, what happens?
-// Answer: All blue-eyed people will leave on the Nth day, where N is the number of blue-eyed individuals.
+// All inhabitants are perfect logicians. If a conclusion can be logically
+// deduced, they will do it instantly.
+//
+// Solution:
+//   If there is 1 blue-eyed person, they see no one else with blue eyes,
+//   deduce it must be them, and leave on day 1.
+//   If there are 2, each sees 1 other blue-eyed person. When that person
+//   does not leave on day 1, each deduces they must also have blue eyes.
+//   Both leave on day 2.
+//   By induction, N blue-eyed people all leave on day N.
+//
+// Example:
+//   Input: blueEyedCount = 3
+//   Output: 3 (all three leave on day 3)
+//
+//   Input: blueEyedCount = 0
+//   Output: 0 (no one leaves)
+//
+// Constraints:
+//   - blueEyedCount >= 0
+//   - All inhabitants are perfect logicians
 
 export function daysUntilBlueEyedPeopleLeave(blueEyedCount: number): number {
   // If no one has blue eyes, no one leaves.

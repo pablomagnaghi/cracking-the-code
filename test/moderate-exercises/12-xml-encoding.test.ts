@@ -102,4 +102,42 @@ describe('encodeXML', () => {
     const expected = '1 0 2 0 5 0 2 0 inner 0 0 0 0';
     expect(encodeXML(input, tagMap)).toBe(expected);
   });
+
+  test('encodes the book example: family with person child and text', () => {
+    const input: Element = {
+      name: 'family',
+      attributes: { lastName: 'McDowell', state: 'CA' },
+      children: [
+        {
+          name: 'person',
+          attributes: { firstName: 'Gayle' },
+          text: 'Some Message',
+        },
+      ],
+    };
+
+    const expected = '1 4 McDowell 5 CA 0 2 3 Gayle 0 Some Message 0 0';
+    expect(encodeXML(input, tagMap)).toBe(expected);
+  });
+
+  test('encodes element with text and attributes but no children', () => {
+    const input: Element = {
+      name: 'person',
+      attributes: { firstName: 'Alice' },
+      text: 'Hello World',
+    };
+
+    const expected = '2 3 Alice 0 Hello World 0';
+    expect(encodeXML(input, tagMap)).toBe(expected);
+  });
+
+  test('encodes element with single attribute only', () => {
+    const input: Element = {
+      name: 'family',
+      attributes: { state: 'NY' },
+    };
+
+    const expected = '1 5 NY 0 0';
+    expect(encodeXML(input, tagMap)).toBe(expected);
+  });
 });
